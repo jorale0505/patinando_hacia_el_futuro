@@ -67,12 +67,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
-        run: |
-          npm run build 2>&1 | tee build.log || {
-            ERR=$(tail -n 20 build.log | tr '\n' ' ' | sed 's/"//g')
-            echo "::error title=Astro Build Error::$ERR"
-            exit 1
-          }
+        run: npm run build
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
