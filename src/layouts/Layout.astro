@@ -8,6 +8,8 @@ const {
   title = "Patinando Hacia El Futuro · Escuela Oficial de Patinaje de Carreras",
   description = "Patina, compite y cumple tus sueños. Escuela de patinaje de velocidad Patinando Hacia El Futuro. Formación integral, alta competencia y valores deportivos."
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <!doctype html>
@@ -15,7 +17,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}images/logo.png`} />
+    <link rel="icon" type="image/png" href={`${base}/images/logo.png`} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -25,7 +27,7 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${import.meta.env.BASE_URL}images/hero.jpeg`} />
+    <meta property="og:image" content={`${base}/images/hero.jpeg`} />
 
     <!-- Google Fonts: Montserrat & Bebas Neue -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

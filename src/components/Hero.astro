@@ -1,12 +1,13 @@
 ---
 // Hero component: Ultra-wide responsive skater background, fluid typography, expansive speed trail and mascot
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section id="inicio" class="hero-section">
   <!-- Full-Width Skater Background Container -->
   <div class="hero-media-wrapper" aria-hidden="true">
     <img
-      src={`${import.meta.env.BASE_URL}images/hero.jpeg`}
+      src={`${base}/images/hero.jpeg`}
       alt="Patinador de velocidad en pista"
       class="hero-bg-image"
       loading="eager"
@@ -73,7 +74,7 @@
           <div class="trail-mascot-anchor">
             <div class="mascot-energy-ring"></div>
             <img
-              src={`${import.meta.env.BASE_URL}images/guepardo.png`}
+              src={`${base}/images/guepardo.png`}
               alt="Mascota Guepardo Patinando Hacia El Futuro"
               class="guepardo-mascot-img"
               width="135"

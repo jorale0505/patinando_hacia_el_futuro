@@ -1,5 +1,6 @@
 ---
 // Componente "Nuestra Escuela": Historia comunitaria, expansión y visión deportiva
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section id="nuestra-escuela" class="about-section">
@@ -13,7 +14,7 @@
             <!-- Slide 1: Origen y Sentido Social en Caimalito -->
             <div class="carousel-slide is-active" data-slide="0">
               <img
-                src={`${import.meta.env.BASE_URL}images/imagen-corporativa.png`}
+                src={`${base}/images/imagen-corporativa.png`}
                 alt="Niños y jóvenes en formación sobre ruedas - Patinando Hacia El Futuro"
                 class="slide-image"
                 loading="lazy"
@@ -32,7 +33,7 @@
             <!-- Slide 2: Entrenamientos en La Virginia -->
             <div class="carousel-slide" data-slide="1">
               <img
-                src={`${import.meta.env.BASE_URL}images/hero.jpeg`}
+                src={`${base}/images/hero.jpeg`}
                 alt="Entrenamientos y velocidad en pista - Patinando Hacia El Futuro"
                 class="slide-image"
                 loading="lazy"
@@ -51,7 +52,7 @@
             <!-- Slide 3: Deporte, Turismo y Competencias -->
             <div class="carousel-slide" data-slide="2">
               <img
-                src={`${import.meta.env.BASE_URL}images/imagen-corporativa.png`}
+                src={`${base}/images/imagen-corporativa.png`}
                 alt="Competencias y turismo deportivo - Patinando Hacia El Futuro"
                 class="slide-image"
                 loading="lazy"
