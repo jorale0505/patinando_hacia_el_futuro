@@ -1,0 +1,3885 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patinando Hacia El Futuro · Escuela Oficial de Patinaje de Carreras</title>
+    <meta name="description" content="Patina, compite y cumple tus sueños. Escuela de patinaje de carreras Patinando Hacia El Futuro. Formación integral, velocidad, alta competencia y valores deportivos." />
+    <link rel="icon" type="image/png" href="logo.png" />
+
+    <!-- Google Fonts: Montserrat & Bebas Neue -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --color-red-energy: #E51B23;
+        --color-orange-speed: #F57C00;
+        --color-yellow-future: #FFD21F;
+        --color-green-panther: #009B55;
+        --color-dark-bg: #000000;
+        --color-dark-surface: #0A0A0A;
+        --color-dark-card: #101216;
+        --color-dark-border: rgba(255, 255, 255, 0.08);
+        --color-white: #FFFFFF;
+        --color-gray-tech: #A7A9AC;
+        --color-gray-muted: #9CA3AF;
+
+        --gradient-energy: linear-gradient(135deg, #E51B23 0%, #F57C00 50%, #FFD21F 100%);
+        --gradient-sports: linear-gradient(135deg, #E51B23 0%, #FFD21F 100%);
+
+        --font-heading: 'Montserrat', sans-serif;
+        --font-sports: 'Bebas Neue', sans-serif;
+        --font-body: 'Montserrat', sans-serif;
+
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 22px;
+        --radius-full: 9999px;
+
+        --shadow-glow-red: 0 8px 32px rgba(229, 27, 35, 0.35);
+        --shadow-glow-yellow: 0 8px 32px rgba(255, 210, 31, 0.3);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-family: var(--font-body);
+        background-color: #000000;
+        color: var(--color-white);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        min-height: 100vh;
+        background-color: #000000;
+        color: var(--color-white);
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        outline: none;
+      }
+
+      .container {
+        width: 100%;
+        max-width: min(94vw, 1500px);
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 4vw, 4rem);
+      }
+
+      .font-sports {
+        font-family: var(--font-sports);
+        letter-spacing: 1px;
+      }
+
+      .text-gradient-energy {
+        background: var(--gradient-energy);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .text-gradient-sports {
+        background: var(--gradient-sports);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* ==================== NAVBAR ==================== */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        height: 76px;
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: min(94vw, 1720px);
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 6rem);
+      }
+
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        transition: transform 0.2s ease;
+      }
+
+      .nav-brand:hover {
+        transform: scale(1.02);
+      }
+
+      .brand-logo {
+        height: 48px;
+        width: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 0 10px rgba(245, 124, 0, 0.45));
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .brand-title {
+        font-family: var(--font-sports);
+        font-size: 1.4rem;
+        letter-spacing: 1.5px;
+        color: var(--color-white);
+        line-height: 1;
+      }
+
+      .brand-sub {
+        font-family: var(--font-heading);
+        font-size: 0.65rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        background: var(--gradient-sports);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .nav-menu {
+        display: flex;
+      }
+
+      .nav-list {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-link {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--color-gray-muted);
+        transition: all 0.25s ease;
+        position: relative;
+        padding: 0.35rem 0;
+      }
+
+      .nav-link:hover {
+        color: var(--color-yellow-future);
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient-energy);
+        transition: width 0.25s ease;
+        border-radius: 2px;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .btn-cta-nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.65rem 1.35rem;
+        border-radius: var(--radius-full);
+        background: var(--gradient-energy);
+        color: #111;
+        font-weight: 800;
+        font-size: 0.88rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 18px rgba(229, 27, 35, 0.35);
+        transition: all 0.3s ease;
+      }
+
+      .btn-cta-nav:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(255, 210, 31, 0.5);
+      }
+
+      /* ==================== HERO SECTION (ULTRA-WIDE OPTIMIZED) ==================== */
+      .hero-section {
+        position: relative;
+        width: 100%;
+        min-height: 94vh;
+        display: flex;
+        align-items: center;
+        background-color: #000000;
+        overflow: hidden;
+        padding-top: 110px;
+        padding-bottom: 70px;
+      }
+
+      .hero-media-wrapper {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .hero-bg-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 78% center;
+        display: block;
+        transform: scale(1.02);
+      }
+
+      .hero-overlay-horizontal {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.96) 0%,
+          rgba(0, 0, 0, 0.90) 28%,
+          rgba(0, 0, 0, 0.55) 48%,
+          rgba(0, 0, 0, 0.12) 68%,
+          rgba(0, 0, 0, 0.25) 100%
+        );
+        z-index: 2;
+      }
+
+      .hero-overlay-vertical {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.85) 0%,
+          transparent 22%,
+          transparent 72%,
+          #000000 100%
+        );
+        z-index: 3;
+      }
+
+      .hero-overlay-vignette {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 78% 50%,
+          transparent 45%,
+          rgba(0, 0, 0, 0.75) 95%
+        );
+        z-index: 4;
+      }
+
+      /* Fluid Widescreen Container: Anchored organically with responsive margin and padding */
+      .hero-container {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        max-width: min(94vw, 1720px);
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 6rem);
+      }
+
+      /* Content Box: Expands proportionally on wide screens without encroaching on the skater */
+      .hero-content {
+        max-width: clamp(520px, 46vw, 760px);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.2rem, 1.8vw, 2rem);
+      }
+
+      /* DIAGONAL VELOCITY SKEW HEADLINE (2 LEVELS) */
+      .speed-headline-box {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(0.6rem, 1vw, 1rem);
+      }
+
+      .speed-title {
+        font-family: var(--font-sports);
+        font-weight: 400;
+        font-style: italic;
+        line-height: 0.92;
+        letter-spacing: clamp(2px, 0.2vw, 4px);
+        transform: skewX(-12deg);
+        transform-origin: left center;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(0.2rem, 0.5vw, 0.5rem);
+      }
+
+      /* Nivel 1 Superior */
+      .title-level-top {
+        font-size: clamp(2.8rem, 4.6vw, 5.8rem);
+        color: var(--color-white);
+        display: block;
+        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95);
+        white-space: nowrap;
+      }
+
+      /* Nivel 2 Inferior con degradado completo: Rojo, Naranja, Amarillo, Verde */
+      .title-level-bottom {
+        font-size: clamp(3.2rem, 5.2vw, 6.4rem);
+        display: block;
+        white-space: nowrap;
+      }
+
+      .text-gradient-full {
+        background: linear-gradient(90deg, #E51B23 0%, #F57C00 32%, #FFD21F 68%, #009B55 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 2px 20px rgba(245, 124, 0, 0.5));
+      }
+
+      /* SPEED TRAIL (DEGRADADO NARANJA A AMARILLO) & GUEPARDO */
+      .speed-trail-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: clamp(480px, 42vw, 680px);
+        margin-top: 0.4rem;
+      }
+
+      .speed-trail-graphic {
+        flex-grow: 1;
+        height: clamp(42px, 3.5vw, 54px);
+        position: relative;
+        overflow: visible;
+      }
+
+      .speed-trail-svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        filter: drop-shadow(0 0 14px rgba(255, 210, 31, 0.65));
+      }
+
+      .trail-mascot-anchor {
+        position: relative;
+        flex-shrink: 0;
+        margin-left: -28px;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mascot-energy-ring {
+        position: absolute;
+        width: clamp(110px, 9vw, 140px);
+        height: clamp(80px, 7vw, 105px);
+        background: radial-gradient(circle, rgba(0, 155, 85, 0.5) 0%, rgba(255, 210, 31, 0.25) 60%, transparent 80%);
+        filter: blur(14px);
+        z-index: -1;
+      }
+
+      .guepardo-mascot-img {
+        width: clamp(115px, 9.5vw, 150px);
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 0 18px rgba(0, 155, 85, 0.85)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+        transform: rotate(-3deg);
+        transition: transform 0.3s ease;
+      }
+
+      .trail-mascot-anchor:hover .guepardo-mascot-img {
+        transform: rotate(0deg) scale(1.08);
+      }
+
+      .hero-lead {
+        font-size: clamp(1.1rem, 1.25vw, 1.35rem);
+        line-height: 1.7;
+        color: #C5CBD2;
+        max-width: clamp(520px, 42vw, 680px);
+        font-weight: 400;
+      }
+
+      .lead-strong {
+        color: #FFFFFF;
+        font-weight: 700;
+        text-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
+        letter-spacing: 0.2px;
+      }
+
+      .lead-gradient {
+        background: linear-gradient(90deg, #FFD21F 0%, #00E676 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800;
+        filter: drop-shadow(0 0 12px rgba(255, 210, 31, 0.5));
+        letter-spacing: 0.2px;
+      }
+
+      /* ===================================================
+         HERO STAT FLOATING DISPLAY (Transparent, Centered)
+         =================================================== */
+      .hero-stat-stage {
+        margin-top: 0.8rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        width: 100%;
+        max-width: clamp(520px, 46vw, 720px);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .stat-stage-track {
+        position: relative;
+        width: 100%;
+        height: 140px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Transparent Floating Stats Centered */
+      .stat-card {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        max-width: 480px;
+        opacity: 0;
+        transform: translateX(-190%);
+        pointer-events: none;
+        transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+        will-change: transform, opacity;
+      }
+
+      /* Animation states:
+         Enter Left (-190%) -> Middle (0) -> Wait 2s -> Exit Right (+190%) */
+      .stat-card.is-entering {
+        transition: none !important;
+        transform: translateX(-190%) !important;
+        opacity: 0 !important;
+      }
+
+      .stat-card.is-active {
+        opacity: 1 !important;
+        transform: translateX(0) !important;
+        pointer-events: auto;
+      }
+
+      .stat-card.is-exiting {
+        opacity: 0 !important;
+        transform: translateX(190%) !important;
+        transition: transform 0.65s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.45s ease !important;
+        pointer-events: none;
+      }
+
+      /* Number: Big, bold sports typography centered over text */
+      .stat-num {
+        font-family: var(--font-sports);
+        font-size: clamp(3.6rem, 4.6vw, 5.2rem);
+        line-height: 0.92;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin-bottom: 0.45rem;
+        text-align: center;
+      }
+
+      /* Colors derived from brand gradient with high-visibility glow & shadow over image */
+      .num-red {
+        color: #FF3B30;
+        text-shadow: 0 0 28px rgba(229, 27, 35, 0.8), 0 4px 16px rgba(0, 0, 0, 0.95);
+      }
+
+      .num-orange {
+        color: #FF8A00;
+        text-shadow: 0 0 28px rgba(245, 124, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.95);
+      }
+
+      .num-yellow {
+        color: #FFD21F;
+        text-shadow: 0 0 28px rgba(255, 210, 31, 0.85), 0 4px 16px rgba(0, 0, 0, 0.95);
+      }
+
+      .num-green {
+        color: #00E676;
+        text-shadow: 0 0 28px rgba(0, 230, 118, 0.85), 0 4px 16px rgba(0, 0, 0, 0.95);
+      }
+
+      /* Labels centered beneath the number in 2 lines */
+      .stat-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-family: var(--font-heading);
+        font-size: clamp(0.92rem, 1.08vw, 1.2rem);
+        font-weight: 700;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        line-height: 1.25;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 22px rgba(0, 0, 0, 0.9);
+      }
+
+      .stat-label span:last-child {
+        color: #D1D5DB;
+      }
+
+      /* ==================== SECTIONS COMMON (PURE BLACK) ==================== */
+      .section-head {
+        max-width: 720px;
+        margin: 0 auto 3.5rem;
+        text-align: center;
+      }
+
+      .eyebrow-tag {
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        color: var(--color-yellow-future);
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 3.5vw, 2.8rem);
+        font-weight: 900;
+        line-height: 1.15;
+        letter-spacing: -0.5px;
+        color: var(--color-white);
+        margin-bottom: 1rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.05rem;
+        color: var(--color-gray-muted);
+        line-height: 1.6;
+      }
+
+      /* ==================== NUESTRA ESCUELA ==================== */
+      .about-section {
+        position: relative;
+        width: 100%;
+        background-color: #000000;
+        padding: clamp(70px, 8vw, 120px) 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .about-container {
+        width: 100%;
+        max-width: min(94vw, 1720px);
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 6rem);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: clamp(2.5rem, 5vw, 5.5rem);
+        align-items: center;
+      }
+
+      .about-media-col {
+        width: 100%;
+      }
+
+      .carousel-wrapper {
+        position: relative;
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #0B0D11;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 124, 0, 0.12);
+        aspect-ratio: 16 / 11;
+      }
+
+      .carousel-track {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .carousel-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transform: scale(1.04);
+        transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        pointer-events: none;
+      }
+
+      .carousel-slide.is-active {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+      }
+
+      .slide-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
+
+      .slide-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.45) 0%,
+          transparent 35%,
+          rgba(0, 0, 0, 0.4) 60%,
+          rgba(0, 0, 0, 0.92) 100%
+        );
+      }
+
+      .slide-badge {
+        position: absolute;
+        top: 1.2rem;
+        left: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: rgba(12, 14, 18, 0.82);
+        border: 1px solid rgba(255, 210, 31, 0.4);
+        padding: 0.35rem 0.85rem;
+        border-radius: var(--radius-full);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .badge-icon {
+        font-size: 0.9rem;
+      }
+
+      .badge-text {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: var(--color-yellow-future);
+        text-transform: uppercase;
+      }
+
+      .slide-caption {
+        position: absolute;
+        bottom: 1.4rem;
+        left: 1.4rem;
+        right: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .caption-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.15rem, 1.4vw, 1.45rem);
+        font-weight: 800;
+        color: var(--color-white);
+        letter-spacing: -0.2px;
+        margin: 0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+      }
+
+      .caption-desc {
+        font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+        color: #D1D5DB;
+        margin: 0;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+        line-height: 1.4;
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: var(--radius-full);
+        background: rgba(14, 16, 20, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--color-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: all 0.25s ease;
+        z-index: 10;
+      }
+
+      .carousel-btn:hover {
+        background: var(--color-orange-speed);
+        border-color: var(--color-yellow-future);
+        color: #000000;
+        box-shadow: 0 0 16px rgba(245, 124, 0, 0.7);
+        transform: translateY(-50%) scale(1.08);
+      }
+
+      .prev-btn {
+        left: 1rem;
+      }
+
+      .next-btn {
+        right: 1rem;
+      }
+
+      .carousel-dots {
+        position: absolute;
+        bottom: 0.8rem;
+        right: 1.4rem;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        z-index: 10;
+      }
+
+      .c-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: var(--radius-full);
+        background: rgba(255, 255, 255, 0.35);
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .c-dot.active {
+        width: 24px;
+        background: linear-gradient(90deg, #F57C00, #FFD21F);
+        box-shadow: 0 0 10px rgba(255, 210, 31, 0.6);
+      }
+
+      .about-text-col {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+      }
+
+      .section-tag-box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      .about-title {
+        font-family: var(--font-sports);
+        font-size: clamp(2.8rem, 3.8vw, 4.4rem);
+        font-weight: 400;
+        letter-spacing: 2px;
+        line-height: 0.95;
+        margin: 0;
+      }
+
+      .about-content-body {
+        display: flex;
+        flex-direction: column;
+        gap: 1.15rem;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+
+      .lead-paragraph {
+        font-size: clamp(1.05rem, 1.15vw, 1.25rem);
+        line-height: 1.7;
+        color: #F3F4F6;
+        font-weight: 500;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+
+      .body-paragraph {
+        font-size: clamp(0.95rem, 1.02vw, 1.08rem);
+        line-height: 1.7;
+        color: #A7A9AC;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+
+      .highlight-text {
+        color: var(--color-white);
+        font-weight: 700;
+      }
+
+      .highlight-quote {
+        color: var(--color-yellow-future);
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      .about-pillars {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.85rem;
+        margin-top: 1.25rem;
+      }
+
+      .about-pillar-card {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius-sm);
+        padding: 0.8rem 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .about-pillar-card:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 210, 31, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .p-card-icon {
+        font-size: 1.35rem;
+      }
+
+      .p-card-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .p-card-title {
+        font-family: var(--font-sports);
+        font-size: 1.15rem;
+        letter-spacing: 0.5px;
+        color: var(--color-white);
+        line-height: 1;
+      }
+
+      .p-card-desc {
+        font-size: 0.76rem;
+        color: var(--color-gray-tech);
+        margin-top: 2px;
+      }
+
+      @media (max-width: 1024px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .carousel-wrapper {
+          max-width: 680px;
+          margin: 0 auto;
+        }
+
+        .about-pillars {
+          grid-template-columns: repeat(3, 1fr);
+          max-width: 680px;
+          margin: 1.25rem auto 0;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .about-pillars {
+          grid-template-columns: 1fr;
+        }
+
+        .carousel-wrapper {
+          aspect-ratio: 4 / 3;
+        }
+
+        .slide-caption {
+          bottom: 1rem;
+          left: 1rem;
+          right: 1rem;
+        }
+
+        .carousel-dots {
+          right: 1rem;
+        }
+      }
+
+      /* ==================== NUESTROS PROFES ==================== */
+      .coaches-section {
+        position: relative;
+        width: 100%;
+        background-color: #000000;
+        padding: clamp(70px, 8vw, 115px) 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .coaches-container {
+        width: 100%;
+        max-width: min(94vw, 1720px);
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 6rem);
+      }
+
+      .coaches-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp(1.2rem, 2vw, 2rem);
+      }
+
+      /* Tarjeta con Borde Animado */
+      .coach-card {
+        position: relative;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 1.5px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+        transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+        display: flex;
+      }
+
+      .coach-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 22px 45px rgba(0, 0, 0, 0.85), 0 0 28px var(--card-glow);
+      }
+
+      /* Línea animada que recorre el borde de la tarjeta en bucle continuo */
+      .coach-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          from 0deg,
+          transparent 0deg,
+          transparent 65deg,
+          var(--card-beam, #FFD21F) 100deg,
+          var(--card-tail, rgba(255, 210, 31, 0.3)) 115deg,
+          transparent 125deg,
+          transparent 360deg
+        );
+        animation: rotateBorderBeam 4s linear infinite;
+        animation-delay: var(--beam-delay, 0s);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      @keyframes rotateBorderBeam {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .coach-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #0E1015;
+        border-radius: 18.5px;
+        overflow: hidden;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .coach-avatar-zone {
+        position: relative;
+        width: 100%;
+        height: 195px;
+        background: radial-gradient(circle at 50% 35%, #252933 0%, #16181F 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .coach-silhouette {
+        width: 90px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #8C92A0;
+        transition: transform 0.35s ease, color 0.35s ease;
+      }
+
+      .coach-card:hover .coach-silhouette {
+        transform: scale(1.06);
+        color: #B4BAC7;
+      }
+
+      .avatar-svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .coach-role-badge {
+        position: absolute;
+        bottom: 12px;
+        right: 14px;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding: 0.38rem 0.8rem;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      }
+
+      .badge-red {
+        background: #E51B23;
+        color: #FFFFFF;
+      }
+
+      .badge-yellow {
+        background: #FFD21F;
+        color: #000000;
+      }
+
+      .badge-green {
+        background: #009B55;
+        color: #FFFFFF;
+      }
+
+      .badge-orange {
+        background: #F57C00;
+        color: #FFFFFF;
+      }
+
+      .coach-info-zone {
+        padding: 1.4rem 1.4rem 1.6rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        background: #0E1015;
+      }
+
+      .coach-name {
+        font-family: var(--font-sports);
+        font-size: 1.32rem;
+        font-weight: 400;
+        color: var(--color-white);
+        letter-spacing: 0.5px;
+        margin: 0 0 0.4rem;
+        line-height: 1.1;
+      }
+
+      .coach-subtitle {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        line-height: 1.35;
+        margin-bottom: 0.75rem;
+      }
+
+      .sub-red {
+        color: #FF5252;
+      }
+
+      .sub-orange {
+        color: #F57C00;
+      }
+
+      .sub-yellow {
+        color: #FFD21F;
+      }
+
+      .sub-green {
+        color: #00E676;
+      }
+
+      .coach-desc {
+        font-size: 0.84rem;
+        line-height: 1.55;
+        color: #A0A4AB;
+        margin: 0 0 1.25rem;
+        flex-grow: 1;
+      }
+
+      .coach-feature-box {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .feature-icon {
+        font-size: 1.05rem;
+      }
+
+      .feature-text {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: #FFD21F;
+        letter-spacing: 0.2px;
+      }
+
+      @media (max-width: 1200px) {
+        .coaches-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .coaches-grid {
+          grid-template-columns: 1fr;
+          max-width: 400px;
+          margin: 0 auto;
+        }
+        .coach-avatar-zone {
+          height: 180px;
+        }
+      }
+
+      /* ==================== NUESTRA COMUNIDAD ==================== */
+      .community-section {
+        position: relative;
+        width: 100%;
+        background-color: #000000;
+        padding: clamp(70px, 8vw, 115px) 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .community-container {
+        width: 100%;
+        max-width: min(94vw, 1720px);
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 6rem);
+      }
+
+      /* Grid de 4 Tarjetas */
+      .community-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp(1.2rem, 2vw, 2rem);
+      }
+
+      /* Tarjeta de Comunidad con Borde Animado (Idéntica a estilo profes) */
+      .community-card {
+        position: relative;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 1.5px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+        transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+        display: flex;
+      }
+
+      .community-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 22px 45px rgba(0, 0, 0, 0.85), 0 0 28px var(--card-glow);
+      }
+
+      /* Línea animada que recorre el borde de la tarjeta en bucle continuo */
+      .community-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          from 0deg,
+          transparent 0deg,
+          transparent 65deg,
+          var(--card-beam, #FFD21F) 100deg,
+          var(--card-tail, rgba(255, 210, 31, 0.3)) 115deg,
+          transparent 125deg,
+          transparent 360deg
+        );
+        animation: rotateBorderBeam 4s linear infinite;
+        animation-delay: var(--beam-delay, 0s);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .community-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #0E1015;
+        border-radius: 18.5px;
+        overflow: hidden;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .community-avatar-zone {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        background: radial-gradient(circle at 50% 35%, #252933 0%, #16181F 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .community-icon-wrap {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.35s ease, filter 0.35s ease;
+      }
+
+      .community-card:hover .community-icon-wrap {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 12px var(--card-beam));
+      }
+
+      .platform-svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .community-role-badge {
+        position: absolute;
+        bottom: 12px;
+        right: 14px;
+        font-size: 0.65rem;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding: 0.35rem 0.75rem;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      }
+
+      .community-info-zone {
+        padding: 1.35rem 1.35rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        background: #0E1015;
+      }
+
+      .community-name {
+        font-family: var(--font-sports);
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: var(--color-white);
+        letter-spacing: 0.5px;
+        margin: 0 0 0.35rem;
+        line-height: 1.1;
+      }
+
+      .community-handle {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+      }
+
+      .community-desc {
+        font-size: 0.82rem;
+        line-height: 1.5;
+        color: #A0A4AB;
+        margin: 0 0 1.2rem;
+        flex-grow: 1;
+      }
+
+      .btn-community-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.72rem 1rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        color: var(--color-white);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-top: auto;
+      }
+
+      .btn-community-action:hover {
+        background: var(--channel-accent);
+        color: #000000;
+        border-color: var(--channel-accent);
+        box-shadow: 0 4px 18px var(--card-glow);
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 1200px) {
+        .community-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .community-grid {
+          grid-template-columns: 1fr;
+          max-width: 400px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      /* ==================== NUESTRAS VICTORIAS SECTION ==================== */
+      .victorias-section {
+        position: relative;
+        width: 100%;
+        background-color: #000000;
+        padding: clamp(70px, 8vw, 115px) 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .victorias-container {
+        width: 100%;
+        max-width: min(94vw, 1720px);
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 6rem);
+      }
+
+      /* Grid Principal 2 Columnas alineadas al centro */
+      .victorias-layout-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: clamp(2rem, 4vw, 4.5rem);
+        align-items: center;
+      }
+
+      /* ==================== COLUMNA IZQUIERDA: PODIO SIN TARJETA NI BORDE ==================== */
+      .podium-col {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .podium-stage-container {
+        position: relative;
+        padding-top: 2rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      /* Suelo de pista deportivo */
+      .podium-track-floor {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 10px;
+        background: linear-gradient(90deg, rgba(229, 27, 35, 0.5) 0%, rgba(255, 210, 31, 0.7) 50%, rgba(0, 155, 85, 0.5) 100%);
+        border-radius: 6px;
+        box-shadow: 0 0 20px rgba(255, 210, 31, 0.4);
+      }
+
+      .podium-pyramid {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: clamp(0.6rem, 1.5vw, 1.2rem);
+        position: relative;
+        z-index: 2;
+        padding-bottom: 10px;
+      }
+
+      .podium-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .podium-column:hover {
+        transform: translateY(-6px);
+      }
+
+      /* Tarjeta de Medalla (Caja superior sobre el pedestal) */
+      .podium-card {
+        width: 100%;
+        border-radius: 16px 16px 8px 8px;
+        padding: clamp(1rem, 1.5vw, 1.6rem) 0.8rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+      }
+
+      .medal-icon-wrap {
+        font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+        line-height: 1;
+        margin-bottom: 0.4rem;
+        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
+      }
+
+      .step-place-tag {
+        font-size: 0.62rem;
+        font-weight: 900;
+        letter-spacing: 1px;
+        padding: 0.2rem 0.55rem;
+        border-radius: 999px;
+        margin-bottom: 0.4rem;
+        text-transform: uppercase;
+      }
+
+      .medal-value {
+        font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+        line-height: 1;
+        font-weight: 900;
+        margin: 0.2rem 0;
+      }
+
+      .medal-metal-label {
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .step-desc {
+        font-size: 0.72rem;
+        color: #9CA3AF;
+        line-height: 1.35;
+        margin: 0 0 0.8rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .step-stat-mini {
+        width: 100%;
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.7rem;
+        color: #9CA3AF;
+      }
+
+      .step-stat-mini strong {
+        color: var(--color-white);
+      }
+
+      /* ESCALÓN ORO (CENTRO - EL MÁS ALTO) */
+      .step-gold {
+        z-index: 3;
+      }
+
+      .crown-glow {
+        margin-bottom: -6px;
+        animation: floatCrown 3s ease-in-out infinite;
+      }
+
+      .crown-icon {
+        font-size: 1.8rem;
+        filter: drop-shadow(0 0 12px rgba(255, 210, 31, 0.8));
+      }
+
+      .card-gold {
+        background: linear-gradient(180deg, rgba(255, 210, 31, 0.16) 0%, rgba(30, 25, 10, 0.95) 100%);
+        border: 1.5px solid rgba(255, 210, 31, 0.5);
+        box-shadow: 0 10px 30px rgba(255, 210, 31, 0.2), inset 0 0 20px rgba(255, 210, 31, 0.08);
+      }
+
+      .gold-tag {
+        background: rgba(255, 210, 31, 0.2);
+        color: #FFD21F;
+        border: 1px solid rgba(255, 210, 31, 0.4);
+      }
+
+      .gold-count {
+        background: linear-gradient(180deg, #FFFFFF 0%, #FFE066 35%, #FFD21F 70%, #D49B00 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 15px rgba(255, 210, 31, 0.4));
+      }
+
+      .gold-label {
+        color: #FFD21F;
+      }
+
+      .gold-stat strong {
+        color: #FFD21F;
+      }
+
+      .pedestal-gold {
+        background: linear-gradient(180deg, #2E250A 0%, #171305 100%);
+        border: 1.5px solid rgba(255, 210, 31, 0.45);
+        border-top: none;
+        height: 110px;
+        box-shadow: inset 0 5px 15px rgba(255, 210, 31, 0.15);
+      }
+
+      .pedestal-gold .pedestal-number {
+        color: #FFD21F;
+        text-shadow: 0 0 15px rgba(255, 210, 31, 0.5);
+      }
+
+      .pedestal-gold .pedestal-accent-line {
+        background: #FFD21F;
+        box-shadow: 0 0 10px #FFD21F;
+      }
+
+      /* ESCALÓN PLATA (IZQUIERDA - ALTURA INTERMEDIA) */
+      .card-silver {
+        background: linear-gradient(180deg, rgba(226, 232, 240, 0.12) 0%, rgba(20, 24, 30, 0.95) 100%);
+        border: 1.5px solid rgba(226, 232, 240, 0.35);
+      }
+
+      .card-silver .step-place-tag {
+        background: rgba(226, 232, 240, 0.15);
+        color: #E2E8F0;
+      }
+
+      .card-silver .medal-value {
+        background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 50%, #94A3B8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .card-silver .medal-metal-label {
+        color: #E2E8F0;
+      }
+
+      .pedestal-silver {
+        background: linear-gradient(180deg, #1E232B 0%, #101317 100%);
+        border: 1.5px solid rgba(226, 232, 240, 0.3);
+        border-top: none;
+        height: 75px;
+      }
+
+      .pedestal-silver .pedestal-number {
+        color: #E2E8F0;
+      }
+
+      .pedestal-silver .pedestal-accent-line {
+        background: #E2E8F0;
+        box-shadow: 0 0 8px rgba(226, 232, 240, 0.6);
+      }
+
+      /* ESCALÓN BRONCE (DERECHA - MÁS BAJO) */
+      .card-bronze {
+        background: linear-gradient(180deg, rgba(205, 127, 50, 0.12) 0%, rgba(28, 18, 12, 0.95) 100%);
+        border: 1.5px solid rgba(205, 127, 50, 0.35);
+      }
+
+      .card-bronze .step-place-tag {
+        background: rgba(205, 127, 50, 0.15);
+        color: #E69D62;
+      }
+
+      .card-bronze .medal-value {
+        background: linear-gradient(180deg, #FFC187 0%, #CD7F32 60%, #8C4E16 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .card-bronze .medal-metal-label {
+        color: #E69D62;
+      }
+
+      .pedestal-bronze {
+        background: linear-gradient(180deg, #241710 0%, #140C08 100%);
+        border: 1.5px solid rgba(205, 127, 50, 0.3);
+        border-top: none;
+        height: 50px;
+      }
+
+      .pedestal-bronze .pedestal-number {
+        color: #E69D62;
+      }
+
+      .pedestal-bronze .pedestal-accent-line {
+        background: #CD7F32;
+        box-shadow: 0 0 8px rgba(205, 127, 50, 0.6);
+      }
+
+      /* Pedestal común */
+      .pedestal-block {
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .pedestal-number {
+        font-size: 2.2rem;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .pedestal-accent-line {
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        right: 10%;
+        height: 3px;
+        border-radius: 2px;
+      }
+
+      /* ==================== COLUMNA DERECHA: CARRUSEL IDÉNTICO A NUESTRA ESCUELA ==================== */
+      .carousel-col {
+        width: 100%;
+      }
+
+      /* Animación de la Corona */
+      @keyframes floatCrown {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+
+      /* Responsivo */
+      @media (max-width: 1080px) {
+        .victorias-layout-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .podium-pyramid {
+          gap: 0.35rem;
+        }
+        .podium-card {
+          padding: 0.8rem 0.4rem;
+        }
+        .medal-value {
+          font-size: 2.3rem;
+        }
+        .pedestal-gold {
+          height: 85px;
+        }
+        .pedestal-silver {
+          height: 60px;
+        }
+        .pedestal-bronze {
+          height: 40px;
+        }
+      }
+
+      .cat-content strong {
+        display: block;
+        font-size: 0.92rem;
+        color: var(--color-white);
+        margin-bottom: 0.2rem;
+      }
+
+      .cat-content p {
+        font-size: 0.85rem;
+        color: var(--color-gray-muted);
+        line-height: 1.4;
+      }
+
+      /* ==================== EVENTS SECTION (CALENDARIO OFICIAL) ==================== */
+      .events-section {
+        position: relative;
+        width: 100%;
+        background-color: #000000;
+        padding: clamp(70px, 8vw, 115px) 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .events-container {
+        width: 100%;
+        max-width: min(94vw, 1720px);
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 6rem);
+      }
+
+      .events-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(1.2rem, 2vw, 2rem);
+        margin-bottom: 3.5rem;
+      }
+
+      /* Tarjeta de Competencia con Borde Animado */
+      .event-card {
+        position: relative;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 1.5px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+        transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+        display: flex;
+      }
+
+      .event-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 45px rgba(0, 0, 0, 0.85), 0 0 28px var(--card-glow);
+      }
+
+      .event-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          from 0deg,
+          transparent 0deg,
+          transparent 65deg,
+          var(--card-beam, #FFD21F) 100deg,
+          var(--card-tail, rgba(255, 210, 31, 0.3)) 115deg,
+          transparent 125deg,
+          transparent 360deg
+        );
+        animation: rotateBorderBeam 4s linear infinite;
+        animation-delay: var(--beam-delay, 0s);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .event-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #0E1015;
+        border-radius: 18.5px;
+        overflow: hidden;
+        z-index: 1;
+        padding: clamp(1.4rem, 2vw, 1.85rem);
+        display: flex;
+        gap: clamp(1.2rem, 2vw, 1.6rem);
+        align-items: center;
+      }
+
+      .event-date-col {
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(14, 16, 21, 0.95) 100%);
+        border: 1.5px solid var(--event-accent, #FFD21F);
+        border-radius: 14px;
+        padding: 1rem 0.8rem;
+        min-width: 96px;
+        text-align: center;
+        flex-shrink: 0;
+        box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), 0 4px 15px rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .date-month {
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        color: var(--event-accent, #FFD21F);
+        text-transform: uppercase;
+        display: block;
+      }
+
+      .date-day {
+        font-size: clamp(2rem, 2.5vw, 2.4rem);
+        font-weight: 900;
+        line-height: 1;
+        color: var(--color-white);
+        margin: 0.25rem 0;
+        display: block;
+        text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+      }
+
+      .date-year {
+        font-size: 0.72rem;
+        color: #9CA3AF;
+        font-weight: 700;
+        display: block;
+      }
+
+      .event-content-col {
+        flex-grow: 1;
+        min-width: 0;
+      }
+
+      .event-top-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        margin-bottom: 0.6rem;
+        flex-wrap: wrap;
+      }
+
+      .event-badge {
+        font-size: 0.68rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--event-accent, #FFD21F);
+      }
+
+      .event-status {
+        font-size: 0.68rem;
+        font-weight: 800;
+        padding: 0.25rem 0.65rem;
+        border-radius: var(--radius-full);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .status-pulse-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: currentColor;
+        box-shadow: 0 0 8px currentColor;
+        animation: statusPulse 2s infinite ease-in-out;
+      }
+
+      .status-open {
+        background: rgba(0, 230, 118, 0.12);
+        color: #00E676;
+        border: 1px solid rgba(0, 230, 118, 0.35);
+      }
+
+      .status-prep {
+        background: rgba(245, 124, 0, 0.15);
+        color: #FFA726;
+        border: 1px solid rgba(245, 124, 0, 0.4);
+      }
+
+      .event-name {
+        font-family: var(--font-heading);
+        font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+        font-weight: 800;
+        color: var(--color-white);
+        margin: 0 0 0.5rem;
+        line-height: 1.3;
+      }
+
+      .event-location {
+        font-size: 0.82rem;
+        color: #9CA3AF;
+        margin-bottom: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .loc-icon {
+        color: var(--event-accent, #FFD21F);
+        flex-shrink: 0;
+      }
+
+      .categories-tag-group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.45rem;
+      }
+
+      .cat-lead {
+        font-size: 0.72rem;
+        color: #6B7280;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .cat-pill {
+        font-size: 0.72rem;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.2rem 0.6rem;
+        border-radius: var(--radius-full);
+        color: #E2E8F0;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .events-footer-cta {
+        background: linear-gradient(180deg, rgba(20, 24, 32, 0.8) 0%, rgba(12, 14, 18, 0.95) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: clamp(1.5rem, 3vw, 2.2rem);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      }
+
+      .cta-inner-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .cta-text-wrap {
+        max-width: 680px;
+      }
+
+      .cta-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+        font-weight: 800;
+        color: var(--color-white);
+        margin: 0 0 0.35rem;
+      }
+
+      .cta-desc {
+        font-size: 0.88rem;
+        color: #9CA3AF;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .btn-event-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: linear-gradient(90deg, #E51B23 0%, #F57C00 32%, #FFD21F 68%, #009B55 100%);
+        color: #000000;
+        font-weight: 900;
+        font-size: 0.9rem;
+        padding: 0.85rem 1.6rem;
+        border-radius: var(--radius-full);
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        white-space: nowrap;
+        box-shadow: 0 4px 20px rgba(245, 124, 0, 0.35);
+      }
+
+      .btn-event-cta:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 8px 25px rgba(245, 124, 0, 0.5), 0 0 20px rgba(0, 155, 85, 0.4);
+      }
+
+      /* ==================== NEWS SECTION ==================== */
+      .news-section {
+        position: relative;
+        width: 100%;
+        background-color: #000000;
+        padding: clamp(70px, 8vw, 115px) 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .news-container {
+        width: 100%;
+        max-width: min(94vw, 1720px);
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 6rem);
+      }
+
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp(1.2rem, 2vw, 2rem);
+      }
+
+      .news-card {
+        position: relative;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 1.5px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+        transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+        display: flex;
+      }
+
+      .news-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 22px 45px rgba(0, 0, 0, 0.85), 0 0 28px var(--card-glow);
+      }
+
+      .news-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          from 0deg,
+          transparent 0deg,
+          transparent 65deg,
+          var(--card-beam, #FFD21F) 100deg,
+          var(--card-tail, rgba(255, 210, 31, 0.3)) 115deg,
+          transparent 125deg,
+          transparent 360deg
+        );
+        animation: rotateBorderBeam 4s linear infinite;
+        animation-delay: var(--beam-delay, 0s);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .news-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #0E1015;
+        border-radius: 18.5px;
+        overflow: hidden;
+        z-index: 1;
+        padding: clamp(1.4rem, 2vw, 1.85rem);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .news-meta-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .news-tag {
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--news-accent, #FFD21F);
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--news-accent, #FFD21F);
+        padding: 0.25rem 0.65rem;
+        border-radius: var(--radius-full);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      .tag-icon {
+        font-size: 0.8rem;
+      }
+
+      .news-date {
+        font-size: 0.72rem;
+        color: #9CA3AF;
+        font-weight: 600;
+      }
+
+      .news-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.1rem, 1.3vw, 1.25rem);
+        font-weight: 800;
+        color: var(--color-white);
+        line-height: 1.35;
+        margin: 0 0 0.85rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .news-summary {
+        font-size: 0.86rem;
+        color: #9CA3AF;
+        line-height: 1.55;
+        margin: 0 0 1.5rem;
+        flex-grow: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .news-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        margin-top: auto;
+      }
+
+      .read-time {
+        font-size: 0.72rem;
+        color: #6B7280;
+        font-weight: 600;
+      }
+
+      .news-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.82rem;
+        font-weight: 800;
+        color: var(--news-accent, #FFD21F);
+        text-decoration: none;
+        transition: transform 0.25s ease, gap 0.25s ease;
+      }
+
+      .news-card:hover .link-arrow {
+        transform: translateX(4px);
+      }
+
+      .link-arrow {
+        transition: transform 0.25s ease;
+      }
+
+      /* ==================== FOOTER ==================== */
+      .site-footer {
+        position: relative;
+        width: 100%;
+        background-color: #000000;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: clamp(60px, 7vw, 90px);
+        padding-bottom: 35px;
+        overflow: hidden;
+      }
+
+      /* Barra Superior con Degradado Completo Neón */
+      .footer-top-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #E51B23 0%, #F57C00 32%, #FFD21F 68%, #009B55 100%);
+        box-shadow: 0 0 20px rgba(245, 124, 0, 0.5), 0 0 35px rgba(0, 155, 85, 0.3);
+      }
+
+      .footer-container {
+        width: 100%;
+        max-width: min(94vw, 1720px);
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 6rem);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 0.9fr 1fr 1.2fr;
+        gap: clamp(2rem, 3.5vw, 3.5rem);
+        margin-bottom: 4rem;
+      }
+
+      .footer-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.85rem;
+        margin-bottom: 1.2rem;
+        text-decoration: none;
+      }
+
+      .footer-logo {
+        height: 55px;
+        width: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 0 10px rgba(245, 124, 0, 0.4));
+      }
+
+      .footer-brand-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .brand-title {
+        font-size: 1.55rem;
+        letter-spacing: 1.5px;
+        color: var(--color-white);
+        line-height: 1;
+        font-weight: 900;
+      }
+
+      .brand-sub {
+        font-family: var(--font-heading);
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 2.2px;
+        background: linear-gradient(90deg, #E51B23 0%, #F57C00 32%, #FFD21F 68%, #009B55 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+      }
+
+      .footer-slogan {
+        font-size: 1.05rem;
+        font-weight: 700;
+        font-style: italic;
+        color: var(--color-yellow-future);
+        margin: 0 0 0.85rem;
+      }
+
+      .footer-bio {
+        font-size: 0.88rem;
+        color: var(--color-gray-tech);
+        line-height: 1.6;
+        max-width: 330px;
+        margin: 0 0 1.2rem;
+      }
+
+      .brand-colors-bar {
+        display: flex;
+        gap: 6px;
+        margin-top: 0.5rem;
+      }
+
+      .bar-color {
+        width: 24px;
+        height: 4px;
+        border-radius: 2px;
+      }
+
+      .color-red { background: #E51B23; box-shadow: 0 0 8px rgba(229, 27, 35, 0.5); }
+      .color-orange { background: #F57C00; box-shadow: 0 0 8px rgba(245, 124, 0, 0.5); }
+      .color-yellow { background: #FFD21F; box-shadow: 0 0 8px rgba(255, 210, 31, 0.5); }
+      .color-green { background: #009B55; box-shadow: 0 0 8px rgba(0, 155, 85, 0.5); }
+
+      .footer-col-title {
+        font-size: 1.08rem;
+        font-weight: 800;
+        color: var(--color-white);
+        margin-bottom: 1.25rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-links li a,
+      .footer-links li span {
+        font-size: 0.88rem;
+        color: var(--color-gray-muted);
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .footer-links li a:hover {
+        color: var(--color-yellow-future);
+        padding-left: 5px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6rem;
+        font-size: 0.88rem;
+        color: var(--color-gray-tech);
+        margin-bottom: 0.85rem;
+        line-height: 1.45;
+      }
+
+      .contact-icon {
+        flex-shrink: 0;
+        font-size: 1rem;
+      }
+
+      .btn-footer-wa {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: linear-gradient(90deg, #E51B23 0%, #F57C00 32%, #FFD21F 68%, #009B55 100%);
+        color: #000000;
+        font-weight: 900;
+        font-size: 0.88rem;
+        padding: 0.75rem 1.4rem;
+        border-radius: var(--radius-full);
+        margin-top: 0.75rem;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        box-shadow: 0 4px 20px rgba(245, 124, 0, 0.35);
+      }
+
+      .btn-footer-wa:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 8px 25px rgba(245, 124, 0, 0.5), 0 0 20px rgba(0, 155, 85, 0.4);
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-bottom p {
+        font-size: 0.84rem;
+        color: var(--color-gray-tech);
+        margin: 0;
+      }
+
+      .footer-legal-motto {
+        background: linear-gradient(90deg, #E51B23 0%, #F57C00 32%, #FFD21F 68%, #009B55 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800;
+        font-size: 0.88rem;
+        letter-spacing: 0.5px;
+      }
+
+      @media (max-width: 1100px) {
+        .hero-bg-image {
+          object-position: 85% center;
+        }
+        .hero-content {
+          max-width: 580px;
+        }
+        .title-level-top, .title-level-bottom {
+          white-space: normal;
+        }
+      }
+
+      @media (max-width: 960px) {
+        .hero-content {
+          max-width: 100%;
+        }
+        .hero-overlay-horizontal {
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(0, 0, 0, 0.92) 55%,
+            #000000 100%
+          );
+        }
+        .title-level-top {
+          font-size: clamp(2.4rem, 8vw, 3.8rem);
+        }
+        .title-level-bottom {
+          font-size: clamp(2.6rem, 9vw, 4.2rem);
+        }
+        .guepardo-mascot-img {
+          width: 95px;
+        }
+        .comp-body-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .nav-menu {
+          display: none;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .event-card {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .stat-stage-track {
+          height: 120px;
+        }
+        .stat-num {
+          font-size: 3rem;
+          margin-bottom: 0.25rem;
+        }
+        .stat-label {
+          font-size: 0.85rem;
+          letter-spacing: 1px;
+        }
+        .guepardo-mascot-img {
+          width: 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="nav-content">
+        <a href="#inicio" class="nav-brand">
+          <img src="logo.png" alt="Logo Patinando Hacia El Futuro" class="brand-logo" />
+          <div class="brand-text">
+            <span class="brand-title">PATINANDO</span>
+            <span class="brand-sub">HACIA EL FUTURO</span>
+          </div>
+        </a>
+
+        <nav class="nav-menu">
+          <ul class="nav-list">
+            <li><a href="#inicio" class="nav-link">Inicio</a></li>
+            <li><a href="#nuestra-escuela" class="nav-link">Nuestra Escuela</a></li>
+            <li><a href="#profes" class="nav-link">Nuestros Profes</a></li>
+            <li><a href="#comunidad" class="nav-link">Nuestra Comunidad</a></li>
+            <li><a href="#victorias" class="nav-link">Nuestras Victorias</a></li>
+            <li><a href="#competencias" class="nav-link">Competencias</a></li>
+            <li><a href="#noticias" class="nav-link">Noticias</a></li>
+          </ul>
+        </nav>
+
+        <a
+          href="https://wa.me/573000000000?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20inscripciones%20en%20Patinando%20Hacia%20El%20Futuro"
+          target="_blank"
+          class="btn-cta-nav"
+        >
+          Inscríbete
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO (ULTRAWIDE FLUID BALANCED LAYOUT) -->
+      <section id="inicio" class="hero-section">
+        <!-- Skater full-width background -->
+        <div class="hero-media-wrapper" aria-hidden="true">
+          <img
+            src="hero.jpeg"
+            alt="Patinador de velocidad en pista"
+            class="hero-bg-image"
+          />
+          <div class="hero-overlay-horizontal"></div>
+          <div class="hero-overlay-vertical"></div>
+          <div class="hero-overlay-vignette"></div>
+        </div>
+
+        <div class="hero-container">
+          <div class="hero-content">
+            <!-- Titular con letras diagonales de velocidad en 2 Niveles -->
+            <div class="speed-headline-box">
+              <h1 class="speed-title">
+                <span class="title-level-top">PATINA, COMPITE Y</span>
+                <span class="title-level-bottom text-gradient-full">CUMPLE TUS SUEÑOS</span>
+              </h1>
+
+              <!-- Estela con degradado de naranja a amarillo y el guepardo al final -->
+              <div class="speed-trail-container">
+                <div class="speed-trail-graphic">
+                  <svg class="speed-trail-svg" viewBox="0 0 650 48" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="prevTrailGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#F57C00" stop-opacity="0" />
+                        <stop offset="20%" stop-color="#F57C00" stop-opacity="0.85" />
+                        <stop offset="75%" stop-color="#FFD21F" stop-opacity="1" />
+                        <stop offset="100%" stop-color="#FFF5C0" stop-opacity="1" />
+                      </linearGradient>
+                      <filter id="prevGlow" x="-10%" y="-30%" width="120%" height="160%">
+                        <feGaussianBlur stdDeviation="3.5" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                      </filter>
+                    </defs>
+
+                    <path
+                      d="M 0,24 C 140,16 290,14 440,18 C 520,20 590,18 620,18 L 600,28 C 530,28 460,30 380,25 C 240,20 110,27 0,29 Z"
+                      fill="url(#prevTrailGrad)"
+                      filter="url(#prevGlow)"
+                    />
+                    <path
+                      d="M 60,12 C 220,7 390,6 550,13 L 530,16 C 380,9 210,11 60,14 Z"
+                      fill="#FFD21F"
+                      opacity="0.9"
+                    />
+                    <path
+                      d="M 150,35 C 300,32 460,31 580,30 L 565,34 C 455,35 295,36 150,38 Z"
+                      fill="#F57C00"
+                      opacity="0.92"
+                    />
+                  </svg>
+                </div>
+
+                <!-- Guepardo al final de la estela -->
+                <div class="trail-mascot-anchor">
+                  <div class="mascot-energy-ring"></div>
+                  <img
+                    src="guepardo.png"
+                    alt="Mascota Guepardo Patinando Hacia El Futuro"
+                    class="guepardo-mascot-img"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <p class="hero-lead">
+              Formamos <strong class="lead-strong">disciplina</strong>, <strong class="lead-strong">confianza</strong> y <strong class="lead-strong">sueños</strong>, impulsando a cada niño, niña y joven a superar sus límites y construir un mejor futuro.
+            </p>
+
+            <!-- Stage de Tarjeta Animada de Estadísticas (Entra izquierda -> espera 2s al centro -> sale derecha) -->
+            <div class="hero-stat-stage" id="hero-stat-stage" aria-label="Tarjetas de estadísticas y logros">
+              <div class="stat-stage-track" id="stat-stage-track">
+                <!-- Tarjeta 1: Rojo (+50 Patinadores Activos) -->
+                <div class="stat-card card-red is-active" data-index="0">
+                  <div class="stat-num num-red">+50</div>
+                  <div class="stat-label">
+                    <span>PATINADORES</span>
+                    <span>ACTIVOS</span>
+                  </div>
+                </div>
+
+                <!-- Tarjeta 2: Naranja (+ de 45 Medallas de Oro en 2025) -->
+                <div class="stat-card card-orange" data-index="1">
+                  <div class="stat-num num-orange">+ de 45</div>
+                  <div class="stat-label">
+                    <span>MEDALLAS DE ORO</span>
+                    <span>EN 2025</span>
+                  </div>
+                </div>
+
+                <!-- Tarjeta 3: Amarillo (4 Profesores Profesionales) -->
+                <div class="stat-card card-yellow" data-index="2">
+                  <div class="stat-num num-yellow">4</div>
+                  <div class="stat-label">
+                    <span>PROFESORES</span>
+                    <span>PROFESIONALES</span>
+                  </div>
+                </div>
+
+                <!-- Tarjeta 4: Verde (+5 Competencias en el 2025) -->
+                <div class="stat-card card-green" data-index="3">
+                  <div class="stat-num num-green">+5</div>
+                  <div class="stat-label">
+                    <span>COMPETENCIAS</span>
+                    <span>EN EL 2025</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: NUESTRA ESCUELA -->
+      <section id="nuestra-escuela" class="about-section">
+        <div class="about-container">
+          <div class="about-grid">
+            <!-- Columna Izquierda: Carrusel de Imágenes Interactivo -->
+            <div class="about-media-col">
+              <div class="carousel-wrapper" id="school-carousel" aria-label="Galería fotográfica de Nuestra Escuela">
+                <!-- Slides Track -->
+                <div class="carousel-track" id="carousel-track">
+                  <!-- Slide 1: Origen y Sentido Social en Caimalito -->
+                  <div class="carousel-slide is-active" data-slide="0">
+                    <img
+                      src="imagen-corporativa.png"
+                      alt="Niños y jóvenes en formación sobre ruedas - Patinando Hacia El Futuro"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">📍</span>
+                      <span class="badge-text">Caimalito · Pereira</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Semillero de Esperanza</h3>
+                      <p class="caption-desc">Oportunidad y formación integral para la niñez de nuestra comunidad.</p>
+                    </div>
+                  </div>
+
+                  <!-- Slide 2: Entrenamientos en La Virginia -->
+                  <div class="carousel-slide" data-slide="1">
+                    <img
+                      src="hero.jpeg"
+                      alt="Entrenamientos y velocidad en pista - Patinando Hacia El Futuro"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">⛸️</span>
+                      <span class="badge-text">La Virginia · Risaralda</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Expansión & Disciplina</h3>
+                      <p class="caption-desc">Prácticas formativas y de alto rendimiento desde los 2 hasta los 16 años.</p>
+                    </div>
+                  </div>
+
+                  <!-- Slide 3: Deporte, Turismo y Competencias -->
+                  <div class="carousel-slide" data-slide="2">
+                    <img
+                      src="imagen-corporativa.png"
+                      alt="Competencias y turismo deportivo - Patinando Hacia El Futuro"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">🇨🇴</span>
+                      <span class="badge-text">Ruta Nacional & Turismo</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Descubriendo a Colombia</h3>
+                      <p class="caption-desc">Fogueo en pistas recreativas y semiprofesionales conociendo nuestro país.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Controles de Navegación -->
+                <button class="carousel-btn prev-btn" id="carousel-prev" aria-label="Imagen anterior">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+
+                <button class="carousel-btn next-btn" id="carousel-next" aria-label="Siguiente imagen">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+
+                <!-- Indicadores de barra inferior -->
+                <div class="carousel-dots" id="carousel-dots" aria-label="Navegación de diapositivas">
+                  <button class="c-dot active" data-index="0" aria-label="Diapositiva 1"></button>
+                  <button class="c-dot" data-index="1" aria-label="Diapositiva 2"></button>
+                  <button class="c-dot" data-index="2" aria-label="Diapositiva 3"></button>
+                </div>
+              </div>
+
+              <!-- Pilares Clave de la Escuela Ubicados Debajo de las Imágenes -->
+              <div class="about-pillars">
+                <div class="about-pillar-card">
+                  <span class="p-card-icon">🌱</span>
+                  <div class="p-card-info">
+                    <span class="p-card-title">Impacto Social</span>
+                    <span class="p-card-desc">Caimalito y La Virginia</span>
+                  </div>
+                </div>
+
+                <div class="about-pillar-card">
+                  <span class="p-card-icon">⚡</span>
+                  <div class="p-card-info">
+                    <span class="p-card-title">+50 Atletas</span>
+                    <span class="p-card-desc">Desde los 2 a 16 años</span>
+                  </div>
+                </div>
+
+                <div class="about-pillar-card">
+                  <span class="p-card-icon">🇨🇴</span>
+                  <div class="p-card-info">
+                    <span class="p-card-title">Turismo Deportivo</span>
+                    <span class="p-card-desc">Competencias en Colombia</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Texto Estructurado y Redacción Pulida -->
+            <div class="about-text-col">
+              <div class="section-tag-box">
+                <span class="eyebrow-tag">HISTORIA & COMPROMISO SOCIAL</span>
+                <h2 class="about-title">
+                  <span class="text-gradient-full">NUESTRA ESCUELA</span>
+                </h2>
+              </div>
+
+              <div class="about-content-body">
+                <!-- Párrafo 1: Origen y Sentido Social -->
+                <p class="lead-paragraph">
+                  El club <strong class="highlight-text">Patinando Hacia El Futuro</strong> nació del liderazgo social y la vocación de servicio de <strong class="highlight-text">Alfredo</strong>, con una misión profundamente transformadora: brindar a los niños y niñas de escasos recursos del corregimiento de <strong class="highlight-text">Caimalito (Pereira)</strong> una alternativa de vida digna a través del patinaje.
+                </p>
+
+                <p class="body-paragraph">
+                  Más que una pista de carreras, nuestra escuela se consolidó como un <em>refugio de esperanza</em> que fomenta la disciplina deportiva, la dedicación constante y el uso positivo del tiempo libre, alejando a la juventud de las problemáticas de su entorno y proyectando sus metas con firmeza.
+                </p>
+
+                <!-- Párrafo 2: Crecimiento y Expansión a La Virginia -->
+                <p class="body-paragraph">
+                  Con perseverancia, el club expandió su impacto hacia el municipio de <strong class="highlight-text">La Virginia</strong>, estableciendo entrenamientos en la cancha de fútbol y escenarios deportivos locales. Hoy conformamos una gran familia de <strong class="highlight-text">+50 deportistas activos</strong>, que van desde pequeños soñadores en nivel formativo y semillero (a partir de los 2 años) hasta categorías juveniles de 15 y 16 años con proyección de alto rendimiento.
+                </p>
+
+                <!-- Párrafo 3: Deporte, Fogueo y Turismo Nacional -->
+                <p class="body-paragraph">
+                  Para nosotros, patinar trasciende los entrenamientos locales: promovemos el fogueo continuo en competencias recreativas y semiprofesionales. Cada año nos fijamos la meta de participar en torneos en destinos más lejanos de Colombia, porque <strong class="highlight-quote">"competir también es divertirse, integrarse en familia y descubrir los rincones más hermosos de nuestro país"</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: NUESTROS PROFES -->
+      <section id="profes" class="coaches-section">
+        <div class="coaches-container">
+          <div class="section-head text-center">
+            <span class="eyebrow-tag">STAFF TÉCNICO & FORMADORES</span>
+            <h2 class="section-title">
+              NUESTROS <span class="text-gradient-full">PROFES</span>
+            </h2>
+            <p class="section-subtitle">
+              Profesionales dedicados a forjar disciplina, velocidad y valores en cada patinador, desde sus primeros pasos hasta las válidas de alto rendimiento.
+            </p>
+          </div>
+
+          <div class="coaches-grid">
+            <!-- Tarjeta 1: Prof. Carlos Restrepo (Rojo) -->
+            <article
+              class="coach-card"
+              style="--card-beam: #FF3B30; --card-tail: rgba(255, 59, 48, 0.25); --card-glow: rgba(255, 59, 48, 0.35); --beam-delay: 0s;"
+            >
+              <div class="coach-card-inner">
+                <div class="coach-avatar-zone">
+                  <div class="coach-silhouette" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" class="avatar-svg" fill="currentColor">
+                      <circle cx="32" cy="20" r="10" opacity="0.9" />
+                      <path d="M22 20 C25 18 39 18 42 20 C42 23 38 25 32 25 C26 25 22 23 22 20 Z" fill="#14171E" />
+                      <path d="M14 54 C14 44 22 38 32 38 C42 38 50 44 50 54 L14 54 Z" opacity="0.8" />
+                    </svg>
+                  </div>
+                  <span class="coach-role-badge badge-red">DIRECTOR TÉCNICO</span>
+                </div>
+
+                <div class="coach-info-zone">
+                  <h3 class="coach-name">PROF. CARLOS RESTREPO</h3>
+                  <div class="coach-subtitle sub-red">
+                    LIC. EN EDUCACIÓN FÍSICA • EXPATINADOR PANAMERICANO
+                  </div>
+                  <p class="coach-desc">
+                    Más de 14 años liderando procesos de velocidad y ruta con múltiples campeonatos interclubes.
+                  </p>
+                  <div class="coach-feature-box">
+                    <span class="feature-icon">🎖️</span>
+                    <span class="feature-text">Certificación Nivel III Fedepatín</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tarjeta 2: Prof. Andrés Mejía (Naranja) -->
+            <article
+              class="coach-card"
+              style="--card-beam: #F57C00; --card-tail: rgba(245, 124, 0, 0.25); --card-glow: rgba(245, 124, 0, 0.35); --beam-delay: -1s;"
+            >
+              <div class="coach-card-inner">
+                <div class="coach-avatar-zone">
+                  <div class="coach-silhouette" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" class="avatar-svg" fill="currentColor">
+                      <circle cx="32" cy="34" r="16" fill="none" stroke="currentColor" stroke-width="4" opacity="0.85" />
+                      <rect x="30" y="12" width="4" height="6" rx="2" opacity="0.9" />
+                      <circle cx="32" cy="34" r="3" opacity="0.9" />
+                      <line x1="32" y1="34" x2="41" y2="25" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9" />
+                    </svg>
+                  </div>
+                  <span class="coach-role-badge badge-orange">ENTRENADOR DE RUTA</span>
+                </div>
+
+                <div class="coach-info-zone">
+                  <h3 class="coach-name">PROF. ANDRÉS MEJÍA</h3>
+                  <div class="coach-subtitle sub-orange">
+                    ESPECIALISTA EN FONDO Y ALTO RENDIMIENTO
+                  </div>
+                  <p class="coach-desc">
+                    Enfocado en técnica de curva, cadencia de zancada y estrategia competitiva en válidas nacionales.
+                  </p>
+                  <div class="coach-feature-box">
+                    <span class="feature-icon">🏆</span>
+                    <span class="feature-text">Medallista Nacional Interclubes</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tarjeta 3: Lic. Marcela Gómez (Amarillo) -->
+            <article
+              class="coach-card"
+              style="--card-beam: #FFD21F; --card-tail: rgba(255, 210, 31, 0.25); --card-glow: rgba(255, 210, 31, 0.35); --beam-delay: -2s;"
+            >
+              <div class="coach-card-inner">
+                <div class="coach-avatar-zone">
+                  <div class="coach-silhouette" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" class="avatar-svg" fill="currentColor">
+                      <circle cx="32" cy="16" r="6" opacity="0.9" />
+                      <path d="M38 28 C38 25.5 36 24 34 24 C31 24 29 26 29 29 C29 32 32 34 35 34 C37 34 38 32 38 30 Z" opacity="0.95" />
+                      <path d="M23 48 C20 45 18 40 20 34 C22 28 26 26 32 26 C36 26 40 28 42 32 C45 36 43 43 39 48 C34 52 26 51 23 48 Z" opacity="0.8" />
+                    </svg>
+                  </div>
+                  <span class="coach-role-badge badge-yellow">INICIACIÓN Y SEMILLERO</span>
+                </div>
+
+                <div class="coach-info-zone">
+                  <h3 class="coach-name">LIC. MARCELA GÓMEZ</h3>
+                  <div class="coach-subtitle sub-yellow">
+                    ESPECIALISTA EN PSICOMOTRICIDAD INFANTIL
+                  </div>
+                  <p class="coach-desc">
+                    Dedicada al desarrollo motriz en edades tempranas con metodología lúdica y fomento de autoconfianza.
+                  </p>
+                  <div class="coach-feature-box">
+                    <span class="feature-icon">🩺</span>
+                    <span class="feature-text">Primeros Auxilios Deportivos</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tarjeta 4: Julián Montoya (Verde) -->
+            <article
+              class="coach-card"
+              style="--card-beam: #00E676; --card-tail: rgba(0, 230, 118, 0.25); --card-glow: rgba(0, 230, 118, 0.35); --beam-delay: -3s;"
+            >
+              <div class="coach-card-inner">
+                <div class="coach-avatar-zone">
+                  <div class="coach-silhouette" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" class="avatar-svg" fill="currentColor">
+                      <rect x="22" y="30" width="20" height="4" rx="2" opacity="0.9" />
+                      <rect x="18" y="22" width="4" height="20" rx="2" opacity="0.9" />
+                      <rect x="12" y="25" width="4" height="14" rx="1.5" opacity="0.75" />
+                      <rect x="42" y="22" width="4" height="20" rx="2" opacity="0.9" />
+                      <rect x="48" y="25" width="4" height="14" rx="1.5" opacity="0.75" />
+                    </svg>
+                  </div>
+                  <span class="coach-role-badge badge-green">PREPARADOR FÍSICO</span>
+                </div>
+
+                <div class="coach-info-zone">
+                  <h3 class="coach-name">JULIÁN MONTOYA</h3>
+                  <div class="coach-subtitle sub-green">
+                    FISIOTERAPEUTA Y PREPARADOR FÍSICO
+                  </div>
+                  <p class="coach-desc">
+                    Encargado del acondicionamiento neuromuscular, prevención de lesiones y potencia específica en curvas.
+                  </p>
+                  <div class="coach-feature-box">
+                    <span class="feature-icon">⏱️</span>
+                    <span class="feature-text">Monitoreo Biomecánico</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: NUESTRA COMUNIDAD -->
+      <section id="comunidad" class="community-section">
+        <span id="redes" class="section-anchor" aria-hidden="true"></span>
+        <div class="community-container">
+          <!-- Encabezado de Sección -->
+          <div class="section-head text-center">
+            <span class="eyebrow-tag">CONCENTRADOR DIGITAL & FAMILIA SOBRE RUEDAS</span>
+            <h2 class="section-title">
+              NUESTRA <span class="text-gradient-full">COMUNIDAD</span>
+            </h2>
+            <p class="section-subtitle">
+              Conéctate con nuestra gran familia sobre ruedas, sigue las transmisiones en vivo de cada competencia y mantente al día con fotos, videos y anuncios oficiales.
+            </p>
+          </div>
+
+          <!-- Grid de 4 Tarjetas de Comunidad (Estilo Profes en Orden del Degradado) -->
+          <div class="community-grid">
+            <!-- Tarjeta 1: Instagram (Rojo) -->
+            <article
+              class="community-card"
+              style="--card-beam: #FF3B30; --card-tail: rgba(255, 59, 48, 0.25); --card-glow: rgba(255, 59, 48, 0.35); --beam-delay: 0s; --channel-accent: #FF3B30;"
+            >
+              <div class="community-card-inner">
+                <div class="community-avatar-zone">
+                  <div class="community-icon-wrap" style="color: #FF3B30;" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" class="platform-svg" fill="currentColor">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                  </div>
+                  <span class="community-role-badge" style="background-color: #E51B23; color: #FFFFFF;">
+                    FOTOS & PODIOS
+                  </span>
+                </div>
+
+                <div class="community-info-zone">
+                  <h3 class="community-name">INSTAGRAM</h3>
+                  <div class="community-handle" style="color: #FF3B30;">
+                    @patinandohaciaelfuturo
+                  </div>
+                  <p class="community-desc">
+                    Galerías fotográficas de cada válida, podios oficiales, historias de entrenamiento y reels de alta velocidad.
+                  </p>
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-community-action"
+                  >
+                    <span>Seguir en Instagram</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tarjeta 2: TikTok (Naranja) -->
+            <article
+              class="community-card"
+              style="--card-beam: #F57C00; --card-tail: rgba(245, 124, 0, 0.25); --card-glow: rgba(245, 124, 0, 0.35); --beam-delay: -1s; --channel-accent: #F57C00;"
+            >
+              <div class="community-card-inner">
+                <div class="community-avatar-zone">
+                  <div class="community-icon-wrap" style="color: #F57C00;" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" class="platform-svg" fill="currentColor">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.5 6.27 6.27 0 0 0 1.95-4.5V8.08a8.28 8.28 0 0 0 4.82 1.54V6.17a4.83 4.83 0 0 1-1-.08z"/>
+                    </svg>
+                  </div>
+                  <span class="community-role-badge" style="background-color: #F57C00; color: #FFFFFF;">
+                    VIDEOS & RETOS
+                  </span>
+                </div>
+
+                <div class="community-info-zone">
+                  <h3 class="community-name">TIKTOK</h3>
+                  <div class="community-handle" style="color: #F57C00;">
+                    @patinandohaciaelfuturo
+                  </div>
+                  <p class="community-desc">
+                    Técnica de patinaje, entrenamientos de velocidad, retos en pista y los mejores momentos de nuestros campeones.
+                  </p>
+                  <a
+                    href="https://tiktok.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-community-action"
+                  >
+                    <span>Ver en TikTok</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tarjeta 3: Facebook (Amarillo) -->
+            <article
+              class="community-card"
+              style="--card-beam: #FFD21F; --card-tail: rgba(255, 210, 31, 0.25); --card-glow: rgba(255, 210, 31, 0.35); --beam-delay: -2s; --channel-accent: #FFD21F;"
+            >
+              <div class="community-card-inner">
+                <div class="community-avatar-zone">
+                  <div class="community-icon-wrap" style="color: #FFD21F;" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" class="platform-svg" fill="currentColor">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                  </div>
+                  <span class="community-role-badge" style="background-color: #FFD21F; color: #000000;">
+                    TRANSMISIONES
+                  </span>
+                </div>
+
+                <div class="community-info-zone">
+                  <h3 class="community-name">FACEBOOK</h3>
+                  <div class="community-handle" style="color: #FFD21F;">
+                    Patinando Hacia El Futuro
+                  </div>
+                  <p class="community-desc">
+                    Página comunitaria: álbumes completos de competencias, transmisiones en vivo de carreras y avisos oficiales.
+                  </p>
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-community-action"
+                  >
+                    <span>Ir a Facebook</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tarjeta 4: WhatsApp Oficial (Verde) -->
+            <article
+              class="community-card"
+              style="--card-beam: #00E676; --card-tail: rgba(0, 230, 118, 0.25); --card-glow: rgba(0, 230, 118, 0.35); --beam-delay: -3s; --channel-accent: #00E676;"
+            >
+              <div class="community-card-inner">
+                <div class="community-avatar-zone">
+                  <div class="community-icon-wrap" style="color: #00E676;" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" class="platform-svg" fill="currentColor">
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.969.541 1.838.835 2.796.835 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.767-5.768-5.768zm7.545 5.766c-.002 4.159-3.385 7.542-7.545 7.542-1.282 0-2.529-.328-3.633-.948l-4.398 1.153 1.173-4.288c-.689-1.159-1.054-2.483-1.054-3.847.002-4.159 3.385-7.542 7.545-7.542 4.159.001 7.542 3.384 7.542 7.542z"/>
+                    </svg>
+                  </div>
+                  <span class="community-role-badge" style="background-color: #009B55; color: #FFFFFF;">
+                    CANAL OFICIAL
+                  </span>
+                </div>
+
+                <div class="community-info-zone">
+                  <h3 class="community-name">WHATSAPP OFICIAL</h3>
+                  <div class="community-handle" style="color: #00E676;">
+                    CANAL & GRUPO DE COMUNICACIÓN
+                  </div>
+                  <p class="community-desc">
+                    Únete a nuestro canal y grupo oficial para recibir cronogramas de entrenamiento, avisos de pista y novedades de primera mano.
+                  </p>
+                  <a
+                    href="https://whatsapp.com/channel/patinandohaciaelfuturo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-community-action"
+                  >
+                    <span>Unirse al Canal / Grupo</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: NUESTRAS VICTORIAS -->
+      <section id="victorias" class="victorias-section">
+        <span id="medallero" class="section-anchor" aria-hidden="true"></span>
+        <div class="victorias-container">
+          <!-- Encabezado de Sección -->
+          <div class="section-head text-center">
+            <span class="eyebrow-tag">ORGULLO DEPORTIVO & PODIOS OFICIALES</span>
+            <h2 class="section-title">
+              NUESTRAS <span class="text-gradient-full">VICTORIAS</span>
+            </h2>
+            <p class="section-subtitle">
+              El fruto de la disciplina, el trabajo diario y la pasión sobre ruedas: cada medalla representa el esfuerzo incansable de nuestros patinadores y el orgullo de toda una comunidad.
+            </p>
+          </div>
+
+          <!-- Grid Principal de 2 Columnas: Podio Pirámide (Izquierda) + Carrusel Idéntico a Nuestra Escuela (Derecha) -->
+          <div class="victorias-layout-grid">
+            
+            <!-- ================= COLUMNA IZQUIERDA: SÓLO EL PODIO TIPO PIRÁMIDE ================= -->
+            <div class="podium-col">
+              <div class="podium-stage-container">
+                <!-- Pista y Línea de Suelo Neón -->
+                <div class="podium-track-floor"></div>
+
+                <div class="podium-pyramid">
+                  
+                  <!-- ESCALÓN 2 (Izquierda): PLATA -->
+                  <div class="podium-column step-silver">
+                    <div class="podium-card card-silver">
+                      <div class="medal-icon-wrap">🥈</div>
+                      <span class="step-place-tag">2° PUESTO</span>
+                      <div class="medal-value font-sports">35</div>
+                      <span class="medal-metal-label">PLATA</span>
+                      <p class="step-desc">Subcampeonatos en pruebas de fondo y relevos.</p>
+                      <div class="step-stat-mini">
+                        <span>Efectividad</span>
+                        <strong>32%</strong>
+                      </div>
+                    </div>
+                    <!-- Pedestal / Base física del escalón 2 -->
+                    <div class="pedestal-block pedestal-silver">
+                      <span class="pedestal-number font-sports">2</span>
+                      <span class="pedestal-accent-line"></span>
+                    </div>
+                  </div>
+
+                  <!-- ESCALÓN 1 (Centro / Lo Más Alto): ORO -->
+                  <div class="podium-column step-gold">
+                    <!-- Corona / Brillo superior del 1er lugar -->
+                    <div class="crown-glow">
+                      <span class="crown-icon">👑</span>
+                    </div>
+                    <div class="podium-card card-gold">
+                      <div class="gold-pulse-halo"></div>
+                      <div class="medal-icon-wrap">🥇</div>
+                      <span class="step-place-tag gold-tag">1° PUESTO · CAMPEONES</span>
+                      <div class="medal-value font-sports gold-count">48</div>
+                      <span class="medal-metal-label gold-label">ORO</span>
+                      <p class="step-desc">Títulos absolutos en pruebas de velocidad y contra reloj.</p>
+                      <div class="step-stat-mini gold-stat">
+                        <span>Efectividad</span>
+                        <strong>44%</strong>
+                      </div>
+                    </div>
+                    <!-- Pedestal / Base física más alta (Escalón 1) -->
+                    <div class="pedestal-block pedestal-gold">
+                      <span class="pedestal-number font-sports">1</span>
+                      <span class="pedestal-accent-line"></span>
+                    </div>
+                  </div>
+
+                  <!-- ESCALÓN 3 (Derecha): BRONCE -->
+                  <div class="podium-column step-bronze">
+                    <div class="podium-card card-bronze">
+                      <div class="medal-icon-wrap">🥉</div>
+                      <span class="step-place-tag">3° PUESTO</span>
+                      <div class="medal-value font-sports">26</div>
+                      <span class="medal-metal-label">BRONCE</span>
+                      <p class="step-desc">Podios ganados en series y eliminaciones.</p>
+                      <div class="step-stat-mini">
+                        <span>Efectividad</span>
+                        <strong>24%</strong>
+                      </div>
+                    </div>
+                    <!-- Pedestal / Base física del escalón 3 -->
+                    <div class="pedestal-block pedestal-bronze">
+                      <span class="pedestal-number font-sports">3</span>
+                      <span class="pedestal-accent-line"></span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= COLUMNA DERECHA: CARRUSEL IDÉNTICO A NUESTRA ESCUELA ================= -->
+            <div class="carousel-col">
+              <div class="carousel-wrapper" id="victorias-carousel" aria-label="Galería fotográfica de Campeones">
+                <!-- Slides Track -->
+                <div class="carousel-track" id="victorias-carousel-track">
+                  
+                  <div class="carousel-slide is-active" data-slide="0">
+                    <img
+                      src="hero.jpeg"
+                      alt="Campeones Patinando Hacia El Futuro - Lluvia de Oro en Pista"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">🥇</span>
+                      <span class="badge-text">Podio Dorado · Válidas Departamentales</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Lluvia de Oro en Pista</h3>
+                      <p class="caption-desc">Nuestros campeones en pruebas contra reloj de 200m y baterías de velocidad.</p>
+                    </div>
+                  </div>
+
+                  <div class="carousel-slide" data-slide="1">
+                    <img
+                      src="imagen-corporativa.png"
+                      alt="Campeones Patinando Hacia El Futuro - Orgullo de Caimalito en lo Más Alto"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">⭐</span>
+                      <span class="badge-text">Semillero de Campeones</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Orgullo de Caimalito en lo Más Alto</h3>
+                      <p class="caption-desc">Nuevas promesas formándose con disciplina, constancia y pasión sobre ruedas.</p>
+                    </div>
+                  </div>
+
+                  <div class="carousel-slide" data-slide="2">
+                    <img
+                      src="hero.jpeg"
+                      alt="Campeones Patinando Hacia El Futuro - Delegación Oficial de Competencia"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">🏆</span>
+                      <span class="badge-text">La Virginia · Risaralda</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Delegación Oficial de Competencia</h3>
+                      <p class="caption-desc">Más de 50 deportistas y familias celebrando en los mejores podios de Colombia.</p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Controles de Navegación (Mismo estilo que Nuestra Escuela) -->
+                <button class="carousel-btn prev-btn" id="victorias-prev" aria-label="Imagen anterior">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+
+                <button class="carousel-btn next-btn" id="victorias-next" aria-label="Siguiente imagen">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+
+                <!-- Indicadores de barra inferior -->
+                <div class="carousel-dots" id="victorias-dots" aria-label="Navegación de diapositivas">
+                  <button class="c-dot active" data-index="0" aria-label="Diapositiva 1"></button>
+                  <button class="c-dot" data-index="1" aria-label="Diapositiva 2"></button>
+                  <button class="c-dot" data-index="2" aria-label="Diapositiva 3"></button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Próximas Competencias -->
+      <section id="competencias" class="events-section">
+        <div class="events-container">
+          <!-- Encabezado de Sección -->
+          <div class="section-head text-center">
+            <span class="eyebrow-tag">CALENDARIO DE PISTA & PRÓXIMAS VÁLIDAS</span>
+            <h2 class="section-title">
+              PRÓXIMAS <span class="text-gradient-full">COMPETENCIAS</span>
+            </h2>
+            <p class="section-subtitle">
+              Acompaña a nuestra delegación en cada válida. Consulta las fechas, pistas y categorías que representarán los colores de Patinando Hacia El Futuro.
+            </p>
+          </div>
+
+          <!-- Grid de Competencias con Borde Animado en Orden del Degradado -->
+          <div class="events-grid">
+            <!-- Evento 1: ROJO -->
+            <article
+              class="event-card"
+              style="--card-beam: #FF3B30; --card-tail: rgba(255, 59, 48, 0.25); --card-glow: rgba(255, 59, 48, 0.35); --beam-delay: 0s; --event-accent: #FF3B30;"
+            >
+              <div class="event-card-inner">
+                <div class="event-date-col">
+                  <span class="date-month">MAR</span>
+                  <span class="date-day font-sports">28-29</span>
+                  <span class="date-year">2026</span>
+                </div>
+                <div class="event-content-col">
+                  <div class="event-top-meta">
+                    <span class="event-badge">1° VÁLIDA · VELOCIDAD</span>
+                    <span class="event-status status-open">
+                      <span class="status-pulse-dot"></span>
+                      Inscripciones Abiertas
+                    </span>
+                  </div>
+                  <h3 class="event-name">Válida Regional Interclubes de Velocidad 2026</h3>
+                  <div class="event-location">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="loc-icon">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <span>Patinódromo Municipal de Carreras · Pista Central</span>
+                  </div>
+                  <div class="categories-tag-group">
+                    <span class="cat-lead">Categorías:</span>
+                    <span class="cat-pill">Escuela de Formación</span>
+                    <span class="cat-pill">Menores 7-10</span>
+                    <span class="cat-pill">Transición</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Evento 2: NARANJA -->
+            <article
+              class="event-card"
+              style="--card-beam: #F57C00; --card-tail: rgba(245, 124, 0, 0.25); --card-glow: rgba(245, 124, 0, 0.35); --beam-delay: -1s; --event-accent: #F57C00;"
+            >
+              <div class="event-card-inner">
+                <div class="event-date-col">
+                  <span class="date-month">ABR</span>
+                  <span class="date-day font-sports">18</span>
+                  <span class="date-year">2026</span>
+                </div>
+                <div class="event-content-col">
+                  <div class="event-top-meta">
+                    <span class="event-badge">2° VÁLIDA · HABILIDADES</span>
+                    <span class="event-status status-prep">
+                      <span class="status-pulse-dot"></span>
+                      En Preparación Técnica
+                    </span>
+                  </div>
+                  <h3 class="event-name">Festival Departamental de Habilidades y Relevos</h3>
+                  <div class="event-location">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="loc-icon">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <span>Complejo Deportivo de Patinaje · Pista de Habilidades</span>
+                  </div>
+                  <div class="categories-tag-group">
+                    <span class="cat-lead">Categorías:</span>
+                    <span class="cat-pill">Semilleros (4 a 6 años)</span>
+                    <span class="cat-pill">Principiantes</span>
+                    <span class="cat-pill">Pre-infantil</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Evento 3: AMARILLO -->
+            <article
+              class="event-card"
+              style="--card-beam: #FFD21F; --card-tail: rgba(255, 210, 31, 0.25); --card-glow: rgba(255, 210, 31, 0.35); --beam-delay: -2s; --event-accent: #FFD21F;"
+            >
+              <div class="event-card-inner">
+                <div class="event-date-col">
+                  <span class="date-month">MAY</span>
+                  <span class="date-day font-sports">15-17</span>
+                  <span class="date-year">2026</span>
+                </div>
+                <div class="event-content-col">
+                  <div class="event-top-meta">
+                    <span class="event-badge">3° VÁLIDA · ALTA COMPETENCIA</span>
+                    <span class="event-status status-open">
+                      <span class="status-pulse-dot"></span>
+                      Convocatoria Abierta
+                    </span>
+                  </div>
+                  <h3 class="event-name">Copa Departamental de Fondo y Eliminación</h3>
+                  <div class="event-location">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="loc-icon">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <span>Pista Internacional de Velocidad · Circuito Oficial</span>
+                  </div>
+                  <div class="categories-tag-group">
+                    <span class="cat-lead">Categorías:</span>
+                    <span class="cat-pill">Transición</span>
+                    <span class="cat-pill">Prejuvenil</span>
+                    <span class="cat-pill">Juvenil</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Evento 4: VERDE -->
+            <article
+              class="event-card"
+              style="--card-beam: #00E676; --card-tail: rgba(0, 230, 118, 0.25); --card-glow: rgba(0, 230, 118, 0.35); --beam-delay: -3s; --event-accent: #00E676;"
+            >
+              <div class="event-card-inner">
+                <div class="event-date-col">
+                  <span class="date-month">JUN</span>
+                  <span class="date-day font-sports">12-14</span>
+                  <span class="date-year">2026</span>
+                </div>
+                <div class="event-content-col">
+                  <div class="event-top-meta">
+                    <span class="event-badge">4° VÁLIDA · RUTA NACIONAL</span>
+                    <span class="event-status status-open">
+                      <span class="status-pulse-dot"></span>
+                      Convocatoria Oficial
+                    </span>
+                  </div>
+                  <h3 class="event-name">Campeonato Nacional Interclubes de Ruta 2026</h3>
+                  <div class="event-location">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="loc-icon">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <span>Circuito Panamericano de Ruta · La Virginia</span>
+                  </div>
+                  <div class="categories-tag-group">
+                    <span class="cat-lead">Categorías:</span>
+                    <span class="cat-pill">Prejuvenil</span>
+                    <span class="cat-pill">Juvenil</span>
+                    <span class="cat-pill">Mayores</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- CTA de Apoyo / Convocatoria -->
+          <div class="events-footer-cta">
+            <div class="cta-inner-content">
+              <div class="cta-text-wrap">
+                <h4 class="cta-title">¿Quieres que tu hijo(a) participe en nuestras válidas federadas?</h4>
+                <p class="cta-desc">Iniciamos procesos desde los 2 años con pruebas formativas, fogueo recreativo y alta competencia.</p>
+              </div>
+              <a
+                href="https://wa.me/573000000000?text=Hola%2C%20quiero%20conocer%20el%20calendario%20de%20competencias%20y%20entrenamientos%20de%20Patinando%20Hacia%20El%20Futuro"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-event-cta"
+              >
+                <span>Solicitar Convocatoria</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Noticias -->
+      <section id="noticias" class="news-section">
+        <div class="news-container">
+          <!-- Encabezado de Sección -->
+          <div class="section-head text-center">
+            <span class="eyebrow-tag">ACTUALIDAD DEL CLUB & COMUNICADOS OFICIALES</span>
+            <h2 class="section-title">
+              NOTICIAS & <span class="text-gradient-full">COMUNICADOS</span>
+            </h2>
+            <p class="section-subtitle">
+              Entérate de convocatorias, horarios especiales, celebraciones de triunfos y las últimas novedades de nuestra escuela.
+            </p>
+          </div>
+
+          <!-- Grid de 4 Noticias con Borde Animado en Orden de Degradado -->
+          <div class="news-grid">
+            <!-- Noticia 1: ROJO -->
+            <article
+              class="news-card"
+              style="--card-beam: #FF3B30; --card-tail: rgba(255, 59, 48, 0.25); --card-glow: rgba(255, 59, 48, 0.35); --beam-delay: 0s; --news-accent: #FF3B30;"
+            >
+              <div class="news-card-inner">
+                <div class="news-meta-top">
+                  <span class="news-tag">
+                    <span class="tag-icon">📣</span>
+                    CONVOCATORIA 2026
+                  </span>
+                  <span class="news-date">10 de Marzo, 2026</span>
+                </div>
+                <h3 class="news-title">Abiertas Inscripciones para Nuevos Talentos: Semillero y Formación</h3>
+                <p class="news-summary">Iniciamos un nuevo ciclo de entrenamientos para niños y jóvenes de 2 a 16 años. ¡Desliza tus sueños y aprende con entrenadores certificados!</p>
+                <div class="news-footer">
+                  <span class="read-time">2 min de lectura</span>
+                  <a
+                    href="https://wa.me/573000000000?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20Inscripciones"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="news-link"
+                  >
+                    <span>Leer más</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" class="link-arrow">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Noticia 2: NARANJA -->
+            <article
+              class="news-card"
+              style="--card-beam: #F57C00; --card-tail: rgba(245, 124, 0, 0.25); --card-glow: rgba(245, 124, 0, 0.35); --beam-delay: -1s; --news-accent: #F57C00;"
+            >
+              <div class="news-card-inner">
+                <div class="news-meta-top">
+                  <span class="news-tag">
+                    <span class="tag-icon">🏆</span>
+                    RESULTADOS EN PISTA
+                  </span>
+                  <span class="news-date">4 de Marzo, 2026</span>
+                </div>
+                <h3 class="news-title">Brillante Cosecha de 13 Medallas en la Válida Departamental</h3>
+                <p class="news-summary">Nuestros patinadores demostraron garra y velocidad conquistando 6 oros, 4 platas y 3 bronces en una jornada inolvidable para la escuela.</p>
+                <div class="news-footer">
+                  <span class="read-time">3 min de lectura</span>
+                  <a
+                    href="https://wa.me/573000000000?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20Medallas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="news-link"
+                  >
+                    <span>Leer más</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" class="link-arrow">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Noticia 3: AMARILLO -->
+            <article
+              class="news-card"
+              style="--card-beam: #FFD21F; --card-tail: rgba(255, 210, 31, 0.25); --card-glow: rgba(255, 210, 31, 0.35); --beam-delay: -2s; --news-accent: #FFD21F;"
+            >
+              <div class="news-card-inner">
+                <div class="news-meta-top">
+                  <span class="news-tag">
+                    <span class="tag-icon">⚡</span>
+                    TECNIFICACIÓN
+                  </span>
+                  <span class="news-date">25 de Febrero, 2026</span>
+                </div>
+                <h3 class="news-title">Taller Especial de Biomecánica y Postura en Curva</h3>
+                <p class="news-summary">Capacitación intensiva para optimizar el empuje, la aerodinámica del patín y la salida en falso plano para categorías de transición.</p>
+                <div class="news-footer">
+                  <span class="read-time">2 min de lectura</span>
+                  <a
+                    href="https://wa.me/573000000000?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20Biomec%C3%A1nica"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="news-link"
+                  >
+                    <span>Leer más</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" class="link-arrow">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Noticia 4: VERDE -->
+            <article
+              class="news-card"
+              style="--card-beam: #00E676; --card-tail: rgba(0, 230, 118, 0.25); --card-glow: rgba(0, 230, 118, 0.35); --beam-delay: -3s; --news-accent: #00E676;"
+            >
+              <div class="news-card-inner">
+                <div class="news-meta-top">
+                  <span class="news-tag">
+                    <span class="tag-icon">✨</span>
+                    IMAGEN & EQUIPO
+                  </span>
+                  <span class="news-date">18 de Febrero, 2026</span>
+                </div>
+                <h3 class="news-title">Presentación Oficial del Uniforme y Línea de Competencia 2026</h3>
+                <p class="news-summary">Revelamos la nueva piel del club inspirada en la disciplina, la velocidad del rojo energía y el brillo del futuro deportivo.</p>
+                <div class="news-footer">
+                  <span class="read-time">1 min de lectura</span>
+                  <a
+                    href="https://wa.me/573000000000?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20Uniforme"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="news-link"
+                  >
+                    <span>Leer más</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" class="link-arrow">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <!-- Barra de Acento Superior con Degradado Completo Neón -->
+      <div class="footer-top-accent"></div>
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Columna 1: Presentación de Marca -->
+          <div class="footer-brand-col">
+            <a href="#inicio" class="footer-brand" aria-label="Ir al inicio">
+              <img src="logo.png" alt="Logo Oficial Patinando Hacia El Futuro" class="footer-logo" />
+              <div class="footer-brand-text">
+                <span class="brand-title font-sports">PATINANDO</span>
+                <span class="brand-sub">HACIA EL FUTURO</span>
+              </div>
+            </a>
+            <p class="footer-slogan">"Desliza tus sueños hacia el futuro."</p>
+            <p class="footer-bio">Formamos disciplina, constancia y carácter deportivo en niños, niñas y jóvenes a través del patinaje de carreras y la alta competencia.</p>
+            <div class="brand-colors-bar">
+              <span class="bar-color color-red"></span>
+              <span class="bar-color color-orange"></span>
+              <span class="bar-color color-yellow"></span>
+              <span class="bar-color color-green"></span>
+            </div>
+          </div>
+
+          <!-- Columna 2: Enlaces de Navegación -->
+          <div class="footer-links-col">
+            <h4 class="footer-col-title">Secciones</h4>
+            <ul class="footer-links">
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#nuestra-escuela">Nuestra Escuela</a></li>
+              <li><a href="#profes">Nuestros Profes</a></li>
+              <li><a href="#comunidad">Nuestra Comunidad</a></li>
+              <li><a href="#victorias">Nuestras Victorias</a></li>
+              <li><a href="#competencias">Próximas Competencias</a></li>
+              <li><a href="#noticias">Noticias & Comunicados</a></li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Niveles y Escuela Deportiva -->
+          <div class="footer-links-col">
+            <h4 class="footer-col-title">Escuela Deportiva</h4>
+            <ul class="footer-links">
+              <li><span>Semilleros (2 a 6 años)</span></li>
+              <li><span>Escuela de Formación</span></li>
+              <li><span>Menores & Transición</span></li>
+              <li><span>Prejuvenil & Velocidad</span></li>
+              <li><span>Ruta y Alta Competencia</span></li>
+              <li><span>Caimalito & La Virginia</span></li>
+            </ul>
+          </div>
+
+          <!-- Columna 4: Contacto & Canal Oficial -->
+          <div class="footer-contact-col">
+            <h4 class="footer-col-title">Contacto Directo</h4>
+            <p class="contact-item">
+              <span class="contact-icon">📍</span>
+              <span>Pista de La Virginia & Caimalito · Pereira</span>
+            </p>
+            <p class="contact-item">
+              <span class="contact-icon">📱</span>
+              <span>WhatsApp Oficial: (+57) 300 000 0000</span>
+            </p>
+            <p class="contact-item">
+              <span class="contact-icon">🕒</span>
+              <span>Horarios: Martes a Sábado (Tarde y Mañana)</span>
+            </p>
+            <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="btn-footer-wa">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.969.541 1.838.835 2.796.835 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.767-5.768-5.767zm7.545 5.766c-.002 4.159-3.385 7.542-7.545 7.542-1.282 0-2.529-.328-3.633-.948l-4.398 1.153 1.173-4.288c-.689-1.159-1.054-2.483-1.054-3.847.002-4.159 3.385-7.542 7.545-7.542 4.159.001 7.542 3.384 7.542 7.542z"/>
+              </svg>
+              <span>Escribir por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Patinando Hacia El Futuro. Todos los derechos reservados.</p>
+          <div class="footer-legal">
+            <span class="footer-legal-motto">Disciplina · Pasión · Constancia · Futuro</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function setupStatCardsCarousel() {
+        const track = document.getElementById('stat-stage-track');
+        if (!track) return;
+        const cards = track.querySelectorAll('.stat-card');
+        if (!cards.length) return;
+
+        let currentIndex = 0;
+        const total = cards.length;
+        const pauseDuration = 2000; // Exact 2 seconds pause in the middle
+        const transitDuration = 650; // ms for slide transition
+        let timer = null;
+
+        function goToCard(nextIndex) {
+          if (nextIndex === currentIndex) return;
+          const currentCard = cards[currentIndex];
+          const nextCard = cards[nextIndex];
+
+          // 1. Current card continues toward the right and disappears
+          currentCard.classList.remove('is-active');
+          currentCard.classList.add('is-exiting');
+
+          // 2. Next card prepares at the left off-screen without animation
+          nextCard.classList.remove('is-exiting', 'is-active');
+          nextCard.classList.add('is-entering');
+
+          // Force layout reflow
+          void nextCard.offsetWidth;
+
+          // 3. Next card slides in from left to center
+          nextCard.classList.remove('is-entering');
+          nextCard.classList.add('is-active');
+
+          // Cleanup exited card
+          setTimeout(() => {
+            currentCard.classList.remove('is-exiting');
+          }, transitDuration + 50);
+
+          currentIndex = nextIndex;
+        }
+
+        function scheduleNext() {
+          stopTimer();
+          timer = setTimeout(() => {
+            const next = (currentIndex + 1) % total;
+            goToCard(next);
+            scheduleNext();
+          }, pauseDuration + transitDuration);
+        }
+
+        function stopTimer() {
+          if (timer) {
+            clearTimeout(timer);
+            timer = null;
+          }
+        }
+
+        scheduleNext();
+
+        // Hover pause
+        const stage = document.getElementById('hero-stat-stage');
+        if (stage) {
+          stage.addEventListener('mouseenter', stopTimer);
+          stage.addEventListener('mouseleave', scheduleNext);
+        }
+      }
+
+      function setupSchoolCarousel() {
+        const track = document.getElementById('carousel-track');
+        if (!track) return;
+        const slides = track.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('#carousel-dots .c-dot');
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+        if (!slides.length) return;
+
+        let current = 0;
+        const total = slides.length;
+        let autoPlayTimer = null;
+        const autoPlayDelay = 4500;
+
+        function goTo(index) {
+          slides[current].classList.remove('is-active');
+          if (dots[current]) dots[current].classList.remove('active');
+
+          current = (index + total) % total;
+
+          slides[current].classList.add('is-active');
+          if (dots[current]) dots[current].classList.add('active');
+        }
+
+        function next() {
+          goTo(current + 1);
+        }
+
+        function prev() {
+          goTo(current - 1);
+        }
+
+        function startTimer() {
+          stopTimer();
+          autoPlayTimer = setInterval(next, autoPlayDelay);
+        }
+
+        function stopTimer() {
+          if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+          }
+        }
+
+        if (nextBtn) nextBtn.addEventListener('click', () => { next(); startTimer(); });
+        if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startTimer(); });
+
+        dots.forEach((dot) => {
+          dot.addEventListener('click', () => {
+            const idx = parseInt(dot.getAttribute('data-index') || '0', 10);
+            goTo(idx);
+            startTimer();
+          });
+        });
+
+        const wrapper = document.getElementById('school-carousel');
+        if (wrapper) {
+          wrapper.addEventListener('mouseenter', stopTimer);
+          wrapper.addEventListener('mouseleave', startTimer);
+        }
+
+        startTimer();
+      }
+
+      function setupVictoriasCarousel() {
+        const track = document.getElementById('victorias-carousel-track');
+        if (!track) return;
+        const slides = track.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('#victorias-dots .c-dot');
+        const prevBtn = document.getElementById('victorias-prev');
+        const nextBtn = document.getElementById('victorias-next');
+        if (!slides.length) return;
+
+        let current = 0;
+        const total = slides.length;
+        let autoPlayTimer = null;
+        const autoPlayDelay = 4500;
+
+        function goTo(index) {
+          slides[current].classList.remove('is-active');
+          if (dots[current]) dots[current].classList.remove('active');
+
+          current = (index + total) % total;
+
+          slides[current].classList.add('is-active');
+          if (dots[current]) dots[current].classList.add('active');
+        }
+
+        function next() {
+          goTo(current + 1);
+        }
+
+        function prev() {
+          goTo(current - 1);
+        }
+
+        function startTimer() {
+          stopTimer();
+          autoPlayTimer = setInterval(next, autoPlayDelay);
+        }
+
+        function stopTimer() {
+          if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+          }
+        }
+
+        if (nextBtn) nextBtn.addEventListener('click', () => { next(); startTimer(); });
+        if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startTimer(); });
+
+        dots.forEach((dot) => {
+          dot.addEventListener('click', () => {
+            const idx = parseInt(dot.getAttribute('data-index') || '0', 10);
+            goTo(idx);
+            startTimer();
+          });
+        });
+
+        const wrapper = document.getElementById('victorias-carousel');
+        if (wrapper) {
+          wrapper.addEventListener('mouseenter', stopTimer);
+          wrapper.addEventListener('mouseleave', startTimer);
+        }
+
+        startTimer();
+      }
+
+      function initApp() {
+        setupStatCardsCarousel();
+        setupSchoolCarousel();
+        setupVictoriasCarousel();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initApp);
+      } else {
+        initApp();
+      }
+    </script>
+  </body>
+</html>
