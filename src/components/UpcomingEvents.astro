@@ -1,0 +1,526 @@
+---
+// Componente "Próximas Competencias": Calendario oficial y válidas en orden de degradado (Rojo, Naranja, Amarillo, Verde)
+const upcomingCompetitions = [
+  {
+    id: "comp-1",
+    title: "Válida Regional Interclubes de Velocidad 2026",
+    badge: "1° VÁLIDA · VELOCIDAD",
+    dateDay: "28-29",
+    dateMonth: "MAR",
+    year: "2026",
+    track: "Patinódromo Municipal de Carreras",
+    city: "Pista Central",
+    categories: ["Escuela de Formación", "Menores 7-10", "Transición"],
+    status: "Inscripciones Abiertas",
+    statusType: "open",
+    accentColor: "#FF3B30",
+    beamTail: "rgba(255, 59, 48, 0.25)",
+    glowColor: "rgba(255, 59, 48, 0.35)",
+    delay: "0s"
+  },
+  {
+    id: "comp-2",
+    title: "Festival Departamental de Habilidades y Relevos",
+    badge: "2° VÁLIDA · HABILIDADES",
+    dateDay: "18",
+    dateMonth: "ABR",
+    year: "2026",
+    track: "Complejo Deportivo de Patinaje",
+    city: "Pista de Habilidades",
+    categories: ["Semilleros (4 a 6 años)", "Principiantes", "Pre-infantil"],
+    status: "En Preparación Técnica",
+    statusType: "prep",
+    accentColor: "#F57C00",
+    beamTail: "rgba(245, 124, 0, 0.25)",
+    glowColor: "rgba(245, 124, 0, 0.35)",
+    delay: "-1s"
+  },
+  {
+    id: "comp-3",
+    title: "Copa Departamental de Fondo y Eliminación",
+    badge: "3° VÁLIDA · ALTA COMPETENCIA",
+    dateDay: "15-17",
+    dateMonth: "MAY",
+    year: "2026",
+    track: "Pista Internacional de Velocidad",
+    city: "Circuito Oficial",
+    categories: ["Transición", "Prejuvenil", "Juvenil"],
+    status: "Convocatoria Abierta",
+    statusType: "open",
+    accentColor: "#FFD21F",
+    beamTail: "rgba(255, 210, 31, 0.25)",
+    glowColor: "rgba(255, 210, 31, 0.35)",
+    delay: "-2s"
+  },
+  {
+    id: "comp-4",
+    title: "Campeonato Nacional Interclubes de Ruta 2026",
+    badge: "4° VÁLIDA · RUTA NACIONAL",
+    dateDay: "12-14",
+    dateMonth: "JUN",
+    year: "2026",
+    track: "Circuito Panamericano de Ruta",
+    city: "La Virginia · Risaralda",
+    categories: ["Prejuvenil", "Juvenil", "Mayores"],
+    status: "Convocatoria Oficial",
+    statusType: "open",
+    accentColor: "#00E676",
+    beamTail: "rgba(0, 230, 118, 0.25)",
+    glowColor: "rgba(0, 230, 118, 0.35)",
+    delay: "-3s"
+  }
+];
+---
+
+<section id="competencias" class="events-section">
+  <div class="events-container">
+    <!-- Encabezado de Sección -->
+    <div class="section-head text-center">
+      <span class="eyebrow-tag">CALENDARIO DE PISTA & PRÓXIMAS VÁLIDAS</span>
+      <h2 class="section-title">
+        PRÓXIMAS <span class="text-gradient-full">COMPETENCIAS</span>
+      </h2>
+      <p class="section-subtitle">
+        Acompaña a nuestra delegación en cada válida. Consulta las fechas, pistas y categorías que representarán los colores de Patinando Hacia El Futuro.
+      </p>
+    </div>
+
+    <!-- Grid de Competencias con Borde Animado en Orden del Degradado -->
+    <div class="events-grid">
+      {upcomingCompetitions.map(event => (
+        <article
+          class="event-card"
+          style={`--card-beam: ${event.accentColor}; --card-tail: ${event.beamTail}; --card-glow: ${event.glowColor}; --beam-delay: ${event.delay}; --event-accent: ${event.accentColor};`}
+        >
+          <div class="event-card-inner">
+            <!-- Bloque de Fecha -->
+            <div class="event-date-col">
+              <span class="date-month">{event.dateMonth}</span>
+              <span class="date-day font-sports">{event.dateDay}</span>
+              <span class="date-year">{event.year}</span>
+            </div>
+
+            <!-- Bloque de Contenido -->
+            <div class="event-content-col">
+              <div class="event-top-meta">
+                <span class="event-badge">{event.badge}</span>
+                <span class={`event-status status-${event.statusType}`}>
+                  <span class="status-pulse-dot"></span>
+                  {event.status}
+                </span>
+              </div>
+
+              <h3 class="event-name">{event.title}</h3>
+
+              <div class="event-location">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="loc-icon">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <span>{event.track} · {event.city}</span>
+              </div>
+
+              <div class="categories-tag-group">
+                <span class="cat-lead">Categorías:</span>
+                {event.categories.map(cat => (
+                  <span class="cat-pill">{cat}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- CTA de Apoyo / Convocatoria -->
+    <div class="events-footer-cta">
+      <div class="cta-inner-content">
+        <div class="cta-text-wrap">
+          <h4 class="cta-title">¿Quieres que tu hijo(a) participe en nuestras válidas federadas?</h4>
+          <p class="cta-desc">Iniciamos procesos desde los 2 años con pruebas formativas, fogueo recreativo y alta competencia.</p>
+        </div>
+        <a
+          href="https://wa.me/573000000000?text=Hola%2C%20quiero%20conocer%20el%20calendario%20de%20competencias%20y%20entrenamientos%20de%20Patinando%20Hacia%20El%20Futuro"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-event-cta"
+        >
+          <span>Solicitar Convocatoria</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .events-section {
+    position: relative;
+    width: 100%;
+    background-color: #000000;
+    padding: clamp(70px, 8vw, 115px) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+  }
+
+  .events-container {
+    width: 100%;
+    max-width: min(94vw, 1720px);
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 6rem);
+  }
+
+  .section-head {
+    margin-bottom: clamp(2.5rem, 4vw, 3.8rem);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .eyebrow-tag {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: var(--color-yellow-future);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    color: var(--color-white);
+    margin: 0 0 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .text-gradient-full {
+    background: linear-gradient(90deg, #E51B23 0%, #F57C00 32%, #FFD21F 68%, #009B55 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 20px rgba(245, 124, 0, 0.4));
+    display: inline-block;
+  }
+
+  .section-subtitle {
+    font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+    color: var(--color-gray-tech);
+    max-width: 740px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Grid de Competencias: 2x2 en escritorio */
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.2rem, 2vw, 2rem);
+    margin-bottom: 3.5rem;
+  }
+
+  /* Tarjeta de Competencia con Borde Animado */
+  .event-card {
+    position: relative;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1.5px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex;
+  }
+
+  .event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.85), 0 0 28px var(--card-glow);
+  }
+
+  /* Línea animada que recorre el borde de la tarjeta */
+  .event-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 65deg,
+      var(--card-beam, #FFD21F) 100deg,
+      var(--card-tail, rgba(255, 210, 31, 0.3)) 115deg,
+      transparent 125deg,
+      transparent 360deg
+    );
+    animation: rotateBorderBeam 4s linear infinite;
+    animation-delay: var(--beam-delay, 0s);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  @keyframes rotateBorderBeam {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Interior de la Tarjeta */
+  .event-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #0E1015;
+    border-radius: 18.5px;
+    overflow: hidden;
+    z-index: 1;
+    padding: clamp(1.4rem, 2vw, 1.85rem);
+    display: flex;
+    gap: clamp(1.2rem, 2vw, 1.6rem);
+    align-items: center;
+  }
+
+  /* Columna de Fecha */
+  .event-date-col {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(14, 16, 21, 0.95) 100%);
+    border: 1.5px solid var(--event-accent, #FFD21F);
+    border-radius: 14px;
+    padding: 1rem 0.8rem;
+    min-width: 96px;
+    text-align: center;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), 0 4px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .date-month {
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: var(--event-accent, #FFD21F);
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .date-day {
+    font-size: clamp(2rem, 2.5vw, 2.4rem);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--color-white);
+    margin: 0.25rem 0;
+    display: block;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+  }
+
+  .date-year {
+    font-size: 0.72rem;
+    color: #9CA3AF;
+    font-weight: 700;
+    display: block;
+  }
+
+  /* Columna de Contenido */
+  .event-content-col {
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .event-top-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .event-badge {
+    font-size: 0.68rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--event-accent, #FFD21F);
+  }
+
+  .event-status {
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .status-pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 8px currentColor;
+    animation: statusPulse 2s infinite ease-in-out;
+  }
+
+  @keyframes statusPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  .status-open {
+    background: rgba(0, 230, 118, 0.12);
+    color: #00E676;
+    border: 1px solid rgba(0, 230, 118, 0.35);
+  }
+
+  .status-prep {
+    background: rgba(245, 124, 0, 0.15);
+    color: #FFA726;
+    border: 1px solid rgba(245, 124, 0, 0.4);
+  }
+
+  .event-name {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+    font-weight: 800;
+    color: var(--color-white);
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
+  }
+
+  .event-location {
+    font-size: 0.82rem;
+    color: #9CA3AF;
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .loc-icon {
+    color: var(--event-accent, #FFD21F);
+    flex-shrink: 0;
+  }
+
+  .categories-tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .cat-lead {
+    font-size: 0.72rem;
+    color: #6B7280;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .cat-pill {
+    font-size: 0.72rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+    color: #E2E8F0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* CTA Inferior */
+  .events-footer-cta {
+    background: linear-gradient(180deg, rgba(20, 24, 32, 0.8) 0%, rgba(12, 14, 18, 0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: clamp(1.5rem, 3vw, 2.2rem);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  }
+
+  .cta-inner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-text-wrap {
+    max-width: 680px;
+  }
+
+  .cta-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+    font-weight: 800;
+    color: var(--color-white);
+    margin: 0 0 0.35rem;
+  }
+
+  .cta-desc {
+    font-size: 0.88rem;
+    color: #9CA3AF;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .btn-event-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(90deg, #E51B23 0%, #F57C00 32%, #FFD21F 68%, #009B55 100%);
+    color: #000000;
+    font-weight: 900;
+    font-size: 0.9rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(245, 124, 0, 0.35);
+  }
+
+  .btn-event-cta:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(245, 124, 0, 0.5), 0 0 20px rgba(0, 155, 85, 0.4);
+  }
+
+  /* Responsivo */
+  @media (max-width: 960px) {
+    .events-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .event-card-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .event-date-col {
+      width: 100%;
+      flex-direction: row;
+      justify-content: center;
+      gap: 0.8rem;
+      padding: 0.6rem;
+    }
+    .date-day {
+      margin: 0;
+    }
+    .cta-inner-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .btn-event-cta {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

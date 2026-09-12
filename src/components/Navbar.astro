@@ -1,0 +1,269 @@
+---
+// Navbar component for Patinando Hacia El Futuro
+---
+
+<header class="navbar">
+  <div class="nav-content">
+    <a href="#inicio" class="nav-brand" aria-label="Ir al inicio">
+      <img src="/images/logo.png" alt="Logo Patinando Hacia El Futuro" class="brand-logo" width="48" height="48" />
+      <div class="brand-text">
+        <span class="brand-title">PATINANDO</span>
+        <span class="brand-sub">HACIA EL FUTURO</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal">
+      <ul class="nav-list">
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#nuestra-escuela" class="nav-link">Nuestra Escuela</a></li>
+        <li><a href="#profes" class="nav-link">Nuestros Profes</a></li>
+        <li><a href="#comunidad" class="nav-link">Nuestra Comunidad</a></li>
+        <li><a href="#victorias" class="nav-link">Nuestras Victorias</a></li>
+        <li><a href="#competencias" class="nav-link">Competencias</a></li>
+        <li><a href="#noticias" class="nav-link">Noticias</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <a
+        href="https://wa.me/573000000000?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20inscripciones%20en%20la%20Escuela%20Patinando%20Hacia%20El%20Futuro"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-cta"
+      >
+        <svg class="icon-wa" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.969.541 1.838.835 2.796.835 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.767-5.768-5.767zm7.545 5.766c-.002 4.159-3.385 7.542-7.545 7.542-1.282 0-2.529-.328-3.633-.948l-4.398 1.153 1.173-4.288c-.689-1.159-1.054-2.483-1.054-3.847.002-4.159 3.385-7.542 7.545-7.542 4.159.001 7.542 3.384 7.542 7.542z"/>
+        </svg>
+        <span>Inscríbete</span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggleBtn = document.getElementById('mobile-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const links = document.querySelectorAll('.nav-link');
+
+  if (toggleBtn && navMenu) {
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('is-open');
+      toggleBtn.classList.toggle('active');
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('is-open');
+        toggleBtn.classList.remove('active');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(12, 14, 18, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    height: 76px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .nav-content {
+    width: 100%;
+    max-width: min(94vw, 1720px);
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 6rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-brand:hover {
+    transform: scale(1.02);
+  }
+
+  .brand-logo {
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(245, 124, 0, 0.4));
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-title {
+    font-family: var(--font-sports);
+    font-size: 1.35rem;
+    letter-spacing: 1.5px;
+    color: var(--color-white);
+    line-height: 1;
+  }
+
+  .brand-sub {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: var(--gradient-sports);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .nav-menu {
+    display: flex;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-gray-muted);
+    transition: all 0.25s ease;
+    position: relative;
+    padding: 0.35rem 0;
+  }
+
+  .nav-link:hover {
+    color: var(--color-yellow-future);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-energy);
+    transition: width 0.25s ease;
+    border-radius: 2px;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-full);
+    background: var(--gradient-energy);
+    color: #111;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 18px rgba(229, 27, 35, 0.35);
+    transition: all 0.3s ease;
+  }
+
+  .btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(255, 210, 31, 0.5);
+    color: #000;
+  }
+
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 32px;
+    height: 24px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .mobile-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .mobile-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  @media (max-width: 960px) {
+    .nav-menu {
+      position: absolute;
+      top: 76px;
+      left: 0;
+      right: 0;
+      background: #0E1015;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      flex-direction: column;
+      padding: 1.5rem;
+      display: none;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu.is-open {
+      display: flex;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+      width: 100%;
+    }
+
+    .nav-link {
+      font-size: 1.1rem;
+      width: 100%;
+    }
+
+    .mobile-toggle {
+      display: flex;
+    }
+  }
+</style>

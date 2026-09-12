@@ -1,0 +1,352 @@
+---
+// Componente "Noticias & Comunicados": Actualidad del club en orden de degradado (Rojo, Naranja, Amarillo, Verde)
+const clubNews = [
+  {
+    id: "noticia-1",
+    tag: "CONVOCATORIA 2026",
+    title: "Abiertas Inscripciones para Nuevos Talentos: Semillero y Formación",
+    date: "10 de Marzo, 2026",
+    summary: "Iniciamos un nuevo ciclo de entrenamientos para niños y jóvenes de 2 a 16 años. ¡Desliza tus sueños y aprende con entrenadores certificados!",
+    readTime: "2 min de lectura",
+    accentColor: "#FF3B30",
+    beamTail: "rgba(255, 59, 48, 0.25)",
+    glowColor: "rgba(255, 59, 48, 0.35)",
+    delay: "0s",
+    badgeIcon: "📣"
+  },
+  {
+    id: "noticia-2",
+    tag: "RESULTADOS EN PISTA",
+    title: "Brillante Cosecha de 13 Medallas en la Válida Departamental",
+    date: "4 de Marzo, 2026",
+    summary: "Nuestros patinadores demostraron garra y velocidad conquistando 6 oros, 4 platas y 3 bronces en una jornada inolvidable para la escuela.",
+    readTime: "3 min de lectura",
+    accentColor: "#F57C00",
+    beamTail: "rgba(245, 124, 0, 0.25)",
+    glowColor: "rgba(245, 124, 0, 0.35)",
+    delay: "-1s",
+    badgeIcon: "🏆"
+  },
+  {
+    id: "noticia-3",
+    tag: "TECNIFICACIÓN",
+    title: "Taller Especial de Biomecánica y Postura en Curva",
+    date: "25 de Febrero, 2026",
+    summary: "Capacitación intensiva para optimizar el empuje, la aerodinámica del patín y la salida en falso plano para categorías de transición.",
+    readTime: "2 min de lectura",
+    accentColor: "#FFD21F",
+    beamTail: "rgba(255, 210, 31, 0.25)",
+    glowColor: "rgba(255, 210, 31, 0.35)",
+    delay: "-2s",
+    badgeIcon: "⚡"
+  },
+  {
+    id: "noticia-4",
+    tag: "IMAGEN & EQUIPO",
+    title: "Presentación Oficial del Uniforme y Línea de Competencia 2026",
+    date: "18 de Febrero, 2026",
+    summary: "Revelamos la nueva piel del club inspirada en la disciplina, la velocidad del rojo energía y el brillo del futuro deportivo.",
+    readTime: "1 min de lectura",
+    accentColor: "#00E676",
+    beamTail: "rgba(0, 230, 118, 0.25)",
+    glowColor: "rgba(0, 230, 118, 0.35)",
+    delay: "-3s",
+    badgeIcon: "✨"
+  }
+];
+---
+
+<section id="noticias" class="news-section">
+  <div class="news-container">
+    <!-- Encabezado de Sección -->
+    <div class="section-head text-center">
+      <span class="eyebrow-tag">ACTUALIDAD DEL CLUB & COMUNICADOS OFICIALES</span>
+      <h2 class="section-title">
+        NOTICIAS & <span class="text-gradient-full">COMUNICADOS</span>
+      </h2>
+      <p class="section-subtitle">
+        Entérate de convocatorias, horarios especiales, celebraciones de triunfos y las últimas novedades de nuestra escuela.
+      </p>
+    </div>
+
+    <!-- Grid de 4 Noticias con Borde Animado en Orden de Degradado -->
+    <div class="news-grid">
+      {clubNews.map(item => (
+        <article
+          class="news-card"
+          style={`--card-beam: ${item.accentColor}; --card-tail: ${item.beamTail}; --card-glow: ${item.glowColor}; --beam-delay: ${item.delay}; --news-accent: ${item.accentColor};`}
+        >
+          <div class="news-card-inner">
+            <!-- Zona Superior: Tag e Ícono -->
+            <div class="news-meta-top">
+              <span class="news-tag">
+                <span class="tag-icon">{item.badgeIcon}</span>
+                {item.tag}
+              </span>
+              <span class="news-date">{item.date}</span>
+            </div>
+
+            <!-- Título y Resumen -->
+            <h3 class="news-title">{item.title}</h3>
+            <p class="news-summary">{item.summary}</p>
+
+            <!-- Zona Inferior: Tiempo de Lectura y Botón -->
+            <div class="news-footer">
+              <span class="read-time">{item.readTime}</span>
+              <a
+                href={`https://wa.me/573000000000?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20${encodeURIComponent(item.title)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="news-link"
+              >
+                <span>Leer más</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" class="link-arrow">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .news-section {
+    position: relative;
+    width: 100%;
+    background-color: #000000;
+    padding: clamp(70px, 8vw, 115px) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+  }
+
+  .news-container {
+    width: 100%;
+    max-width: min(94vw, 1720px);
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 6rem);
+  }
+
+  .section-head {
+    margin-bottom: clamp(2.5rem, 4vw, 3.8rem);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .eyebrow-tag {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: var(--color-yellow-future);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    color: var(--color-white);
+    margin: 0 0 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .text-gradient-full {
+    background: linear-gradient(90deg, #E51B23 0%, #F57C00 32%, #FFD21F 68%, #009B55 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 20px rgba(245, 124, 0, 0.4));
+    display: inline-block;
+  }
+
+  .section-subtitle {
+    font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+    color: var(--color-gray-tech);
+    max-width: 740px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Grid de Noticias: 4 columnas en desktop */
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(1.2rem, 2vw, 2rem);
+  }
+
+  /* Tarjeta de Noticia con Borde Animado */
+  .news-card {
+    position: relative;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1.5px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex;
+  }
+
+  .news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.85), 0 0 28px var(--card-glow);
+  }
+
+  /* Línea animada que recorre el borde de la tarjeta */
+  .news-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 65deg,
+      var(--card-beam, #FFD21F) 100deg,
+      var(--card-tail, rgba(255, 210, 31, 0.3)) 115deg,
+      transparent 125deg,
+      transparent 360deg
+    );
+    animation: rotateBorderBeam 4s linear infinite;
+    animation-delay: var(--beam-delay, 0s);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  @keyframes rotateBorderBeam {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Interior de la Tarjeta */
+  .news-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #0E1015;
+    border-radius: 18.5px;
+    overflow: hidden;
+    z-index: 1;
+    padding: clamp(1.4rem, 2vw, 1.85rem);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .news-meta-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .news-tag {
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--news-accent, #FFD21F);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--news-accent, #FFD21F);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .tag-icon {
+    font-size: 0.8rem;
+  }
+
+  .news-date {
+    font-size: 0.72rem;
+    color: #9CA3AF;
+    font-weight: 600;
+  }
+
+  .news-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 1.3vw, 1.25rem);
+    font-weight: 800;
+    color: var(--color-white);
+    line-height: 1.35;
+    margin: 0 0 0.85rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .news-summary {
+    font-size: 0.86rem;
+    color: #9CA3AF;
+    line-height: 1.55;
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .news-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: auto;
+  }
+
+  .read-time {
+    font-size: 0.72rem;
+    color: #6B7280;
+    font-weight: 600;
+  }
+
+  .news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--news-accent, #FFD21F);
+    text-decoration: none;
+    transition: transform 0.25s ease, gap 0.25s ease;
+  }
+
+  .news-card:hover .link-arrow {
+    transform: translateX(4px);
+  }
+
+  .link-arrow {
+    transition: transform 0.25s ease;
+  }
+
+  /* Responsivo */
+  @media (max-width: 1200px) {
+    .news-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .news-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

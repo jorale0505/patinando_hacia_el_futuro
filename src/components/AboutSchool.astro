@@ -1,0 +1,594 @@
+---
+// Componente "Nuestra Escuela": Historia comunitaria, expansión y visión deportiva
+---
+
+<section id="nuestra-escuela" class="about-section">
+  <div class="about-container">
+    <div class="about-grid">
+      <!-- Columna Izquierda: Carrusel de Imágenes Interactivo -->
+      <div class="about-media-col">
+        <div class="carousel-wrapper" id="school-carousel" aria-label="Galería fotográfica de Nuestra Escuela">
+          <!-- Slides Track -->
+          <div class="carousel-track" id="carousel-track">
+            <!-- Slide 1: Origen y Sentido Social en Caimalito -->
+            <div class="carousel-slide is-active" data-slide="0">
+              <img
+                src="/images/imagen-corporativa.png"
+                alt="Niños y jóvenes en formación sobre ruedas - Patinando Hacia El Futuro"
+                class="slide-image"
+                loading="lazy"
+              />
+              <div class="slide-overlay"></div>
+              <div class="slide-badge">
+                <span class="badge-icon">📍</span>
+                <span class="badge-text">Caimalito · Pereira</span>
+              </div>
+              <div class="slide-caption">
+                <h3 class="caption-title">Semillero de Esperanza</h3>
+                <p class="caption-desc">Oportunidad y formación integral para la niñez de nuestra comunidad.</p>
+              </div>
+            </div>
+
+            <!-- Slide 2: Entrenamientos en La Virginia -->
+            <div class="carousel-slide" data-slide="1">
+              <img
+                src="/images/hero.jpeg"
+                alt="Entrenamientos y velocidad en pista - Patinando Hacia El Futuro"
+                class="slide-image"
+                loading="lazy"
+              />
+              <div class="slide-overlay"></div>
+              <div class="slide-badge">
+                <span class="badge-icon">⛸️</span>
+                <span class="badge-text">La Virginia · Risaralda</span>
+              </div>
+              <div class="slide-caption">
+                <h3 class="caption-title">Expansión & Disciplina</h3>
+                <p class="caption-desc">Prácticas formativas y de alto rendimiento desde los 2 hasta los 16 años.</p>
+              </div>
+            </div>
+
+            <!-- Slide 3: Deporte, Turismo y Competencias -->
+            <div class="carousel-slide" data-slide="2">
+              <img
+                src="/images/imagen-corporativa.png"
+                alt="Competencias y turismo deportivo - Patinando Hacia El Futuro"
+                class="slide-image"
+                loading="lazy"
+              />
+              <div class="slide-overlay"></div>
+              <div class="slide-badge">
+                <span class="badge-icon">🇨🇴</span>
+                <span class="badge-text">Ruta Nacional & Turismo</span>
+              </div>
+              <div class="slide-caption">
+                <h3 class="caption-title">Descubriendo a Colombia</h3>
+                <p class="caption-desc">Fogueo en pistas recreativas y semiprofesionales conociendo nuestro país.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles de Navegación -->
+          <button class="carousel-btn prev-btn" id="carousel-prev" aria-label="Imagen anterior">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <button class="carousel-btn next-btn" id="carousel-next" aria-label="Siguiente imagen">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Indicadores de barra inferior -->
+          <div class="carousel-dots" id="carousel-dots" aria-label="Navegación de diapositivas">
+            <button class="c-dot active" data-index="0" aria-label="Diapositiva 1"></button>
+            <button class="c-dot" data-index="1" aria-label="Diapositiva 2"></button>
+            <button class="c-dot" data-index="2" aria-label="Diapositiva 3"></button>
+          </div>
+        </div>
+
+        <!-- Pilares Clave de la Escuela Ubicados Debajo de las Imágenes -->
+        <div class="about-pillars">
+          <div class="about-pillar-card">
+            <span class="p-card-icon">🌱</span>
+            <div class="p-card-info">
+              <span class="p-card-title">Impacto Social</span>
+              <span class="p-card-desc">Caimalito y La Virginia</span>
+            </div>
+          </div>
+
+          <div class="about-pillar-card">
+            <span class="p-card-icon">⚡</span>
+            <div class="p-card-info">
+              <span class="p-card-title">+50 Atletas</span>
+              <span class="p-card-desc">Desde los 2 a 16 años</span>
+            </div>
+          </div>
+
+          <div class="about-pillar-card">
+            <span class="p-card-icon">🇨🇴</span>
+            <div class="p-card-info">
+              <span class="p-card-title">Turismo Deportivo</span>
+              <span class="p-card-desc">Competencias en Colombia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Texto Estructurado y Redacción Pulida -->
+      <div class="about-text-col">
+        <div class="section-tag-box">
+          <span class="eyebrow-tag">HISTORIA & COMPROMISO SOCIAL</span>
+          <h2 class="about-title">
+            <span class="text-gradient-full">NUESTRA ESCUELA</span>
+          </h2>
+        </div>
+
+        <div class="about-content-body">
+          <!-- Párrafo 1: Origen y Sentido Social -->
+          <p class="lead-paragraph">
+            El club <strong class="highlight-text">Patinando Hacia El Futuro</strong> nació del liderazgo social y la vocación de servicio de <strong class="highlight-text">Alfredo</strong>, con una misión profundamente transformadora: brindar a los niños y niñas de escasos recursos del corregimiento de <strong class="highlight-text">Caimalito (Pereira)</strong> una alternativa de vida digna a través del patinaje.
+          </p>
+
+          <p class="body-paragraph">
+            Más que una pista de carreras, nuestra escuela se consolidó como un <em>refugio de esperanza</em> que fomenta la disciplina deportiva, la dedicación constante y el uso positivo del tiempo libre, alejando a la juventud de las problemáticas de su entorno y proyectando sus metas con firmeza.
+          </p>
+
+          <!-- Párrafo 2: Crecimiento y Expansión a La Virginia -->
+          <p class="body-paragraph">
+            Con perseverancia, el club expandió su impacto hacia el municipio de <strong class="highlight-text">La Virginia</strong>, estableciendo entrenamientos en la cancha de fútbol y escenarios deportivos locales. Hoy conformamos una gran familia de <strong class="highlight-text">+50 deportistas activos</strong>, que van desde pequeños soñadores en nivel formativo y semillero (a partir de los 2 años) hasta categorías juveniles de 15 y 16 años con proyección de alto rendimiento.
+          </p>
+
+          <!-- Párrafo 3: Deporte, Fogueo y Turismo Nacional -->
+          <p class="body-paragraph">
+            Para nosotros, patinar trasciende los entrenamientos locales: promovemos el fogueo continuo en competencias recreativas y semiprofesionales. Cada año nos fijamos la meta de participar en torneos en destinos más lejanos de Colombia, porque <strong class="highlight-quote">"competir también es divertirse, integrarse en familia y descubrir los rincones más hermosos de nuestro país"</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    position: relative;
+    width: 100%;
+    background-color: #000000;
+    padding: clamp(70px, 8vw, 120px) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+  }
+
+  .about-container {
+    width: 100%;
+    max-width: min(94vw, 1720px);
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 6rem);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(2.5rem, 5vw, 5.5rem);
+    align-items: center;
+  }
+
+  /* =========================================
+     CARRUSEL DE IMÁGENES (COLUMNA IZQUIERDA)
+     ========================================= */
+  .about-media-col {
+    width: 100%;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #0B0D11;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 124, 0, 0.12);
+    aspect-ratio: 16 / 11;
+  }
+
+  .carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .carousel-slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* Degradado cinematográfico oscuro sobre la foto para legibilidad de títulos */
+  .slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      transparent 35%,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0.92) 100%
+    );
+  }
+
+  /* Badge superior flotante */
+  .slide-badge {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(12, 14, 18, 0.82);
+    border: 1px solid rgba(255, 210, 31, 0.4);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .badge-icon {
+    font-size: 0.9rem;
+  }
+
+  .badge-text {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--color-yellow-future);
+    text-transform: uppercase;
+  }
+
+  /* Pie de foto / Cartela */
+  .slide-caption {
+    position: absolute;
+    bottom: 1.4rem;
+    left: 1.4rem;
+    right: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .caption-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.15rem, 1.4vw, 1.45rem);
+    font-weight: 800;
+    color: var(--color-white);
+    letter-spacing: -0.2px;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  }
+
+  .caption-desc {
+    font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+    color: #D1D5DB;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    line-height: 1.4;
+  }
+
+  /* Botones de navegación (Flechas) */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    background: rgba(14, 16, 20, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+    z-index: 10;
+  }
+
+  .carousel-btn:hover {
+    background: var(--color-orange-speed);
+    border-color: var(--color-yellow-future);
+    color: #000000;
+    box-shadow: 0 0 16px rgba(245, 124, 0, 0.7);
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  .prev-btn {
+    left: 1rem;
+  }
+
+  .next-btn {
+    right: 1rem;
+  }
+
+  /* Indicadores inferiores */
+  .carousel-dots {
+    position: absolute;
+    bottom: 0.8rem;
+    right: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    z-index: 10;
+  }
+
+  .c-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.35);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .c-dot.active {
+    width: 24px;
+    background: linear-gradient(90deg, #F57C00, #FFD21F);
+    box-shadow: 0 0 10px rgba(255, 210, 31, 0.6);
+  }
+
+  /* =========================================
+     COLUMNA DE TEXTO (COLUMNA DERECHA)
+     ========================================= */
+  .about-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .section-tag-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .eyebrow-tag {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: var(--color-yellow-future);
+    text-transform: uppercase;
+  }
+
+  .about-title {
+    font-family: var(--font-sports);
+    font-size: clamp(2.8rem, 3.8vw, 4.4rem);
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 0.95;
+    margin: 0;
+  }
+
+  .text-gradient-full {
+    background: linear-gradient(90deg, #E51B23 0%, #F57C00 32%, #FFD21F 68%, #009B55 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 20px rgba(245, 124, 0, 0.4));
+    display: inline-block;
+  }
+
+  .about-content-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .lead-paragraph {
+    font-size: clamp(1.05rem, 1.15vw, 1.25rem);
+    line-height: 1.7;
+    color: #F3F4F6;
+    font-weight: 500;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .body-paragraph {
+    font-size: clamp(0.95rem, 1.02vw, 1.08rem);
+    line-height: 1.7;
+    color: #A7A9AC;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .highlight-text {
+    color: var(--color-white);
+    font-weight: 700;
+  }
+
+  .highlight-quote {
+    color: var(--color-yellow-future);
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  /* Pilares Clave */
+  .about-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+    margin-top: 1.25rem;
+  }
+
+  .about-pillar-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .about-pillar-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 210, 31, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .p-card-icon {
+    font-size: 1.35rem;
+  }
+
+  .p-card-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .p-card-title {
+    font-family: var(--font-sports);
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+    color: var(--color-white);
+    line-height: 1;
+  }
+
+  .p-card-desc {
+    font-size: 0.76rem;
+    color: var(--color-gray-tech);
+    margin-top: 2px;
+  }
+
+  /* Responsivo */
+  @media (max-width: 1024px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .carousel-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .about-pillars {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .about-pillars {
+      grid-template-columns: 1fr;
+    }
+
+    .carousel-wrapper {
+      aspect-ratio: 4 / 3;
+    }
+
+    .slide-caption {
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+    }
+
+    .carousel-dots {
+      right: 1rem;
+    }
+  }
+</style>
+
+<script>
+  function setupSchoolCarousel() {
+    const track = document.getElementById('carousel-track');
+    if (!track) return;
+    const slides = track.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('#carousel-dots .c-dot');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    if (!slides.length) return;
+
+    let current = 0;
+    const total = slides.length;
+    let autoPlayTimer = null;
+    const autoPlayDelay = 4500;
+
+    function goTo(index) {
+      slides[current].classList.remove('is-active');
+      if (dots[current]) dots[current].classList.remove('active');
+
+      current = (index + total) % total;
+
+      slides[current].classList.add('is-active');
+      if (dots[current]) dots[current].classList.add('active');
+    }
+
+    function next() {
+      goTo(current + 1);
+    }
+
+    function prev() {
+      goTo(current - 1);
+    }
+
+    function startTimer() {
+      stopTimer();
+      autoPlayTimer = setInterval(next, autoPlayDelay);
+    }
+
+    function stopTimer() {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', () => { next(); startTimer(); });
+    if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startTimer(); });
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const idx = parseInt(dot.getAttribute('data-index') || '0', 10);
+        goTo(idx);
+        startTimer();
+      });
+    });
+
+    const wrapper = document.getElementById('school-carousel');
+    if (wrapper) {
+      wrapper.addEventListener('mouseenter', stopTimer);
+      wrapper.addEventListener('mouseleave', startTimer);
+    }
+
+    startTimer();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupSchoolCarousel);
+  } else {
+    setupSchoolCarousel();
+  }
+  document.addEventListener('astro:page-load', setupSchoolCarousel);
+</script>

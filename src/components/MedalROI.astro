@@ -1,0 +1,837 @@
+---
+// Componente "Nuestras Victorias": Podio Olímpico Piramidal y Carrusel de Campeones
+const medalStats = {
+  gold: 48,
+  silver: 35,
+  bronze: 26
+};
+
+const championSlides = [
+  {
+    image: "/images/hero.jpeg",
+    badgeIcon: "🥇",
+    badgeText: "Podio Dorado · Válidas Departamentales",
+    title: "Lluvia de Oro en Pista",
+    desc: "Nuestros campeones en pruebas contra reloj de 200m y baterías de velocidad."
+  },
+  {
+    image: "/images/imagen-corporativa.png",
+    badgeIcon: "⭐",
+    badgeText: "Semillero de Campeones",
+    title: "Orgullo de Caimalito en lo Más Alto",
+    desc: "Nuevas promesas formándose con disciplina, constancia y pasión sobre ruedas."
+  },
+  {
+    image: "/images/hero.jpeg",
+    badgeIcon: "🏆",
+    badgeText: "La Virginia · Risaralda",
+    title: "Delegación Oficial de Competencia",
+    desc: "Más de 50 deportistas y familias celebrando en los mejores podios de Colombia."
+  }
+];
+---
+
+<section id="victorias" class="victorias-section">
+  <!-- Anchor compatible con #medallero -->
+  <span id="medallero" class="section-anchor" aria-hidden="true"></span>
+
+  <div class="victorias-container">
+    <!-- Encabezado de Sección -->
+    <div class="section-head text-center">
+      <span class="eyebrow-tag">ORGULLO DEPORTIVO & PODIOS OFICIALES</span>
+      <h2 class="section-title">
+        NUESTRAS <span class="text-gradient-full">VICTORIAS</span>
+      </h2>
+      <p class="section-subtitle">
+        El fruto de la disciplina, el trabajo diario y la pasión sobre ruedas: cada medalla representa el esfuerzo incansable de nuestros patinadores y el orgullo de toda una comunidad.
+      </p>
+    </div>
+
+    <!-- Grid Principal de 2 Columnas: Podio Pirámide (Izquierda) + Carrusel Idéntico a Nuestra Escuela (Derecha) -->
+    <div class="victorias-layout-grid">
+      
+      <!-- ================= COLUMNA IZQUIERDA: SÓLO EL PODIO TIPO PIRÁMIDE ================= -->
+      <div class="podium-col">
+        <div class="podium-stage-container">
+          <!-- Pista y Línea de Suelo Neón -->
+          <div class="podium-track-floor"></div>
+
+          <div class="podium-pyramid">
+            
+            <!-- ESCALÓN 2 (Izquierda): PLATA -->
+            <div class="podium-column step-silver">
+              <div class="podium-card card-silver">
+                <div class="medal-icon-wrap">🥈</div>
+                <span class="step-place-tag">2° PUESTO</span>
+                <div class="medal-value font-sports">{medalStats.silver}</div>
+                <span class="medal-metal-label">PLATA</span>
+                <p class="step-desc">Subcampeonatos en pruebas de fondo y relevos.</p>
+                <div class="step-stat-mini">
+                  <span>Efectividad</span>
+                  <strong>32%</strong>
+                </div>
+              </div>
+              <!-- Pedestal / Base física del escalón 2 -->
+              <div class="pedestal-block pedestal-silver">
+                <span class="pedestal-number font-sports">2</span>
+                <span class="pedestal-accent-line"></span>
+              </div>
+            </div>
+
+            <!-- ESCALÓN 1 (Centro / Lo Más Alto): ORO -->
+            <div class="podium-column step-gold">
+              <!-- Corona / Brillo superior del 1er lugar -->
+              <div class="crown-glow">
+                <span class="crown-icon">👑</span>
+              </div>
+              <div class="podium-card card-gold">
+                <div class="gold-pulse-halo"></div>
+                <div class="medal-icon-wrap">🥇</div>
+                <span class="step-place-tag gold-tag">1° PUESTO · CAMPEONES</span>
+                <div class="medal-value font-sports gold-count">{medalStats.gold}</div>
+                <span class="medal-metal-label gold-label">ORO</span>
+                <p class="step-desc">Títulos absolutos en pruebas de velocidad y contra reloj.</p>
+                <div class="step-stat-mini gold-stat">
+                  <span>Efectividad</span>
+                  <strong>44%</strong>
+                </div>
+              </div>
+              <!-- Pedestal / Base física más alta (Escalón 1) -->
+              <div class="pedestal-block pedestal-gold">
+                <span class="pedestal-number font-sports">1</span>
+                <span class="pedestal-accent-line"></span>
+              </div>
+            </div>
+
+            <!-- ESCALÓN 3 (Derecha): BRONCE -->
+            <div class="podium-column step-bronze">
+              <div class="podium-card card-bronze">
+                <div class="medal-icon-wrap">🥉</div>
+                <span class="step-place-tag">3° PUESTO</span>
+                <div class="medal-value font-sports">{medalStats.bronze}</div>
+                <span class="medal-metal-label">BRONCE</span>
+                <p class="step-desc">Podios ganados en series y eliminaciones.</p>
+                <div class="step-stat-mini">
+                  <span>Efectividad</span>
+                  <strong>24%</strong>
+                </div>
+              </div>
+              <!-- Pedestal / Base física del escalón 3 -->
+              <div class="pedestal-block pedestal-bronze">
+                <span class="pedestal-number font-sports">3</span>
+                <span class="pedestal-accent-line"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= COLUMNA DERECHA: CARRUSEL IDÉNTICO A NUESTRA ESCUELA ================= -->
+      <div class="carousel-col">
+        <div class="carousel-wrapper" id="victorias-carousel" aria-label="Galería fotográfica de Campeones">
+          <!-- Slides Track -->
+          <div class="carousel-track" id="victorias-carousel-track">
+            {championSlides.map((slide, index) => (
+              <div class={`carousel-slide ${index === 0 ? 'is-active' : ''}`} data-slide={index}>
+                <img
+                  src={slide.image}
+                  alt={`Campeones Patinando Hacia El Futuro - ${slide.title}`}
+                  class="slide-image"
+                  loading="lazy"
+                />
+                <div class="slide-overlay"></div>
+                <div class="slide-badge">
+                  <span class="badge-icon">{slide.badgeIcon}</span>
+                  <span class="badge-text">{slide.badgeText}</span>
+                </div>
+                <div class="slide-caption">
+                  <h3 class="caption-title">{slide.title}</h3>
+                  <p class="caption-desc">{slide.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <!-- Controles de Navegación (Mismo estilo que Nuestra Escuela) -->
+          <button class="carousel-btn prev-btn" id="victorias-prev" aria-label="Imagen anterior">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <button class="carousel-btn next-btn" id="victorias-next" aria-label="Siguiente imagen">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Indicadores de barra inferior -->
+          <div class="carousel-dots" id="victorias-dots" aria-label="Navegación de diapositivas">
+            {championSlides.map((_, index) => (
+              <button
+                class={`c-dot ${index === 0 ? 'active' : ''}`}
+                data-index={index}
+                aria-label={`Diapositiva ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ==================== ESTILOS SECCIÓN NUESTRAS VICTORIAS ==================== */
+  .victorias-section {
+    position: relative;
+    width: 100%;
+    background-color: #000000;
+    padding: clamp(70px, 8vw, 115px) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+  }
+
+  .section-anchor {
+    position: absolute;
+    top: -90px;
+    left: 0;
+    visibility: hidden;
+  }
+
+  .victorias-container {
+    width: 100%;
+    max-width: min(94vw, 1720px);
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 6rem);
+  }
+
+  .section-head {
+    margin-bottom: clamp(2.5rem, 4vw, 3.8rem);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .eyebrow-tag {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: var(--color-yellow-future);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    color: var(--color-white);
+    margin: 0 0 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .text-gradient-full {
+    background: linear-gradient(90deg, #E51B23 0%, #F57C00 35%, #FFD21F 70%, #009B55 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  .section-subtitle {
+    max-width: 820px;
+    margin: 0 auto;
+    font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+    line-height: 1.65;
+    color: #A0A5B2;
+  }
+
+  /* Grid Principal 2 Columnas alineadas al centro */
+  .victorias-layout-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(2rem, 4vw, 4.5rem);
+    align-items: center;
+  }
+
+  /* ==================== COLUMNA IZQUIERDA: PODIO SIN TARJETA NI BORDE ==================== */
+  .podium-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .podium-stage-container {
+    position: relative;
+    padding-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  /* Suelo de pista deportivo */
+  .podium-track-floor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(90deg, rgba(229, 27, 35, 0.5) 0%, rgba(255, 210, 31, 0.7) 50%, rgba(0, 155, 85, 0.5) 100%);
+    border-radius: 6px;
+    box-shadow: 0 0 20px rgba(255, 210, 31, 0.4);
+  }
+
+  .podium-pyramid {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: clamp(0.6rem, 1.5vw, 1.2rem);
+    position: relative;
+    z-index: 2;
+    padding-bottom: 10px;
+  }
+
+  .podium-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .podium-column:hover {
+    transform: translateY(-6px);
+  }
+
+  /* Tarjeta de Medalla (Caja superior sobre el pedestal) */
+  .podium-card {
+    width: 100%;
+    border-radius: 16px 16px 8px 8px;
+    padding: clamp(1rem, 1.5vw, 1.6rem) 0.8rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  .medal-icon-wrap {
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
+  }
+
+  .step-place-tag {
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+  }
+
+  .medal-value {
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+    line-height: 1;
+    font-weight: 900;
+    margin: 0.2rem 0;
+  }
+
+  .medal-metal-label {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-desc {
+    font-size: 0.72rem;
+    color: #9CA3AF;
+    line-height: 1.35;
+    margin: 0 0 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .step-stat-mini {
+    width: 100%;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: #9CA3AF;
+  }
+
+  .step-stat-mini strong {
+    color: var(--color-white);
+  }
+
+  /* ESCALÓN ORO (CENTRO - EL MÁS ALTO) */
+  .step-gold {
+    z-index: 3;
+  }
+
+  .crown-glow {
+    margin-bottom: -6px;
+    animation: floatCrown 3s ease-in-out infinite;
+  }
+
+  .crown-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 12px rgba(255, 210, 31, 0.8));
+  }
+
+  .card-gold {
+    background: linear-gradient(180deg, rgba(255, 210, 31, 0.16) 0%, rgba(30, 25, 10, 0.95) 100%);
+    border: 1.5px solid rgba(255, 210, 31, 0.5);
+    box-shadow: 0 10px 30px rgba(255, 210, 31, 0.2), inset 0 0 20px rgba(255, 210, 31, 0.08);
+  }
+
+  .gold-tag {
+    background: rgba(255, 210, 31, 0.2);
+    color: #FFD21F;
+    border: 1px solid rgba(255, 210, 31, 0.4);
+  }
+
+  .gold-count {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFE066 35%, #FFD21F 70%, #D49B00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(255, 210, 31, 0.4));
+  }
+
+  .gold-label {
+    color: #FFD21F;
+  }
+
+  .gold-stat strong {
+    color: #FFD21F;
+  }
+
+  .pedestal-gold {
+    background: linear-gradient(180deg, #2E250A 0%, #171305 100%);
+    border: 1.5px solid rgba(255, 210, 31, 0.45);
+    border-top: none;
+    height: 110px;
+    box-shadow: inset 0 5px 15px rgba(255, 210, 31, 0.15);
+  }
+
+  .pedestal-gold .pedestal-number {
+    color: #FFD21F;
+    text-shadow: 0 0 15px rgba(255, 210, 31, 0.5);
+  }
+
+  .pedestal-gold .pedestal-accent-line {
+    background: #FFD21F;
+    box-shadow: 0 0 10px #FFD21F;
+  }
+
+  /* ESCALÓN PLATA (IZQUIERDA - ALTURA INTERMEDIA) */
+  .card-silver {
+    background: linear-gradient(180deg, rgba(226, 232, 240, 0.12) 0%, rgba(20, 24, 30, 0.95) 100%);
+    border: 1.5px solid rgba(226, 232, 240, 0.35);
+  }
+
+  .card-silver .step-place-tag {
+    background: rgba(226, 232, 240, 0.15);
+    color: #E2E8F0;
+  }
+
+  .card-silver .medal-value {
+    background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 50%, #94A3B8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .card-silver .medal-metal-label {
+    color: #E2E8F0;
+  }
+
+  .pedestal-silver {
+    background: linear-gradient(180deg, #1E232B 0%, #101317 100%);
+    border: 1.5px solid rgba(226, 232, 240, 0.3);
+    border-top: none;
+    height: 75px;
+  }
+
+  .pedestal-silver .pedestal-number {
+    color: #E2E8F0;
+  }
+
+  .pedestal-silver .pedestal-accent-line {
+    background: #E2E8F0;
+    box-shadow: 0 0 8px rgba(226, 232, 240, 0.6);
+  }
+
+  /* ESCALÓN BRONCE (DERECHA - MÁS BAJO) */
+  .card-bronze {
+    background: linear-gradient(180deg, rgba(205, 127, 50, 0.12) 0%, rgba(28, 18, 12, 0.95) 100%);
+    border: 1.5px solid rgba(205, 127, 50, 0.35);
+  }
+
+  .card-bronze .step-place-tag {
+    background: rgba(205, 127, 50, 0.15);
+    color: #E69D62;
+  }
+
+  .card-bronze .medal-value {
+    background: linear-gradient(180deg, #FFC187 0%, #CD7F32 60%, #8C4E16 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .card-bronze .medal-metal-label {
+    color: #E69D62;
+  }
+
+  .pedestal-bronze {
+    background: linear-gradient(180deg, #241710 0%, #140C08 100%);
+    border: 1.5px solid rgba(205, 127, 50, 0.3);
+    border-top: none;
+    height: 50px;
+  }
+
+  .pedestal-bronze .pedestal-number {
+    color: #E69D62;
+  }
+
+  .pedestal-bronze .pedestal-accent-line {
+    background: #CD7F32;
+    box-shadow: 0 0 8px rgba(205, 127, 50, 0.6);
+  }
+
+  /* Pedestal común */
+  .pedestal-block {
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .pedestal-number {
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .pedestal-accent-line {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  /* Animación de la Corona */
+  @keyframes floatCrown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  /* ==================== COLUMNA DERECHA: CARRUSEL IDÉNTICO A NUESTRA ESCUELA ==================== */
+  .carousel-col {
+    width: 100%;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #0B0D11;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 124, 0, 0.12);
+    aspect-ratio: 16 / 11;
+  }
+
+  .carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .carousel-slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      transparent 35%,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0.92) 100%
+    );
+  }
+
+  .slide-badge {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(12, 14, 18, 0.82);
+    border: 1px solid rgba(255, 210, 31, 0.4);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .badge-icon {
+    font-size: 0.9rem;
+  }
+
+  .badge-text {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--color-yellow-future);
+    text-transform: uppercase;
+  }
+
+  .slide-caption {
+    position: absolute;
+    bottom: 1.4rem;
+    left: 1.4rem;
+    right: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .caption-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.15rem, 1.4vw, 1.45rem);
+    font-weight: 800;
+    color: var(--color-white);
+    letter-spacing: -0.2px;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  }
+
+  .caption-desc {
+    font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+    color: #D1D5DB;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    line-height: 1.4;
+  }
+
+  /* Botones de navegación (Flechas) */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    background: rgba(14, 16, 20, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+    z-index: 10;
+  }
+
+  .carousel-btn:hover {
+    background: var(--color-orange-speed);
+    border-color: var(--color-yellow-future);
+    color: #000000;
+    box-shadow: 0 0 16px rgba(245, 124, 0, 0.7);
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  .prev-btn {
+    left: 1rem;
+  }
+
+  .next-btn {
+    right: 1rem;
+  }
+
+  /* Indicadores inferiores */
+  .carousel-dots {
+    position: absolute;
+    bottom: 0.8rem;
+    right: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    z-index: 10;
+  }
+
+  .c-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.35);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .c-dot.active {
+    width: 24px;
+    background: linear-gradient(90deg, #F57C00, #FFD21F);
+    box-shadow: 0 0 10px rgba(255, 210, 31, 0.6);
+  }
+
+  /* Responsivo */
+  @media (max-width: 1080px) {
+    .victorias-layout-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .podium-pyramid {
+      gap: 0.35rem;
+    }
+    .podium-card {
+      padding: 0.8rem 0.4rem;
+    }
+    .medal-value {
+      font-size: 2.3rem;
+    }
+    .pedestal-gold {
+      height: 85px;
+    }
+    .pedestal-silver {
+      height: 60px;
+    }
+    .pedestal-bronze {
+      height: 40px;
+    }
+    .carousel-wrapper {
+      aspect-ratio: 4 / 3;
+    }
+  }
+</style>
+
+<script>
+  function setupVictoriasCarousel() {
+    const track = document.getElementById('victorias-carousel-track');
+    if (!track) return;
+    const slides = track.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('#victorias-dots .c-dot');
+    const prevBtn = document.getElementById('victorias-prev');
+    const nextBtn = document.getElementById('victorias-next');
+    if (!slides.length) return;
+
+    let current = 0;
+    const total = slides.length;
+    let autoPlayTimer: number | null = null;
+    const autoPlayDelay = 4500;
+
+    function goTo(index: number) {
+      slides[current].classList.remove('is-active');
+      if (dots[current]) dots[current].classList.remove('active');
+
+      current = (index + total) % total;
+
+      slides[current].classList.add('is-active');
+      if (dots[current]) dots[current].classList.add('active');
+    }
+
+    function next() {
+      goTo(current + 1);
+    }
+
+    function prev() {
+      goTo(current - 1);
+    }
+
+    function startTimer() {
+      stopTimer();
+      autoPlayTimer = window.setInterval(next, autoPlayDelay);
+    }
+
+    function stopTimer() {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', () => { next(); startTimer(); });
+    if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startTimer(); });
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const idx = parseInt(dot.getAttribute('data-index') || '0', 10);
+        goTo(idx);
+        startTimer();
+      });
+    });
+
+    const wrapper = document.getElementById('victorias-carousel');
+    if (wrapper) {
+      wrapper.addEventListener('mouseenter', stopTimer);
+      wrapper.addEventListener('mouseleave', startTimer);
+    }
+
+    startTimer();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupVictoriasCarousel);
+  } else {
+    setupVictoriasCarousel();
+  }
+  document.addEventListener('astro:page-load', setupVictoriasCarousel);
+</script>

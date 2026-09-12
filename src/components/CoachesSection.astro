@@ -1,0 +1,450 @@
+---
+// Componente "Nuestros Profes": Equipo de entrenadores, formadores y especialistas
+const coaches = [
+  {
+    id: 'carlos-restrepo',
+    name: 'PROF. CARLOS RESTREPO',
+    badge: 'DIRECTOR TÉCNICO',
+    badgeClass: 'badge-red',
+    accentColor: '#FF3B30',
+    beamTail: 'rgba(255, 59, 48, 0.25)',
+    glowColor: 'rgba(255, 59, 48, 0.35)',
+    subtitle: 'LIC. EN EDUCACIÓN FÍSICA • EXPATINADOR PANAMERICANO',
+    subtitleClass: 'sub-red',
+    desc: 'Más de 14 años liderando procesos de velocidad y ruta con múltiples campeonatos interclubes.',
+    featureIcon: '🎖️',
+    featureText: 'Certificación Nivel III Fedepatín',
+    iconType: 'skater',
+    delay: '0s'
+  },
+  {
+    id: 'andres-mejia',
+    name: 'PROF. ANDRÉS MEJÍA',
+    badge: 'ENTRENADOR DE RUTA',
+    badgeClass: 'badge-orange',
+    accentColor: '#F57C00',
+    beamTail: 'rgba(245, 124, 0, 0.25)',
+    glowColor: 'rgba(245, 124, 0, 0.35)',
+    subtitle: 'ESPECIALISTA EN FONDO Y ALTO RENDIMIENTO',
+    subtitleClass: 'sub-orange',
+    desc: 'Enfocado en técnica de curva, cadencia de zancada y estrategia competitiva en válidas nacionales.',
+    featureIcon: '🏆',
+    featureText: 'Medallista Nacional Interclubes',
+    iconType: 'route',
+    delay: '-1s'
+  },
+  {
+    id: 'marcela-gomez',
+    name: 'LIC. MARCELA GÓMEZ',
+    badge: 'INICIACIÓN Y SEMILLERO',
+    badgeClass: 'badge-yellow',
+    accentColor: '#FFD21F',
+    beamTail: 'rgba(255, 210, 31, 0.25)',
+    glowColor: 'rgba(255, 210, 31, 0.35)',
+    subtitle: 'ESPECIALISTA EN PSICOMOTRICIDAD INFANTIL',
+    subtitleClass: 'sub-yellow',
+    desc: 'Dedicada al desarrollo motriz en edades tempranas con metodología lúdica y fomento de autoconfianza.',
+    featureIcon: '🩺',
+    featureText: 'Primeros Auxilios Deportivos',
+    iconType: 'child',
+    delay: '-2s'
+  },
+  {
+    id: 'julian-montoya',
+    name: 'JULIÁN MONTOYA',
+    badge: 'PREPARADOR FÍSICO',
+    badgeClass: 'badge-green',
+    accentColor: '#00E676',
+    beamTail: 'rgba(0, 230, 118, 0.25)',
+    glowColor: 'rgba(0, 230, 118, 0.35)',
+    subtitle: 'FISIOTERAPEUTA Y PREPARADOR FÍSICO',
+    subtitleClass: 'sub-green',
+    desc: 'Encargado del acondicionamiento neuromuscular, prevención de lesiones y potencia específica en curvas.',
+    featureIcon: '⏱️',
+    featureText: 'Monitoreo Biomecánico',
+    iconType: 'dumbbell',
+    delay: '-3s'
+  }
+];
+---
+
+<section id="profes" class="coaches-section">
+  <div class="coaches-container">
+    <div class="section-head text-center">
+      <span class="eyebrow-tag">STAFF TÉCNICO & FORMADORES</span>
+      <h2 class="section-title">
+        NUESTROS <span class="text-gradient-full">PROFES</span>
+      </h2>
+      <p class="section-subtitle">
+        Profesionales dedicados a forjar disciplina, velocidad y valores en cada patinador, desde sus primeros pasos hasta las válidas de alto rendimiento.
+      </p>
+    </div>
+
+    <div class="coaches-grid">
+      {coaches.map((coach) => (
+        <article
+          class="coach-card"
+          style={`--card-beam: ${coach.accentColor}; --card-tail: ${coach.beamTail}; --card-glow: ${coach.glowColor}; --beam-delay: ${coach.delay};`}
+        >
+          <div class="coach-card-inner">
+            <!-- Zona Superior: Avatar / Silueta Deportiva -->
+            <div class="coach-avatar-zone">
+              <div class="coach-silhouette" aria-hidden="true">
+                {coach.iconType === 'skater' && (
+                  <svg viewBox="0 0 64 64" class="avatar-svg" fill="currentColor">
+                    <!-- Silueta patinador con gafas deportivas y bandana -->
+                    <circle cx="32" cy="20" r="10" opacity="0.9" />
+                    <!-- Gafas / Visor -->
+                    <path d="M22 20 C25 18 39 18 42 20 C42 23 38 25 32 25 C26 25 22 23 22 20 Z" fill="#14171E" />
+                    <!-- Hombros y tronco atlético -->
+                    <path d="M14 54 C14 44 22 38 32 38 C42 38 50 44 50 54 L14 54 Z" opacity="0.8" />
+                  </svg>
+                )}
+
+                {coach.iconType === 'child' && (
+                  <svg viewBox="0 0 64 64" class="avatar-svg" fill="currentColor">
+                    <!-- Silueta formador guiando / protegiendo a la niñez -->
+                    <circle cx="32" cy="16" r="6" opacity="0.9" />
+                    <!-- Niño/a en brazos/iniciación -->
+                    <path d="M38 28 C38 25.5 36 24 34 24 C31 24 29 26 29 29 C29 32 32 34 35 34 C37 34 38 32 38 30 Z" opacity="0.95" />
+                    <!-- Torso envolvente y figura formativa -->
+                    <path d="M23 48 C20 45 18 40 20 34 C22 28 26 26 32 26 C36 26 40 28 42 32 C45 36 43 43 39 48 C34 52 26 51 23 48 Z" opacity="0.8" />
+                  </svg>
+                )}
+
+                {coach.iconType === 'dumbbell' && (
+                  <svg viewBox="0 0 64 64" class="avatar-svg" fill="currentColor">
+                    <!-- Pesa / Acondicionamiento físico -->
+                    <rect x="22" y="30" width="20" height="4" rx="2" opacity="0.9" />
+                    <!-- Discos izquierdos -->
+                    <rect x="18" y="22" width="4" height="20" rx="2" opacity="0.9" />
+                    <rect x="12" y="25" width="4" height="14" rx="1.5" opacity="0.75" />
+                    <!-- Discos derechos -->
+                    <rect x="42" y="22" width="4" height="20" rx="2" opacity="0.9" />
+                    <rect x="48" y="25" width="4" height="14" rx="1.5" opacity="0.75" />
+                  </svg>
+                )}
+
+                {coach.iconType === 'route' && (
+                  <svg viewBox="0 0 64 64" class="avatar-svg" fill="currentColor">
+                    <!-- Silueta cronómetro y velocidad -->
+                    <circle cx="32" cy="34" r="16" fill="none" stroke="currentColor" stroke-width="4" opacity="0.85" />
+                    <rect x="30" y="12" width="4" height="6" rx="2" opacity="0.9" />
+                    <circle cx="32" cy="34" r="3" opacity="0.9" />
+                    <line x1="32" y1="34" x2="41" y2="25" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9" />
+                  </svg>
+                )}
+              </div>
+
+              <!-- Badge flotante inferior derecho -->
+              <span class={`coach-role-badge ${coach.badgeClass}`}>
+                {coach.badge}
+              </span>
+            </div>
+
+            <!-- Zona Inferior: Información del Entrenador -->
+            <div class="coach-info-zone">
+              <h3 class="coach-name">{coach.name}</h3>
+              <div class={`coach-subtitle ${coach.subtitleClass}`}>
+                {coach.subtitle}
+              </div>
+              <p class="coach-desc">{coach.desc}</p>
+
+              <div class="coach-feature-box">
+                <span class="feature-icon">{coach.featureIcon}</span>
+                <span class="feature-text">{coach.featureText}</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .coaches-section {
+    position: relative;
+    width: 100%;
+    background-color: #000000;
+    padding: clamp(70px, 8vw, 115px) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+  }
+
+  .coaches-container {
+    width: 100%;
+    max-width: min(94vw, 1720px);
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 6rem);
+  }
+
+  .section-head {
+    margin-bottom: clamp(2.5rem, 4vw, 3.8rem);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .eyebrow-tag {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: var(--color-yellow-future);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: var(--font-sports);
+    font-size: clamp(2.5rem, 4.2vw, 4.2rem);
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--color-white);
+    line-height: 1;
+    margin: 0 0 1rem;
+  }
+
+  .text-gradient-full {
+    background: linear-gradient(90deg, #E51B23 0%, #F57C00 32%, #FFD21F 68%, #009B55 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 20px rgba(245, 124, 0, 0.4));
+    display: inline-block;
+  }
+
+  .section-subtitle {
+    font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+    color: var(--color-gray-tech);
+    max-width: 740px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Grid de Tarjetas */
+  .coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(1.2rem, 2vw, 2rem);
+  }
+
+  /* Tarjeta de Entrenador con Borde Animado */
+  .coach-card {
+    position: relative;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1.5px; /* Espacio exacto por donde corre la línea */
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex;
+  }
+
+  .coach-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.85), 0 0 28px var(--card-glow);
+  }
+
+  /* Línea animada que recorre el borde de la tarjeta en bucle continuo */
+  .coach-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 65deg,
+      var(--card-beam, #FFD21F) 100deg,
+      var(--card-tail, rgba(255, 210, 31, 0.3)) 115deg,
+      transparent 125deg,
+      transparent 360deg
+    );
+    animation: rotateBorderBeam 4s linear infinite;
+    animation-delay: var(--beam-delay, 0s);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  @keyframes rotateBorderBeam {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Interior de la Tarjeta */
+  .coach-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #0E1015;
+    border-radius: 18.5px;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Zona Superior: Avatar / Silueta */
+  .coach-avatar-zone {
+    position: relative;
+    width: 100%;
+    height: 195px;
+    background: radial-gradient(circle at 50% 35%, #252933 0%, #16181F 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .coach-silhouette {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8C92A0;
+    transition: transform 0.35s ease, color 0.35s ease;
+  }
+
+  .coach-card:hover .coach-silhouette {
+    transform: scale(1.06);
+    color: #B4BAC7;
+  }
+
+  .avatar-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Badge de Rol Flotante */
+  .coach-role-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 0.38rem 0.8rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .badge-red {
+    background: #E51B23;
+    color: #FFFFFF;
+  }
+
+  .badge-yellow {
+    background: #FFD21F;
+    color: #000000;
+  }
+
+  .badge-green {
+    background: #009B55;
+    color: #FFFFFF;
+  }
+
+  .badge-orange {
+    background: #F57C00;
+    color: #FFFFFF;
+  }
+
+  /* Zona Inferior: Información */
+  .coach-info-zone {
+    padding: 1.4rem 1.4rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: #0E1015;
+  }
+
+  .coach-name {
+    font-family: var(--font-sports);
+    font-size: 1.32rem;
+    font-weight: 400;
+    color: var(--color-white);
+    letter-spacing: 0.5px;
+    margin: 0 0 0.4rem;
+    line-height: 1.1;
+  }
+
+  .coach-subtitle {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    line-height: 1.35;
+    margin-bottom: 0.75rem;
+  }
+
+  .sub-red {
+    color: #FF5252;
+  }
+
+  .sub-orange {
+    color: #F57C00;
+  }
+
+  .sub-yellow {
+    color: #FFD21F;
+  }
+
+  .sub-green {
+    color: #00E676;
+  }
+
+  .coach-desc {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: #A0A4AB;
+    margin: 0 0 1.25rem;
+    flex-grow: 1;
+  }
+
+  .coach-feature-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .feature-icon {
+    font-size: 1.05rem;
+  }
+
+  .feature-text {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #FFD21F;
+    letter-spacing: 0.2px;
+  }
+
+  /* Responsivo */
+  @media (max-width: 1200px) {
+    .coaches-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .coaches-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .coach-avatar-zone {
+      height: 180px;
+    }
+  }
+</style>

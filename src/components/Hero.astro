@@ -1,0 +1,618 @@
+---
+// Hero component: Ultra-wide responsive skater background, fluid typography, expansive speed trail and mascot
+---
+
+<section id="inicio" class="hero-section">
+  <!-- Full-Width Skater Background Container -->
+  <div class="hero-media-wrapper" aria-hidden="true">
+    <img
+      src="/images/hero.jpeg"
+      alt="Patinador de velocidad en pista"
+      class="hero-bg-image"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <!-- Cinematographic Responsive Dark Overlays -->
+    <div class="hero-overlay-horizontal"></div>
+    <div class="hero-overlay-vertical"></div>
+    <div class="hero-overlay-vignette"></div>
+  </div>
+
+  <div class="hero-container">
+    <div class="hero-content">
+      <!-- Main Headline: 2 Levels with Diagonal Velocity Skew Typography -->
+      <div class="speed-headline-box">
+        <h1 class="speed-title">
+          <!-- Nivel 1 Superior -->
+          <span class="title-level-top">PATINA, COMPITE Y</span>
+          <!-- Nivel 2 Inferior con degradado completo: Rojo, Naranja, Amarillo, Verde -->
+          <span class="title-level-bottom text-gradient-full">CUMPLE TUS SUEÑOS</span>
+        </h1>
+
+        <!-- Speed Trail (Estela con degradado de naranja a amarillo) + Guepardo al final -->
+        <div class="speed-trail-container">
+          <div class="speed-trail-graphic">
+            <svg class="speed-trail-svg" viewBox="0 0 650 48" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="heroTrailGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#F57C00" stop-opacity="0" />
+                  <stop offset="20%" stop-color="#F57C00" stop-opacity="0.85" />
+                  <stop offset="75%" stop-color="#FFD21F" stop-opacity="1" />
+                  <stop offset="100%" stop-color="#FFF5C0" stop-opacity="1" />
+                </linearGradient>
+                <filter id="trailGlow" x="-10%" y="-30%" width="120%" height="160%">
+                  <feGaussianBlur stdDeviation="3.5" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              <!-- Dynamic primary speed streak -->
+              <path
+                d="M 0,24 C 140,16 290,14 440,18 C 520,20 590,18 620,18 L 600,28 C 530,28 460,30 380,25 C 240,20 110,27 0,29 Z"
+                fill="url(#heroTrailGrad)"
+                filter="url(#trailGlow)"
+              />
+
+              <!-- Upper speed blade streak -->
+              <path
+                d="M 60,12 C 220,7 390,6 550,13 L 530,16 C 380,9 210,11 60,14 Z"
+                fill="#FFD21F"
+                opacity="0.9"
+              />
+
+              <!-- Lower speed accent streak -->
+              <path
+                d="M 150,35 C 300,32 460,31 580,30 L 565,34 C 455,35 295,36 150,38 Z"
+                fill="#F57C00"
+                opacity="0.92"
+              />
+            </svg>
+          </div>
+
+          <!-- Guepardo / Pantera Verde Mascot at the end of the trail -->
+          <div class="trail-mascot-anchor">
+            <div class="mascot-energy-ring"></div>
+            <img
+              src="/images/guepardo.png"
+              alt="Mascota Guepardo Patinando Hacia El Futuro"
+              class="guepardo-mascot-img"
+              width="135"
+              height="95"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Description / School Identity -->
+      <p class="hero-lead">
+        Formamos <strong class="lead-strong">disciplina</strong>, <strong class="lead-strong">confianza</strong> y <strong class="lead-strong">sueños</strong>, impulsando a cada niño, niña y joven a superar sus límites y construir un mejor futuro.
+      </p>
+
+      <!-- Stage de Tarjeta Animada de Estadísticas (Entra izquierda -> espera 2s al centro -> sale derecha) -->
+      <div class="hero-stat-stage" id="hero-stat-stage" aria-label="Tarjetas de estadísticas y logros">
+        <div class="stat-stage-track" id="stat-stage-track">
+          <!-- Tarjeta 1: Rojo (+50 Patinadores Activos) -->
+          <div class="stat-card card-red is-active" data-index="0">
+            <div class="stat-num num-red">+50</div>
+            <div class="stat-label">
+              <span>PATINADORES</span>
+              <span>ACTIVOS</span>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Naranja (+ de 45 Medallas de Oro en 2025) -->
+          <div class="stat-card card-orange" data-index="1">
+            <div class="stat-num num-orange">+ de 45</div>
+            <div class="stat-label">
+              <span>MEDALLAS DE ORO</span>
+              <span>EN 2025</span>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Amarillo (4 Profesores Profesionales) -->
+          <div class="stat-card card-yellow" data-index="2">
+            <div class="stat-num num-yellow">4</div>
+            <div class="stat-label">
+              <span>PROFESORES</span>
+              <span>PROFESIONALES</span>
+            </div>
+          </div>
+
+          <!-- Tarjeta 4: Verde (+5 Competencias en el 2025) -->
+          <div class="stat-card card-green" data-index="3">
+            <div class="stat-num num-green">+5</div>
+            <div class="stat-label">
+              <span>COMPETENCIAS</span>
+              <span>EN EL 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 94vh;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    overflow: hidden;
+    padding-top: 110px;
+    padding-bottom: 70px;
+  }
+
+  /* Full-width Skater Background */
+  .hero-media-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 78% center;
+    display: block;
+    transform: scale(1.02);
+  }
+
+  /* Responsive Fluid Overlays: Keeps skater clear on the right while smoothly illuminating text on the left */
+  .hero-overlay-horizontal {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.96) 0%,
+      rgba(0, 0, 0, 0.90) 28%,
+      rgba(0, 0, 0, 0.55) 48%,
+      rgba(0, 0, 0, 0.12) 68%,
+      rgba(0, 0, 0, 0.25) 100%
+    );
+    z-index: 2;
+  }
+
+  .hero-overlay-vertical {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.85) 0%,
+      transparent 22%,
+      transparent 72%,
+      #000000 100%
+    );
+    z-index: 3;
+  }
+
+  .hero-overlay-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at 78% 50%,
+      transparent 45%,
+      rgba(0, 0, 0, 0.75) 95%
+    );
+    z-index: 4;
+  }
+
+  /* Fluid Widescreen Container: Anchored organically with responsive margin and padding */
+  .hero-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: min(94vw, 1720px);
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 6rem);
+  }
+
+  /* Content Box: Expands proportionally on wide screens without encroaching on the skater */
+  .hero-content {
+    max-width: clamp(520px, 46vw, 760px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.2rem, 1.8vw, 2rem);
+  }
+
+  /* Diagonal Velocity Skew Typography in 2 Levels */
+  .speed-headline-box {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.6rem, 1vw, 1rem);
+  }
+
+  .speed-title {
+    font-family: var(--font-sports);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 0.92;
+    letter-spacing: clamp(2px, 0.2vw, 4px);
+    transform: skewX(-12deg);
+    transform-origin: left center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.2rem, 0.5vw, 0.5rem);
+  }
+
+  /* Nivel 1 Superior */
+  .title-level-top {
+    font-size: clamp(2.8rem, 4.6vw, 5.8rem);
+    color: var(--color-white);
+    display: block;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95);
+    white-space: nowrap;
+  }
+
+  /* Nivel 2 Inferior con degradado completo: Rojo, Naranja, Amarillo, Verde */
+  .title-level-bottom {
+    font-size: clamp(3.2rem, 5.2vw, 6.4rem);
+    display: block;
+    white-space: nowrap;
+  }
+
+  .text-gradient-full {
+    background: linear-gradient(90deg, #E51B23 0%, #F57C00 32%, #FFD21F 68%, #009B55 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 20px rgba(245, 124, 0, 0.5));
+  }
+
+  /* Speed Trail (Estela Degradado Naranja a Amarillo) & Guepardo */
+  .speed-trail-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: clamp(480px, 42vw, 680px);
+    margin-top: 0.4rem;
+  }
+
+  .speed-trail-graphic {
+    flex-grow: 1;
+    height: clamp(42px, 3.5vw, 54px);
+    position: relative;
+    overflow: visible;
+  }
+
+  .speed-trail-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    filter: drop-shadow(0 0 14px rgba(255, 210, 31, 0.65));
+  }
+
+  .trail-mascot-anchor {
+    position: relative;
+    flex-shrink: 0;
+    margin-left: -28px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mascot-energy-ring {
+    position: absolute;
+    width: clamp(110px, 9vw, 140px);
+    height: clamp(80px, 7vw, 105px);
+    background: radial-gradient(circle, rgba(0, 155, 85, 0.5) 0%, rgba(255, 210, 31, 0.25) 60%, transparent 80%);
+    filter: blur(14px);
+    z-index: -1;
+  }
+
+  .guepardo-mascot-img {
+    width: clamp(115px, 9.5vw, 150px);
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 18px rgba(0, 155, 85, 0.85)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease;
+  }
+
+  .trail-mascot-anchor:hover .guepardo-mascot-img {
+    transform: rotate(0deg) scale(1.08);
+  }
+
+  /* Description text */
+  .hero-lead {
+    font-size: clamp(1.1rem, 1.25vw, 1.35rem);
+    line-height: 1.7;
+    color: #C5CBD2;
+    max-width: clamp(520px, 42vw, 680px);
+    font-weight: 400;
+  }
+
+  .lead-strong {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.2px;
+  }
+
+  .lead-gradient {
+    background: linear-gradient(90deg, #FFD21F 0%, #00E676 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    filter: drop-shadow(0 0 12px rgba(255, 210, 31, 0.5));
+    letter-spacing: 0.2px;
+  }
+
+  /* ===================================================
+     HERO STAT CARD STAGE (Compact Leaderboard Card)
+     =================================================== */
+  /* ===================================================
+     HERO STAT FLOATING DISPLAY (Transparent, Centered)
+     =================================================== */
+  .hero-stat-stage {
+    margin-top: 0.8rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    width: 100%;
+    max-width: clamp(520px, 46vw, 720px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-stage-track {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Transparent Floating Stats Centered */
+  .stat-card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 480px;
+    opacity: 0;
+    transform: translateX(-190%);
+    pointer-events: none;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+    will-change: transform, opacity;
+  }
+
+  /* Animation states:
+     Enter Left (-190%) -> Middle (0) -> Wait 2s -> Exit Right (+190%) */
+  .stat-card.is-entering {
+    transition: none !important;
+    transform: translateX(-190%) !important;
+    opacity: 0 !important;
+  }
+
+  .stat-card.is-active {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    pointer-events: auto;
+  }
+
+  .stat-card.is-exiting {
+    opacity: 0 !important;
+    transform: translateX(190%) !important;
+    transition: transform 0.65s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.45s ease !important;
+    pointer-events: none;
+  }
+
+  /* Number: Big, bold sports typography centered over text */
+  .stat-num {
+    font-family: var(--font-sports);
+    font-size: clamp(3.6rem, 4.6vw, 5.2rem);
+    line-height: 0.92;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 0.45rem;
+    text-align: center;
+  }
+
+  /* Colors derived from brand gradient with high-visibility glow & shadow over image */
+  .num-red {
+    color: #FF3B30;
+    text-shadow: 0 0 28px rgba(229, 27, 35, 0.8), 0 4px 16px rgba(0, 0, 0, 0.95);
+  }
+
+  .num-orange {
+    color: #FF8A00;
+    text-shadow: 0 0 28px rgba(245, 124, 0, 0.8), 0 4px 16px rgba(0, 0, 0, 0.95);
+  }
+
+  .num-yellow {
+    color: #FFD21F;
+    text-shadow: 0 0 28px rgba(255, 210, 31, 0.85), 0 4px 16px rgba(0, 0, 0, 0.95);
+  }
+
+  .num-green {
+    color: #00E676;
+    text-shadow: 0 0 28px rgba(0, 230, 118, 0.85), 0 4px 16px rgba(0, 0, 0, 0.95);
+  }
+
+  /* Labels centered beneath the number in 2 lines */
+  .stat-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: clamp(0.92rem, 1.08vw, 1.2rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 1.25;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 22px rgba(0, 0, 0, 0.9);
+  }
+
+  .stat-label span:last-child {
+    color: #D1D5DB;
+  }
+
+  /* Adjustments for smaller desktop and mobile */
+  @media (max-width: 1100px) {
+    .hero-bg-image {
+      object-position: 85% center;
+    }
+
+    .hero-content {
+      max-width: 580px;
+    }
+
+    .title-level-top {
+      white-space: normal;
+    }
+
+    .title-level-bottom {
+      white-space: normal;
+    }
+  }
+
+  @media (max-width: 960px) {
+    .hero-section {
+      min-height: auto;
+      padding-top: 120px;
+      padding-bottom: 60px;
+    }
+
+    .hero-content {
+      max-width: 100%;
+    }
+
+    .hero-overlay-horizontal {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.92) 55%,
+        #000000 100%
+      );
+    }
+
+    .title-level-top {
+      font-size: clamp(2.4rem, 8vw, 3.8rem);
+    }
+
+    .title-level-bottom {
+      font-size: clamp(2.6rem, 9vw, 4.2rem);
+    }
+
+    .guepardo-mascot-img {
+      width: 95px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .stat-stage-track {
+      height: 120px;
+    }
+
+    .stat-num {
+      font-size: 3rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+
+    .guepardo-mascot-img {
+      width: 80px;
+    }
+  }
+</style>
+
+<script>
+  function setupStatCardsCarousel() {
+    const track = document.getElementById('stat-stage-track');
+    if (!track) return;
+    const cards = track.querySelectorAll('.stat-card');
+    if (!cards.length) return;
+
+    let currentIndex = 0;
+    const total = cards.length;
+    const pauseDuration = 2000; // Exact 2 seconds pause in the middle
+    const transitDuration = 650; // ms for slide transition
+    let timer = null;
+
+    function goToCard(nextIndex) {
+      if (nextIndex === currentIndex) return;
+      const currentCard = cards[currentIndex];
+      const nextCard = cards[nextIndex];
+
+      // 1. Current card continues toward the right and disappears
+      currentCard.classList.remove('is-active');
+      currentCard.classList.add('is-exiting');
+
+      // 2. Next card prepares at the left off-screen without animation
+      nextCard.classList.remove('is-exiting', 'is-active');
+      nextCard.classList.add('is-entering');
+
+      // Force layout reflow
+      void nextCard.offsetWidth;
+
+      // 3. Next card slides in from left to center
+      nextCard.classList.remove('is-entering');
+      nextCard.classList.add('is-active');
+
+      // Cleanup exited card
+      setTimeout(() => {
+        currentCard.classList.remove('is-exiting');
+      }, transitDuration + 50);
+
+      currentIndex = nextIndex;
+    }
+
+    function scheduleNext() {
+      stopTimer();
+      timer = setTimeout(() => {
+        const next = (currentIndex + 1) % total;
+        goToCard(next);
+        scheduleNext();
+      }, pauseDuration + transitDuration);
+    }
+
+    function stopTimer() {
+      if (timer) {
+        clearTimeout(timer);
+        timer = null;
+      }
+    }
+
+    scheduleNext();
+
+    // Hover pause: allows reader to inspect without interruption
+    const stage = document.getElementById('hero-stat-stage');
+    if (stage) {
+      stage.addEventListener('mouseenter', stopTimer);
+      stage.addEventListener('mouseleave', scheduleNext);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupStatCardsCarousel);
+  } else {
+    setupStatCardsCarousel();
+  }
+  document.addEventListener('astro:page-load', setupStatCardsCarousel);
+</script>
