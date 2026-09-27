@@ -388,7 +388,7 @@
       .trail-mascot-anchor {
         position: relative;
         flex-shrink: 0;
-        margin-left: -28px;
+        margin-left: -38px;
         z-index: 5;
         display: flex;
         align-items: center;
@@ -397,18 +397,18 @@
 
       .mascot-energy-ring {
         position: absolute;
-        width: clamp(110px, 9vw, 140px);
-        height: clamp(80px, 7vw, 105px);
+        width: clamp(165px, 13.5vw, 210px);
+        height: clamp(120px, 10.5vw, 158px);
         background: radial-gradient(circle, rgba(0, 155, 85, 0.5) 0%, rgba(255, 210, 31, 0.25) 60%, transparent 80%);
-        filter: blur(14px);
+        filter: blur(16px);
         z-index: -1;
       }
 
       .guepardo-mascot-img {
-        width: clamp(115px, 9.5vw, 150px);
+        width: clamp(175px, 14.5vw, 225px);
         height: auto;
         object-fit: contain;
-        filter: drop-shadow(0 0 18px rgba(0, 155, 85, 0.85)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+        filter: drop-shadow(0 0 20px rgba(0, 155, 85, 0.85)) drop-shadow(0 4px 14px rgba(0, 0, 0, 0.8));
         transform: rotate(-3deg);
         transition: transform 0.3s ease;
       }
@@ -660,6 +660,10 @@
         object-fit: cover;
         object-position: center;
         display: block;
+      }
+
+      #victorias-carousel .slide-image {
+        object-position: center 25%;
       }
 
       .slide-overlay {
@@ -952,13 +956,16 @@
         padding: 0 clamp(1.5rem, 5vw, 6rem);
       }
 
+      /* Grid de Tarjetas (3 Columnas para el Staff Oficial) */
       .coaches-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: clamp(1.2rem, 2vw, 2rem);
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(1.4rem, 2.5vw, 2.5rem);
+        max-width: 1240px;
+        margin: 0 auto;
       }
 
-      /* Tarjeta con Borde Animado */
+      /* Tarjeta de Entrenador con Borde Animado */
       .coach-card {
         position: relative;
         border-radius: 20px;
@@ -1019,35 +1026,40 @@
         flex-direction: column;
       }
 
+      /* Zona Superior: Fotografía Real con Overlay */
       .coach-avatar-zone {
         position: relative;
         width: 100%;
-        height: 195px;
-        background: radial-gradient(circle at 50% 35%, #252933 0%, #16181F 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        height: 310px;
+        background: #14171E;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       }
 
-      .coach-silhouette {
-        width: 90px;
-        height: 90px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #8C92A0;
-        transition: transform 0.35s ease, color 0.35s ease;
-      }
-
-      .coach-card:hover .coach-silhouette {
-        transform: scale(1.06);
-        color: #B4BAC7;
-      }
-
-      .avatar-svg {
+      .coach-photo {
         width: 100%;
         height: 100%;
+        object-fit: cover;
+        object-position: center 15%;
+        transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+        display: block;
+      }
+
+      .coach-card:hover .coach-photo {
+        transform: scale(1.06);
+      }
+
+      .coach-photo-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.05) 0%,
+          transparent 35%,
+          rgba(14, 16, 21, 0.65) 75%,
+          #0E1015 100%
+        );
+        pointer-events: none;
       }
 
       .coach-role-badge {
@@ -1138,36 +1150,38 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        padding-top: 0.75rem;
+        padding-top: 0.85rem;
         border-top: 1px solid rgba(255, 255, 255, 0.06);
       }
 
       .feature-icon {
-        font-size: 1.05rem;
+        font-size: 1.15rem;
+        flex-shrink: 0;
       }
 
       .feature-text {
-        font-size: 0.78rem;
-        font-weight: 600;
-        color: #FFD21F;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--coach-accent, #FFD21F);
         letter-spacing: 0.2px;
+        line-height: 1.35;
       }
 
-      @media (max-width: 1200px) {
+      @media (max-width: 1024px) {
         .coaches-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 1.5rem;
         }
       }
 
-      @media (max-width: 640px) {
+      @media (max-width: 680px) {
         .coaches-grid {
           grid-template-columns: 1fr;
           max-width: 400px;
           margin: 0 auto;
         }
         .coach-avatar-zone {
-          height: 180px;
+          height: 290px;
         }
       }
 
@@ -2401,7 +2415,7 @@
           font-size: clamp(2.6rem, 9vw, 4.2rem);
         }
         .guepardo-mascot-img {
-          width: 95px;
+          width: 145px;
         }
         .comp-body-grid {
           grid-template-columns: 1fr;
@@ -2434,7 +2448,7 @@
           letter-spacing: 1px;
         }
         .guepardo-mascot-img {
-          width: 80px;
+          width: 120px;
         }
       }
     </style>
@@ -2464,7 +2478,7 @@
         </nav>
 
         <a
-          href="https://wa.me/573000000000?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20inscripciones%20en%20Patinando%20Hacia%20El%20Futuro"
+          href="https://wa.me/573205676811?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20inscripciones%20en%20Patinando%20Hacia%20El%20Futuro"
           target="_blank"
           class="btn-cta-nav"
         >
@@ -2539,6 +2553,8 @@
                     src="guepardo.png"
                     alt="Mascota Guepardo Patinando Hacia El Futuro"
                     class="guepardo-mascot-img"
+                    width="200"
+                    height="142"
                   />
                 </div>
               </div>
@@ -2569,9 +2585,9 @@
                   </div>
                 </div>
 
-                <!-- Tarjeta 3: Amarillo (4 Profesores Profesionales) -->
+                <!-- Tarjeta 3: Amarillo (3 Profesores Profesionales) -->
                 <div class="stat-card card-yellow" data-index="2">
-                  <div class="stat-num num-yellow">4</div>
+                  <div class="stat-num num-yellow">3</div>
                   <div class="stat-label">
                     <span>PROFESORES</span>
                     <span>PROFESIONALES</span>
@@ -2599,13 +2615,13 @@
             <!-- Columna Izquierda: Carrusel de Imágenes Interactivo -->
             <div class="about-media-col">
               <div class="carousel-wrapper" id="school-carousel" aria-label="Galería fotográfica de Nuestra Escuela">
-                <!-- Slides Track -->
+                <!-- Slides Track (6 Fotos Oficiales de Nuestra Historia) -->
                 <div class="carousel-track" id="carousel-track">
-                  <!-- Slide 1: Origen y Sentido Social en Caimalito -->
+                  <!-- Slide 1: Semillero y Sentido Social en Caimalito -->
                   <div class="carousel-slide is-active" data-slide="0">
                     <img
-                      src="imagen-corporativa.png"
-                      alt="Niños y jóvenes en formación sobre ruedas - Patinando Hacia El Futuro"
+                      src="carrusel1.jpg"
+                      alt="Semillero de niños y niñas con medallas del club Patinando Hacia El Futuro"
                       class="slide-image"
                       loading="lazy"
                     />
@@ -2616,45 +2632,102 @@
                     </div>
                     <div class="slide-caption">
                       <h3 class="caption-title">Semillero de Esperanza</h3>
-                      <p class="caption-desc">Oportunidad y formación integral para la niñez de nuestra comunidad.</p>
+                      <p class="caption-desc">Oportunidad, valores y formación integral para la niñez de nuestra comunidad.</p>
                     </div>
                   </div>
 
-                  <!-- Slide 2: Entrenamientos en La Virginia -->
+                  <!-- Slide 2: Triunfo y Podio -->
                   <div class="carousel-slide" data-slide="1">
                     <img
-                      src="hero.jpeg"
-                      alt="Entrenamientos y velocidad en pista - Patinando Hacia El Futuro"
+                      src="carrusel2.jpg"
+                      alt="Patinadora del club en el primer lugar del podio levantando el trofeo"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">🥇</span>
+                      <span class="badge-text">Triunfo & Campeones</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">En lo Más Alto del Podio</h3>
+                      <p class="caption-desc">Fruto de la disciplina, el esfuerzo constante y la superación deportiva.</p>
+                    </div>
+                  </div>
+
+                  <!-- Slide 3: Disciplina en Pista -->
+                  <div class="carousel-slide" data-slide="2">
+                    <img
+                      src="carrusel3.jpg"
+                      alt="Delegación completa de patinadores en formación sobre la pista de patinaje"
                       class="slide-image"
                       loading="lazy"
                     />
                     <div class="slide-overlay"></div>
                     <div class="slide-badge">
                       <span class="badge-icon">⛸️</span>
-                      <span class="badge-text">La Virginia · Risaralda</span>
+                      <span class="badge-text">Formación & Técnica</span>
                     </div>
                     <div class="slide-caption">
-                      <h3 class="caption-title">Expansión & Disciplina</h3>
-                      <p class="caption-desc">Prácticas formativas y de alto rendimiento desde los 2 hasta los 16 años.</p>
+                      <h3 class="caption-title">Disciplina sobre Ruedas</h3>
+                      <p class="caption-desc">Entrenamientos de velocidad y técnica en pista junto al profesor Alfredo Marulanda.</p>
                     </div>
                   </div>
 
-                  <!-- Slide 3: Deporte, Turismo y Competencias -->
-                  <div class="carousel-slide" data-slide="2">
+                  <!-- Slide 4: Orgullo y Trofeos -->
+                  <div class="carousel-slide" data-slide="3">
                     <img
-                      src="imagen-corporativa.png"
-                      alt="Competencias y turismo deportivo - Patinando Hacia El Futuro"
+                      src="carrusel4.jpg"
+                      alt="Equipo del club con múltiples trofeos y medallas departamentales y nacionales"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">🏆</span>
+                      <span class="badge-text">Risaralda Sobre Ruedas</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Orgullo & Cosecha de Triunfos</h3>
+                      <p class="caption-desc">Deportistas y profesores celebrando campeonatos interclubes y trofeos dorados.</p>
+                    </div>
+                  </div>
+
+                  <!-- Slide 5: Alta Competencia -->
+                  <div class="carousel-slide" data-slide="4">
+                    <img
+                      src="carrusel5.jpg"
+                      alt="Deportistas del club en circuito y pista de patinaje de carreras"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">⚡</span>
+                      <span class="badge-text">Alta Competencia</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Fogueo Nacional en Pista</h3>
+                      <p class="caption-desc">Participación y fogueo continuo en torneos de alto rendimiento en todo el país.</p>
+                    </div>
+                  </div>
+
+                  <!-- Slide 6: Familia y Turismo Deportivo -->
+                  <div class="carousel-slide" data-slide="5">
+                    <img
+                      src="carrusel6.jpg"
+                      alt="Familia y deportistas compartiendo durante una válida y viaje deportivo"
                       class="slide-image"
                       loading="lazy"
                     />
                     <div class="slide-overlay"></div>
                     <div class="slide-badge">
                       <span class="badge-icon">🇨🇴</span>
-                      <span class="badge-text">Ruta Nacional & Turismo</span>
+                      <span class="badge-text">Familia & Turismo Deportivo</span>
                     </div>
                     <div class="slide-caption">
-                      <h3 class="caption-title">Descubriendo a Colombia</h3>
-                      <p class="caption-desc">Fogueo en pistas recreativas y semiprofesionales conociendo nuestro país.</p>
+                      <h3 class="caption-title">Integración & Viajes por Colombia</h3>
+                      <p class="caption-desc">Compartiendo en familia, fortaleciendo lazos y descubriendo destinos colombianos.</p>
                     </div>
                   </div>
                 </div>
@@ -2672,11 +2745,14 @@
                   </svg>
                 </button>
 
-                <!-- Indicadores de barra inferior -->
+                <!-- Indicadores de barra inferior (6 Diapositivas) -->
                 <div class="carousel-dots" id="carousel-dots" aria-label="Navegación de diapositivas">
                   <button class="c-dot active" data-index="0" aria-label="Diapositiva 1"></button>
                   <button class="c-dot" data-index="1" aria-label="Diapositiva 2"></button>
                   <button class="c-dot" data-index="2" aria-label="Diapositiva 3"></button>
+                  <button class="c-dot" data-index="3" aria-label="Diapositiva 4"></button>
+                  <button class="c-dot" data-index="4" aria-label="Diapositiva 5"></button>
+                  <button class="c-dot" data-index="5" aria-label="Diapositiva 6"></button>
                 </div>
               </div>
 
@@ -2756,136 +2832,100 @@
           </div>
 
           <div class="coaches-grid">
-            <!-- Tarjeta 1: Prof. Carlos Restrepo (Rojo) -->
+            <!-- Tarjeta 1: Prof. Alfredo Marulanda (Rojo) -->
             <article
               class="coach-card"
-              style="--card-beam: #FF3B30; --card-tail: rgba(255, 59, 48, 0.25); --card-glow: rgba(255, 59, 48, 0.35); --beam-delay: 0s;"
+              style="--card-beam: #FF3B30; --card-tail: rgba(255, 59, 48, 0.25); --card-glow: rgba(255, 59, 48, 0.35); --beam-delay: 0s; --coach-accent: #FF3B30;"
             >
               <div class="coach-card-inner">
                 <div class="coach-avatar-zone">
-                  <div class="coach-silhouette" aria-hidden="true">
-                    <svg viewBox="0 0 64 64" class="avatar-svg" fill="currentColor">
-                      <circle cx="32" cy="20" r="10" opacity="0.9" />
-                      <path d="M22 20 C25 18 39 18 42 20 C42 23 38 25 32 25 C26 25 22 23 22 20 Z" fill="#14171E" />
-                      <path d="M14 54 C14 44 22 38 32 38 C42 38 50 44 50 54 L14 54 Z" opacity="0.8" />
-                    </svg>
-                  </div>
-                  <span class="coach-role-badge badge-red">DIRECTOR TÉCNICO</span>
+                  <img
+                    src="public/images/alfredoJPG.JPG"
+                    alt="PROF. ALFREDO MARULANDA"
+                    class="coach-photo"
+                    loading="lazy"
+                  />
+                  <div class="coach-photo-overlay" aria-hidden="true"></div>
+                  <span class="coach-role-badge badge-red">FUNDADOR & ENTRENADOR GENERAL</span>
                 </div>
 
                 <div class="coach-info-zone">
-                  <h3 class="coach-name">PROF. CARLOS RESTREPO</h3>
+                  <h3 class="coach-name">PROF. ALFREDO MARULANDA</h3>
                   <div class="coach-subtitle sub-red">
-                    LIC. EN EDUCACIÓN FÍSICA • EXPATINADOR PANAMERICANO
+                    ENTRENADOR GENERAL Y FUNDADOR
                   </div>
                   <p class="coach-desc">
-                    Más de 14 años liderando procesos de velocidad y ruta con múltiples campeonatos interclubes.
+                    Líder y fundador de la escuela. Su pasión es ver a los deportistas disfrutando cada jornada sobre ruedas y guiarlos con entrega hasta lograr que alcancen un alto nivel competitivo.
                   </p>
                   <div class="coach-feature-box">
-                    <span class="feature-icon">🎖️</span>
-                    <span class="feature-text">Certificación Nivel III Fedepatín</span>
+                    <span class="feature-icon">🔥</span>
+                    <span class="feature-text">Pasión: Ver a los deportistas disfrutando y en alto nivel</span>
                   </div>
                 </div>
               </div>
             </article>
 
-            <!-- Tarjeta 2: Prof. Andrés Mejía (Naranja) -->
+            <!-- Tarjeta 2: Profe. Erika Vanegas (Amarillo) -->
             <article
               class="coach-card"
-              style="--card-beam: #F57C00; --card-tail: rgba(245, 124, 0, 0.25); --card-glow: rgba(245, 124, 0, 0.35); --beam-delay: -1s;"
+              style="--card-beam: #FFD21F; --card-tail: rgba(255, 210, 31, 0.25); --card-glow: rgba(255, 210, 31, 0.35); --beam-delay: -1.5s; --coach-accent: #FFD21F;"
             >
               <div class="coach-card-inner">
                 <div class="coach-avatar-zone">
-                  <div class="coach-silhouette" aria-hidden="true">
-                    <svg viewBox="0 0 64 64" class="avatar-svg" fill="currentColor">
-                      <circle cx="32" cy="34" r="16" fill="none" stroke="currentColor" stroke-width="4" opacity="0.85" />
-                      <rect x="30" y="12" width="4" height="6" rx="2" opacity="0.9" />
-                      <circle cx="32" cy="34" r="3" opacity="0.9" />
-                      <line x1="32" y1="34" x2="41" y2="25" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9" />
-                    </svg>
-                  </div>
-                  <span class="coach-role-badge badge-orange">ENTRENADOR DE RUTA</span>
+                  <img
+                    src="public/images/erika.JPG"
+                    alt="PROFE. ERIKA VANEGAS"
+                    class="coach-photo"
+                    loading="lazy"
+                  />
+                  <div class="coach-photo-overlay" aria-hidden="true"></div>
+                  <span class="coach-role-badge badge-yellow">NIÑOS HASTA 7 AÑOS</span>
                 </div>
 
                 <div class="coach-info-zone">
-                  <h3 class="coach-name">PROF. ANDRÉS MEJÍA</h3>
-                  <div class="coach-subtitle sub-orange">
-                    ESPECIALISTA EN FONDO Y ALTO RENDIMIENTO
+                  <h3 class="coach-name">PROFE. ERIKA VANEGAS</h3>
+                  <div class="coach-subtitle sub-yellow">
+                    TÉCNICA EN EJECUCIÓN DE PROGRAMAS DEPORTIVOS
                   </div>
                   <p class="coach-desc">
-                    Enfocado en técnica de curva, cadencia de zancada y estrategia competitiva en válidas nacionales.
+                    Profesora de niños hasta 7 años. Su pasión es ver a los peques lograr sus sueños y celebrar los avances que tienen cada día en motricidad, técnica y confianza.
+                  </p>
+                  <div class="coach-feature-box">
+                    <span class="feature-icon">⭐</span>
+                    <span class="feature-text">Pasión: Ver a los peques lograr sus sueños día a día</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tarjeta 3: Prof. Juan Carlos Ramírez (Verde) -->
+            <article
+              class="coach-card"
+              style="--card-beam: #00E676; --card-tail: rgba(0, 230, 118, 0.25); --card-glow: rgba(0, 230, 118, 0.35); --beam-delay: -3s; --coach-accent: #00E676;"
+            >
+              <div class="coach-card-inner">
+                <div class="coach-avatar-zone">
+                  <img
+                    src="public/images/juan_carlos.JPG"
+                    alt="PROF. JUAN CARLOS RAMÍREZ"
+                    class="coach-photo"
+                    loading="lazy"
+                  />
+                  <div class="coach-photo-overlay" aria-hidden="true"></div>
+                  <span class="coach-role-badge badge-green">MAYORES DE 7 AÑOS</span>
+                </div>
+
+                <div class="coach-info-zone">
+                  <h3 class="coach-name">PROF. JUAN CARLOS RAMÍREZ</h3>
+                  <div class="coach-subtitle sub-green">
+                    TECNÓLOGO EN ENTRENAMIENTO DEPORTIVO
+                  </div>
+                  <p class="coach-desc">
+                    Entrenador de escuelas para mayores de 7 años. Su mejor día es cuando ve a sus deportistas en lo más alto del podio cosechando los frutos de su disciplina.
                   </p>
                   <div class="coach-feature-box">
                     <span class="feature-icon">🏆</span>
-                    <span class="feature-text">Medallista Nacional Interclubes</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Tarjeta 3: Lic. Marcela Gómez (Amarillo) -->
-            <article
-              class="coach-card"
-              style="--card-beam: #FFD21F; --card-tail: rgba(255, 210, 31, 0.25); --card-glow: rgba(255, 210, 31, 0.35); --beam-delay: -2s;"
-            >
-              <div class="coach-card-inner">
-                <div class="coach-avatar-zone">
-                  <div class="coach-silhouette" aria-hidden="true">
-                    <svg viewBox="0 0 64 64" class="avatar-svg" fill="currentColor">
-                      <circle cx="32" cy="16" r="6" opacity="0.9" />
-                      <path d="M38 28 C38 25.5 36 24 34 24 C31 24 29 26 29 29 C29 32 32 34 35 34 C37 34 38 32 38 30 Z" opacity="0.95" />
-                      <path d="M23 48 C20 45 18 40 20 34 C22 28 26 26 32 26 C36 26 40 28 42 32 C45 36 43 43 39 48 C34 52 26 51 23 48 Z" opacity="0.8" />
-                    </svg>
-                  </div>
-                  <span class="coach-role-badge badge-yellow">INICIACIÓN Y SEMILLERO</span>
-                </div>
-
-                <div class="coach-info-zone">
-                  <h3 class="coach-name">LIC. MARCELA GÓMEZ</h3>
-                  <div class="coach-subtitle sub-yellow">
-                    ESPECIALISTA EN PSICOMOTRICIDAD INFANTIL
-                  </div>
-                  <p class="coach-desc">
-                    Dedicada al desarrollo motriz en edades tempranas con metodología lúdica y fomento de autoconfianza.
-                  </p>
-                  <div class="coach-feature-box">
-                    <span class="feature-icon">🩺</span>
-                    <span class="feature-text">Primeros Auxilios Deportivos</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Tarjeta 4: Julián Montoya (Verde) -->
-            <article
-              class="coach-card"
-              style="--card-beam: #00E676; --card-tail: rgba(0, 230, 118, 0.25); --card-glow: rgba(0, 230, 118, 0.35); --beam-delay: -3s;"
-            >
-              <div class="coach-card-inner">
-                <div class="coach-avatar-zone">
-                  <div class="coach-silhouette" aria-hidden="true">
-                    <svg viewBox="0 0 64 64" class="avatar-svg" fill="currentColor">
-                      <rect x="22" y="30" width="20" height="4" rx="2" opacity="0.9" />
-                      <rect x="18" y="22" width="4" height="20" rx="2" opacity="0.9" />
-                      <rect x="12" y="25" width="4" height="14" rx="1.5" opacity="0.75" />
-                      <rect x="42" y="22" width="4" height="20" rx="2" opacity="0.9" />
-                      <rect x="48" y="25" width="4" height="14" rx="1.5" opacity="0.75" />
-                    </svg>
-                  </div>
-                  <span class="coach-role-badge badge-green">PREPARADOR FÍSICO</span>
-                </div>
-
-                <div class="coach-info-zone">
-                  <h3 class="coach-name">JULIÁN MONTOYA</h3>
-                  <div class="coach-subtitle sub-green">
-                    FISIOTERAPEUTA Y PREPARADOR FÍSICO
-                  </div>
-                  <p class="coach-desc">
-                    Encargado del acondicionamiento neuromuscular, prevención de lesiones y potencia específica en curvas.
-                  </p>
-                  <div class="coach-feature-box">
-                    <span class="feature-icon">⏱️</span>
-                    <span class="feature-text">Monitoreo Biomecánico</span>
+                    <span class="feature-text">Su mejor día: Ver a sus deportistas en el podio</span>
                   </div>
                 </div>
               </div>
@@ -3175,57 +3215,174 @@
                 <!-- Slides Track -->
                 <div class="carousel-track" id="victorias-carousel-track">
                   
+                  <!-- Slide 1: podio9.jpg (Campeona Oro) -->
                   <div class="carousel-slide is-active" data-slide="0">
                     <img
-                      src="hero.jpeg"
-                      alt="Campeones Patinando Hacia El Futuro - Lluvia de Oro en Pista"
+                      src="podio9.jpg"
+                      alt="Campeones Patinando Hacia El Futuro - En lo Más Alto del Podio"
                       class="slide-image"
                       loading="lazy"
                     />
                     <div class="slide-overlay"></div>
                     <div class="slide-badge">
                       <span class="badge-icon">🥇</span>
-                      <span class="badge-text">Podio Dorado · Válidas Departamentales</span>
+                      <span class="badge-text">Podio Dorado · Campeona</span>
                     </div>
                     <div class="slide-caption">
-                      <h3 class="caption-title">Lluvia de Oro en Pista</h3>
-                      <p class="caption-desc">Nuestros campeones en pruebas contra reloj de 200m y baterías de velocidad.</p>
+                      <h3 class="caption-title">En lo Más Alto del Podio</h3>
+                      <p class="caption-desc">Pequeña campeona coronándose con la medalla de oro en lo más alto del podio olímpico.</p>
                     </div>
                   </div>
 
+                  <!-- Slide 2: podio4.jpg (Gran Copa) -->
                   <div class="carousel-slide" data-slide="1">
                     <img
-                      src="imagen-corporativa.png"
-                      alt="Campeones Patinando Hacia El Futuro - Orgullo de Caimalito en lo Más Alto"
-                      class="slide-image"
-                      loading="lazy"
-                    />
-                    <div class="slide-overlay"></div>
-                    <div class="slide-badge">
-                      <span class="badge-icon">⭐</span>
-                      <span class="badge-text">Semillero de Campeones</span>
-                    </div>
-                    <div class="slide-caption">
-                      <h3 class="caption-title">Orgullo de Caimalito en lo Más Alto</h3>
-                      <p class="caption-desc">Nuevas promesas formándose con disciplina, constancia y pasión sobre ruedas.</p>
-                    </div>
-                  </div>
-
-                  <div class="carousel-slide" data-slide="2">
-                    <img
-                      src="hero.jpeg"
-                      alt="Campeones Patinando Hacia El Futuro - Delegación Oficial de Competencia"
+                      src="podio4.jpg"
+                      alt="Campeones Patinando Hacia El Futuro - Gran Copa Staff y Club"
                       class="slide-image"
                       loading="lazy"
                     />
                     <div class="slide-overlay"></div>
                     <div class="slide-badge">
                       <span class="badge-icon">🏆</span>
-                      <span class="badge-text">La Virginia · Risaralda</span>
+                      <span class="badge-text">Gran Copa · Staff & Club</span>
                     </div>
                     <div class="slide-caption">
-                      <h3 class="caption-title">Delegación Oficial de Competencia</h3>
-                      <p class="caption-desc">Más de 50 deportistas y familias celebrando en los mejores podios de Colombia.</p>
+                      <h3 class="caption-title">Liderazgo y Campeones Generales</h3>
+                      <p class="caption-desc">El profesor Alfredo Marulanda y el equipo técnico celebrando la gran copa del torneo.</p>
+                    </div>
+                  </div>
+
+                  <!-- Slide 3: podio3.jpg (Placa y Medallas) -->
+                  <div class="carousel-slide" data-slide="2">
+                    <img
+                      src="podio3.jpg"
+                      alt="Campeones Patinando Hacia El Futuro - Placa de Campeona y Medallas"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">⭐</span>
+                      <span class="badge-text">Cumpliendo Sueños · Festival Oficial</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Placa de Campeona y Medallas</h3>
+                      <p class="caption-desc">Fruto de la disciplina, el entrenamiento diario y la pasión por el patinaje de velocidad.</p>
+                    </div>
+                  </div>
+
+                  <!-- Slide 4: podio2.jpg (Semillero LPC) -->
+                  <div class="carousel-slide" data-slide="3">
+                    <img
+                      src="podio2.jpg"
+                      alt="Campeones Patinando Hacia El Futuro - Semilleros en el Podio LPC"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">🥇</span>
+                      <span class="badge-text">Liga de Patinaje · Pista Azul</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Semilleros en el Podio LPC</h3>
+                      <p class="caption-desc">Nuestras futuras estrellas subiendo al podio con alegría, técnica y velocidad.</p>
+                    </div>
+                  </div>
+
+                  <!-- Slide 5: podio1.jpg (Doble Podio) -->
+                  <div class="carousel-slide" data-slide="4">
+                    <img
+                      src="podio1.jpg"
+                      alt="Campeones Patinando Hacia El Futuro - Doble Podio Oro y Plata"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">🥇</span>
+                      <span class="badge-text">Doble Podio · Oro y Plata</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Dominio en Pista de Carreras</h3>
+                      <p class="caption-desc">Deportistas del club ocupando los puestos 1 y 2 en las válidas departamentales.</p>
+                    </div>
+                  </div>
+
+                  <!-- Slide 6: podio5.jpg (Sonrisas y Futuro) -->
+                  <div class="carousel-slide" data-slide="5">
+                    <img
+                      src="podio5.jpg"
+                      alt="Campeones Patinando Hacia El Futuro - Sonrisas y Futuro Deportivo"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">🏅</span>
+                      <span class="badge-text">Festival de Patinaje de Carreras</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Sonrisas y Futuro Deportivo</h3>
+                      <p class="caption-desc">Cada medalla representa el esfuerzo, la constancia y los sueños de nuestros niños.</p>
+                    </div>
+                  </div>
+
+                  <!-- Slide 7: podio6.jpg (Juvenil Válidas) -->
+                  <div class="carousel-slide" data-slide="6">
+                    <img
+                      src="podio6.jpg"
+                      alt="Campeones Patinando Hacia El Futuro - Velocidad y Alto Rendimiento"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">🥇</span>
+                      <span class="badge-text">Categoría Juvenil · Válidas</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Velocidad y Alto Rendimiento</h3>
+                      <p class="caption-desc">Atletas juveniles compitiendo con potencia y entrega en pistas nacionales.</p>
+                    </div>
+                  </div>
+
+                  <!-- Slide 8: podio7.jpg (Celebración) -->
+                  <div class="carousel-slide" data-slide="7">
+                    <img
+                      src="podio7.jpg"
+                      alt="Campeones Patinando Hacia El Futuro - Brazos Arriba por Risaralda"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">🎉</span>
+                      <span class="badge-text">Celebración y Victoria</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Brazos Arriba por Risaralda</h3>
+                      <p class="caption-desc">El orgullo de representar a Caimalito y La Virginia en cada competencia.</p>
+                    </div>
+                  </div>
+
+                  <!-- Slide 9: podio8.jpg (Espíritu Deportivo) -->
+                  <div class="carousel-slide" data-slide="8">
+                    <img
+                      src="podio8.jpg"
+                      alt="Campeones Patinando Hacia El Futuro - Unión y Pasión Sobre Ruedas"
+                      class="slide-image"
+                      loading="lazy"
+                    />
+                    <div class="slide-overlay"></div>
+                    <div class="slide-badge">
+                      <span class="badge-icon">✌️</span>
+                      <span class="badge-text">Espíritu Deportivo</span>
+                    </div>
+                    <div class="slide-caption">
+                      <h3 class="caption-title">Unión y Pasión Sobre Ruedas</h3>
+                      <p class="caption-desc">Deportistas forjando amistad y compañerismo en lo más alto del podio.</p>
                     </div>
                   </div>
 
@@ -3244,11 +3401,17 @@
                   </svg>
                 </button>
 
-                <!-- Indicadores de barra inferior -->
+                <!-- Indicadores de barra inferior (9 Diapositivas) -->
                 <div class="carousel-dots" id="victorias-dots" aria-label="Navegación de diapositivas">
                   <button class="c-dot active" data-index="0" aria-label="Diapositiva 1"></button>
                   <button class="c-dot" data-index="1" aria-label="Diapositiva 2"></button>
                   <button class="c-dot" data-index="2" aria-label="Diapositiva 3"></button>
+                  <button class="c-dot" data-index="3" aria-label="Diapositiva 4"></button>
+                  <button class="c-dot" data-index="4" aria-label="Diapositiva 5"></button>
+                  <button class="c-dot" data-index="5" aria-label="Diapositiva 6"></button>
+                  <button class="c-dot" data-index="6" aria-label="Diapositiva 7"></button>
+                  <button class="c-dot" data-index="7" aria-label="Diapositiva 8"></button>
+                  <button class="c-dot" data-index="8" aria-label="Diapositiva 9"></button>
                 </div>
               </div>
             </div>
@@ -3280,29 +3443,29 @@
             >
               <div class="event-card-inner">
                 <div class="event-date-col">
-                  <span class="date-month">MAR</span>
-                  <span class="date-day font-sports">28-29</span>
+                  <span class="date-month">ABR</span>
+                  <span class="date-day font-sports">11-12</span>
                   <span class="date-year">2026</span>
                 </div>
                 <div class="event-content-col">
                   <div class="event-top-meta">
-                    <span class="event-badge">1° VÁLIDA · VELOCIDAD</span>
+                    <span class="event-badge">LIGA RISARALDENSE · PEREIRA</span>
                     <span class="event-status status-open">
                       <span class="status-pulse-dot"></span>
                       Inscripciones Abiertas
                     </span>
                   </div>
-                  <h3 class="event-name">Válida Regional Interclubes de Velocidad 2026</h3>
+                  <h3 class="event-name">Ranking Departamental de Escuelas y Menores - Risaralda</h3>
                   <div class="event-location">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="loc-icon">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                     </svg>
-                    <span>Patinódromo Municipal de Carreras · Pista Central</span>
+                    <span>Patinódromo de la Unidad Deportiva · Pereira</span>
                   </div>
                   <div class="categories-tag-group">
                     <span class="cat-lead">Categorías:</span>
-                    <span class="cat-pill">Escuela de Formación</span>
-                    <span class="cat-pill">Menores 7-10</span>
+                    <span class="cat-pill">Escuelas de Formación</span>
+                    <span class="cat-pill">Menores 7-10 años</span>
                     <span class="cat-pill">Transición</span>
                   </div>
                 </div>
@@ -3316,24 +3479,24 @@
             >
               <div class="event-card-inner">
                 <div class="event-date-col">
-                  <span class="date-month">ABR</span>
-                  <span class="date-day font-sports">18</span>
+                  <span class="date-month">MAY</span>
+                  <span class="date-day font-sports">23-24</span>
                   <span class="date-year">2026</span>
                 </div>
                 <div class="event-content-col">
                   <div class="event-top-meta">
-                    <span class="event-badge">2° VÁLIDA · HABILIDADES</span>
+                    <span class="event-badge">CIRCUITO REGIONAL · MANIZALES</span>
                     <span class="event-status status-prep">
                       <span class="status-pulse-dot"></span>
                       En Preparación Técnica
                     </span>
                   </div>
-                  <h3 class="event-name">Festival Departamental de Habilidades y Relevos</h3>
+                  <h3 class="event-name">Copa del Eje Cafetero de Patinaje de Carreras</h3>
                   <div class="event-location">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="loc-icon">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                     </svg>
-                    <span>Complejo Deportivo de Patinaje · Pista de Habilidades</span>
+                    <span>Patinódromo Bosque Popular El Prado · Manizales</span>
                   </div>
                   <div class="categories-tag-group">
                     <span class="cat-lead">Categorías:</span>
@@ -3352,24 +3515,24 @@
             >
               <div class="event-card-inner">
                 <div class="event-date-col">
-                  <span class="date-month">MAY</span>
-                  <span class="date-day font-sports">15-17</span>
+                  <span class="date-month">JUN</span>
+                  <span class="date-day font-sports">20-21</span>
                   <span class="date-year">2026</span>
                 </div>
                 <div class="event-content-col">
                   <div class="event-top-meta">
-                    <span class="event-badge">3° VÁLIDA · ALTA COMPETENCIA</span>
+                    <span class="event-badge">FESTIVAL EJE · ARMENIA</span>
                     <span class="event-status status-open">
                       <span class="status-pulse-dot"></span>
                       Convocatoria Abierta
                     </span>
                   </div>
-                  <h3 class="event-name">Copa Departamental de Fondo y Eliminación</h3>
+                  <h3 class="event-name">Festival Regional de Habilidades y Relevos del Eje</h3>
                   <div class="event-location">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="loc-icon">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                     </svg>
-                    <span>Pista Internacional de Velocidad · Circuito Oficial</span>
+                    <span>Patinódromo Parque de la Vida · Armenia</span>
                   </div>
                   <div class="categories-tag-group">
                     <span class="cat-lead">Categorías:</span>
@@ -3388,24 +3551,24 @@
             >
               <div class="event-card-inner">
                 <div class="event-date-col">
-                  <span class="date-month">JUN</span>
-                  <span class="date-day font-sports">12-14</span>
+                  <span class="date-month">JUL</span>
+                  <span class="date-day font-sports">18-19</span>
                   <span class="date-year">2026</span>
                 </div>
                 <div class="event-content-col">
                   <div class="event-top-meta">
-                    <span class="event-badge">4° VÁLIDA · RUTA NACIONAL</span>
+                    <span class="event-badge">INTERCLUBES · LA VIRGINIA</span>
                     <span class="event-status status-open">
                       <span class="status-pulse-dot"></span>
                       Convocatoria Oficial
                     </span>
                   </div>
-                  <h3 class="event-name">Campeonato Nacional Interclubes de Ruta 2026</h3>
+                  <h3 class="event-name">Campeonato Regional Interclubes de Ruta del Eje</h3>
                   <div class="event-location">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="loc-icon">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                     </svg>
-                    <span>Circuito Panamericano de Ruta · La Virginia</span>
+                    <span>Circuito Deportivo Municipal · La Virginia</span>
                   </div>
                   <div class="categories-tag-group">
                     <span class="cat-lead">Categorías:</span>
@@ -3426,7 +3589,7 @@
                 <p class="cta-desc">Iniciamos procesos desde los 2 años con pruebas formativas, fogueo recreativo y alta competencia.</p>
               </div>
               <a
-                href="https://wa.me/573000000000?text=Hola%2C%20quiero%20conocer%20el%20calendario%20de%20competencias%20y%20entrenamientos%20de%20Patinando%20Hacia%20El%20Futuro"
+                href="https://wa.me/573205676811?text=Hola%2C%20quiero%20conocer%20el%20calendario%20de%20competencias%20y%20entrenamientos%20de%20Patinando%20Hacia%20El%20Futuro"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-event-cta"
@@ -3475,7 +3638,7 @@
                 <div class="news-footer">
                   <span class="read-time">2 min de lectura</span>
                   <a
-                    href="https://wa.me/573000000000?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20Inscripciones"
+                    href="https://wa.me/573205676811?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20Inscripciones"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="news-link"
@@ -3507,7 +3670,7 @@
                 <div class="news-footer">
                   <span class="read-time">3 min de lectura</span>
                   <a
-                    href="https://wa.me/573000000000?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20Medallas"
+                    href="https://wa.me/573205676811?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20Medallas"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="news-link"
@@ -3539,7 +3702,7 @@
                 <div class="news-footer">
                   <span class="read-time">2 min de lectura</span>
                   <a
-                    href="https://wa.me/573000000000?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20Biomec%C3%A1nica"
+                    href="https://wa.me/573205676811?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20Biomec%C3%A1nica"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="news-link"
@@ -3571,7 +3734,7 @@
                 <div class="news-footer">
                   <span class="read-time">1 min de lectura</span>
                   <a
-                    href="https://wa.me/573000000000?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20Uniforme"
+                    href="https://wa.me/573205676811?text=Hola%2C%20le%C3%AD%20la%20noticia%20sobre%20Uniforme"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="news-link"
@@ -3650,13 +3813,13 @@
             </p>
             <p class="contact-item">
               <span class="contact-icon">📱</span>
-              <span>WhatsApp Oficial: (+57) 300 000 0000</span>
+              <span>WhatsApp Oficial: (+57) 320 567 6811</span>
             </p>
             <p class="contact-item">
               <span class="contact-icon">🕒</span>
-              <span>Horarios: Martes a Sábado (Tarde y Mañana)</span>
+              <span>Horarios: Lunes, Miércoles y Viernes de 6:00 pm a 8:00 pm</span>
             </p>
-            <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="btn-footer-wa">
+            <a href="https://wa.me/573205676811?text=Hola%2C%20quiero%20inscribirme%20en%20Patinando%20Hacia%20El%20Futuro" target="_blank" rel="noopener noreferrer" class="btn-footer-wa">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                 <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.969.541 1.838.835 2.796.835 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.767-5.768-5.767zm7.545 5.766c-.002 4.159-3.385 7.542-7.545 7.542-1.282 0-2.529-.328-3.633-.948l-4.398 1.153 1.173-4.288c-.689-1.159-1.054-2.483-1.054-3.847.002-4.159 3.385-7.542 7.545-7.542 4.159.001 7.542 3.384 7.542 7.542z"/>
               </svg>

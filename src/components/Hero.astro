@@ -77,8 +77,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               src={`${base}/images/guepardo.png`}
               alt="Mascota Guepardo Patinando Hacia El Futuro"
               class="guepardo-mascot-img"
-              width="135"
-              height="95"
+              width="200"
+              height="142"
             />
           </div>
         </div>
@@ -110,9 +110,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </div>
           </div>
 
-          <!-- Tarjeta 3: Amarillo (4 Profesores Profesionales) -->
+          <!-- Tarjeta 3: Amarillo (3 Profesores Profesionales) -->
           <div class="stat-card card-yellow" data-index="2">
-            <div class="stat-num num-yellow">4</div>
+            <div class="stat-num num-yellow">3</div>
             <div class="stat-label">
               <span>PROFESORES</span>
               <span>PROFESIONALES</span>
@@ -293,7 +293,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .trail-mascot-anchor {
     position: relative;
     flex-shrink: 0;
-    margin-left: -28px;
+    margin-left: -38px;
     z-index: 5;
     display: flex;
     align-items: center;
@@ -302,18 +302,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   .mascot-energy-ring {
     position: absolute;
-    width: clamp(110px, 9vw, 140px);
-    height: clamp(80px, 7vw, 105px);
+    width: clamp(165px, 13.5vw, 210px);
+    height: clamp(120px, 10.5vw, 158px);
     background: radial-gradient(circle, rgba(0, 155, 85, 0.5) 0%, rgba(255, 210, 31, 0.25) 60%, transparent 80%);
-    filter: blur(14px);
+    filter: blur(16px);
     z-index: -1;
   }
 
   .guepardo-mascot-img {
-    width: clamp(115px, 9.5vw, 150px);
+    width: clamp(175px, 14.5vw, 225px);
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 0 18px rgba(0, 155, 85, 0.85)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(0 0 20px rgba(0, 155, 85, 0.85)) drop-shadow(0 4px 14px rgba(0, 0, 0, 0.8));
     transform: rotate(-3deg);
     transition: transform 0.3s ease;
   }
@@ -518,7 +518,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     }
 
     .guepardo-mascot-img {
-      width: 95px;
+      width: 145px;
     }
   }
 
@@ -538,7 +538,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     }
 
     .guepardo-mascot-img {
-      width: 80px;
+      width: 120px;
     }
   }
 </style>

@@ -9,13 +9,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <!-- Columna Izquierda: Carrusel de Imágenes Interactivo -->
       <div class="about-media-col">
         <div class="carousel-wrapper" id="school-carousel" aria-label="Galería fotográfica de Nuestra Escuela">
-          <!-- Slides Track -->
+          <!-- Slides Track (6 Fotos Oficiales de Nuestra Historia) -->
           <div class="carousel-track" id="carousel-track">
-            <!-- Slide 1: Origen y Sentido Social en Caimalito -->
+            <!-- Slide 1: Semillero y Sentido Social en Caimalito -->
             <div class="carousel-slide is-active" data-slide="0">
               <img
-                src={`${base}/images/imagen-corporativa.png`}
-                alt="Niños y jóvenes en formación sobre ruedas - Patinando Hacia El Futuro"
+                src={`${base}/images/carrusel1.jpg`}
+                alt="Semillero de niños y niñas con medallas del club Patinando Hacia El Futuro"
                 class="slide-image"
                 loading="lazy"
               />
@@ -26,45 +26,102 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               </div>
               <div class="slide-caption">
                 <h3 class="caption-title">Semillero de Esperanza</h3>
-                <p class="caption-desc">Oportunidad y formación integral para la niñez de nuestra comunidad.</p>
+                <p class="caption-desc">Oportunidad, valores y formación integral para la niñez de nuestra comunidad.</p>
               </div>
             </div>
 
-            <!-- Slide 2: Entrenamientos en La Virginia -->
+            <!-- Slide 2: Triunfo y Podio -->
             <div class="carousel-slide" data-slide="1">
               <img
-                src={`${base}/images/hero.jpeg`}
-                alt="Entrenamientos y velocidad en pista - Patinando Hacia El Futuro"
+                src={`${base}/images/carrusel2.jpg`}
+                alt="Patinadora del club en el primer lugar del podio levantando el trofeo"
+                class="slide-image"
+                loading="lazy"
+              />
+              <div class="slide-overlay"></div>
+              <div class="slide-badge">
+                <span class="badge-icon">🥇</span>
+                <span class="badge-text">Triunfo & Campeones</span>
+              </div>
+              <div class="slide-caption">
+                <h3 class="caption-title">En lo Más Alto del Podio</h3>
+                <p class="caption-desc">Fruto de la disciplina, el esfuerzo constante y la superación deportiva.</p>
+              </div>
+            </div>
+
+            <!-- Slide 3: Disciplina en Pista -->
+            <div class="carousel-slide" data-slide="2">
+              <img
+                src={`${base}/images/carrusel3.jpg`}
+                alt="Delegación completa de patinadores en formación sobre la pista de patinaje"
                 class="slide-image"
                 loading="lazy"
               />
               <div class="slide-overlay"></div>
               <div class="slide-badge">
                 <span class="badge-icon">⛸️</span>
-                <span class="badge-text">La Virginia · Risaralda</span>
+                <span class="badge-text">Formación & Técnica</span>
               </div>
               <div class="slide-caption">
-                <h3 class="caption-title">Expansión & Disciplina</h3>
-                <p class="caption-desc">Prácticas formativas y de alto rendimiento desde los 2 hasta los 16 años.</p>
+                <h3 class="caption-title">Disciplina sobre Ruedas</h3>
+                <p class="caption-desc">Entrenamientos de velocidad y técnica en pista junto al profesor Alfredo Marulanda.</p>
               </div>
             </div>
 
-            <!-- Slide 3: Deporte, Turismo y Competencias -->
-            <div class="carousel-slide" data-slide="2">
+            <!-- Slide 4: Orgullo y Trofeos -->
+            <div class="carousel-slide" data-slide="3">
               <img
-                src={`${base}/images/imagen-corporativa.png`}
-                alt="Competencias y turismo deportivo - Patinando Hacia El Futuro"
+                src={`${base}/images/carrusel4.jpg`}
+                alt="Equipo del club con múltiples trofeos y medallas departamentales y nacionales"
+                class="slide-image"
+                loading="lazy"
+              />
+              <div class="slide-overlay"></div>
+              <div class="slide-badge">
+                <span class="badge-icon">🏆</span>
+                <span class="badge-text">Risaralda Sobre Ruedas</span>
+              </div>
+              <div class="slide-caption">
+                <h3 class="caption-title">Orgullo & Cosecha de Triunfos</h3>
+                <p class="caption-desc">Deportistas y profesores celebrando campeonatos interclubes y trofeos dorados.</p>
+              </div>
+            </div>
+
+            <!-- Slide 5: Alta Competencia -->
+            <div class="carousel-slide" data-slide="4">
+              <img
+                src={`${base}/images/carrusel5.jpg`}
+                alt="Deportistas del club en circuito y pista de patinaje de carreras"
+                class="slide-image"
+                loading="lazy"
+              />
+              <div class="slide-overlay"></div>
+              <div class="slide-badge">
+                <span class="badge-icon">⚡</span>
+                <span class="badge-text">Alta Competencia</span>
+              </div>
+              <div class="slide-caption">
+                <h3 class="caption-title">Fogueo Nacional en Pista</h3>
+                <p class="caption-desc">Participación y fogueo continuo en torneos de alto rendimiento en todo el país.</p>
+              </div>
+            </div>
+
+            <!-- Slide 6: Familia y Turismo Deportivo -->
+            <div class="carousel-slide" data-slide="5">
+              <img
+                src={`${base}/images/carrusel6.jpg`}
+                alt="Familia y deportistas compartiendo durante una válida y viaje deportivo"
                 class="slide-image"
                 loading="lazy"
               />
               <div class="slide-overlay"></div>
               <div class="slide-badge">
                 <span class="badge-icon">🇨🇴</span>
-                <span class="badge-text">Ruta Nacional & Turismo</span>
+                <span class="badge-text">Familia & Turismo Deportivo</span>
               </div>
               <div class="slide-caption">
-                <h3 class="caption-title">Descubriendo a Colombia</h3>
-                <p class="caption-desc">Fogueo en pistas recreativas y semiprofesionales conociendo nuestro país.</p>
+                <h3 class="caption-title">Integración & Viajes por Colombia</h3>
+                <p class="caption-desc">Compartiendo en familia, fortaleciendo lazos y descubriendo destinos colombianos.</p>
               </div>
             </div>
           </div>
@@ -82,11 +139,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </svg>
           </button>
 
-          <!-- Indicadores de barra inferior -->
+          <!-- Indicadores de barra inferior (6 Diapositivas) -->
           <div class="carousel-dots" id="carousel-dots" aria-label="Navegación de diapositivas">
             <button class="c-dot active" data-index="0" aria-label="Diapositiva 1"></button>
             <button class="c-dot" data-index="1" aria-label="Diapositiva 2"></button>
             <button class="c-dot" data-index="2" aria-label="Diapositiva 3"></button>
+            <button class="c-dot" data-index="3" aria-label="Diapositiva 4"></button>
+            <button class="c-dot" data-index="4" aria-label="Diapositiva 5"></button>
+            <button class="c-dot" data-index="5" aria-label="Diapositiva 6"></button>
           </div>
         </div>
 
