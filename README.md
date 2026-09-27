@@ -2,6 +2,9 @@
 
 Sitio web oficial y landing page de alto rendimiento de la **Escuela de Patinaje de Carreras Patinando Hacia El Futuro** (Caimalito · Pereira / La Virginia · Risaralda).
 
+🌐 **Sitio Web Oficial:** **[https://www.patinandohaciaelfuturo.pro](https://www.patinandohaciaelfuturo.pro)**  
+*(Redirección automática activa desde [https://patinandohaciaelfuturo.pro](https://patinandohaciaelfuturo.pro))*
+
 ---
 
 ## 🌟 Características y Secciones
@@ -19,7 +22,7 @@ Sitio web oficial y landing page de alto rendimiento de la **Escuela de Patinaje
 
 ## 🎨 Paleta de Colores Institucional
 
-La identidad visual está construida sobre un fondo negro puro (`#000000`) con el degradado continuo:
+La identidad visual está construida sobre un fondo negro puro (`#000000`) con el degradado continuo de marca:
 
 | Color | Hex | Representación |
 | :--- | :--- | :--- |
@@ -30,12 +33,13 @@ La identidad visual está construida sobre un fondo negro puro (`#000000`) con e
 
 ---
 
-## 🚀 Tecnologías
+## 🚀 Tecnologías & Despliegue
 
-- **Framework:** [Astro](https://astro.build/)
+- **Framework:** [Astro 7](https://astro.build/)
 - **Estilos:** CSS3 nativo moderno, Glassmorphism, animaciones de borde con `conic-gradient`
-- **Diseño Responsivo:** Mobile-first optimizado para celulares, tablets y pantallas de escritorio
-- **Vista Autónoma:** Archivo `preview.html` listo para visualización directa sin servidor
+- **Hosting & CI/CD:** [GitHub Pages](https://pages.github.com/) con despliegue automatizado vía [GitHub Actions](https://github.com/features/actions)
+- **Dominio Personalizado:** [patinandohaciaelfuturo.pro](https://www.patinandohaciaelfuturo.pro) (DNS administrado en Hostinger, certificado SSL/HTTPS gestionado por GitHub)
+- **Diseño Responsivo:** Mobile-first optimizado para smartphones, tablets y pantallas de escritorio
 
 ---
 
@@ -43,8 +47,8 @@ La identidad visual está construida sobre un fondo negro puro (`#000000`) con e
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git
-   cd TU_REPOSITORIO
+   git clone https://github.com/jorale0505/patinando_hacia_el_futuro.git
+   cd patinando_hacia_el_futuro
    ```
 
 2. **Instalar dependencias:**
